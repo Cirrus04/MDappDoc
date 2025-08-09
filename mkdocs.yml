@@ -1,0 +1,45 @@
+site_name: My Financial App Documentation
+site_url: https://<YourGitHubUsername>.github.io/<YourRepoName>/  # 
+IMPORTANT: Update this later
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+# Navigation Structure
+nav:
+  - 'Home': 'index.md'
+  - 'Setup Guide':
+    - 'Installation': 'guide/installation.md'
+    - 'Configuration': 'guide/configuration.md'
+    - 'Deployment': 'guide/deployment.md'
+  - 'User Manual':
+    - 'Web Interface': 'usage/web_interface.md'
+    - 'Load Scripts': 'usage/shell_scripts.md'
+  - 'Technical Analysis':
+    - 'Indicators Overview': 'technical_analysis/indicators.md'
+    - 'Bollinger Bands': 'technical_analysis/bollinger_bands.md'
+    - 'RSI': 'technical_analysis/rsi.md'
+    - 'ADX': 'technical_analysis/adx.md'
+    - 'MACD': 'technical_analysis/macd.md'
+  - 'Development':
+    - 'Database Schema': 'development/database_schema.md'
+    - 'Data Sources': 'development/data_sources.md'
+    - 'Maintenance': 'development/maintenance.md'
+
