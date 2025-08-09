@@ -1,6 +1,5 @@
 site_name: My Financial App Documentation
-site_url: https://<YourGitHubUsername>.github.io/<YourRepoName>/  # 
-IMPORTANT: Update this later
+site_url: https://Cirrus04.github.io/MDappDoc/  
 
 theme:
   name: material
