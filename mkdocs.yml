@@ -1,5 +1,5 @@
-site_name: My Financial App Documentation
-site_url: https://Cirrus04.github.io/MDappDoc/  
+site_name: MarketData Analyzer Documentation
+site_url: https://Cirrus04.github.io/MDappDoc/
 
 theme:
   name: material
@@ -21,6 +21,9 @@ theme:
     - search.highlight
     - content.code.annotate
 
+extra_css:
+  - assets/custom.css
+
 # Navigation Structure
 nav:
   - 'Home': 'index.md'
@@ -37,8 +40,17 @@ nav:
     - 'RSI': 'technical_analysis/rsi.md'
     - 'ADX': 'technical_analysis/adx.md'
     - 'MACD': 'technical_analysis/macd.md'
+  - 'Glossary':
+    - 'Overview': 'glossary/overview.md'
+    - 'EODHD': 'glossary/eodhd.md'
+    - 'STRATO': 'glossary/strato.md'
+    - 'VPS': 'glossary/vps.md'
+    - 'MySQL': 'glossary/mysql.md'
+    - 'Cron & Crontab': 'glossary/cron.md'
+    - 'Bash Shell': 'glossary/bash_shell.md'
+    - 'nano & vi': 'glossary/nano_vi.md'
+
   - 'Development':
     - 'Database Schema': 'development/database_schema.md'
     - 'Data Sources': 'development/data_sources.md'
     - 'Maintenance': 'development/maintenance.md'
-
