@@ -1348,17 +1348,17 @@
 
   <h1>Cron & Crontab</h1>
 
-<h3 id="what-is-cron">What is Cron?</h3>
+<h3 id="what-is-cron">What is Cron?<a class="headerlink" href="#what-is-cron" title="Permanent link">&para;</a></h3>
 <p><strong>Cron</strong> is a time-based job scheduler in Unix-like computer operating systems (including Linux and macOS). It is a daemon, meaning it runs continuously in the background. Its purpose is to automate repetitive tasks by executing scripts or commands at specified intervals (e.g., every night at 2 AM).</p>
 <p>Our application relies on <strong>cron</strong> to run the <strong>load.sh</strong> script automatically every day to download the latest financial data.</p>
-<h3 id="what-is-a-crontab">What is a Crontab?</h3>
+<h3 id="what-is-a-crontab">What is a Crontab?<a class="headerlink" href="#what-is-a-crontab" title="Permanent link">&para;</a></h3>
 <p>A <strong>crontab</strong> (short for "cron table") is a simple text file that contains the schedule of jobs for <strong>cron</strong> to run. Each user on the system can have their own crontab file.</p>
 <p>Each line in a crontab file represents a single job and has 2 parts:</p>
 <ol>
 <li>The schedule (when to run the job).</li>
 <li>The command to execute.</li>
 </ol>
-<h3 id="the-schedule-format">The Schedule Format</h3>
+<h3 id="the-schedule-format">The Schedule Format<a class="headerlink" href="#the-schedule-format" title="Permanent link">&para;</a></h3>
 <p>The schedule is defined by five fields, followed by the command:</p>
 <pre>
 <code>
@@ -1378,11 +1378,11 @@ An asterisk `*` means "every".
 </code>
 </pre>
 
-<h3 id="how-to-edit-the-crontab">How to Edit the Crontab</h3>
+<h3 id="how-to-edit-the-crontab">How to Edit the Crontab<a class="headerlink" href="#how-to-edit-the-crontab" title="Permanent link">&para;</a></h3>
 <p>To edit your user's crontab file, you use the following command in the terminal:</p>
 <p><strong>crontab -e</strong></p>
 <p>This will open the crontab file in your default text editor (like <strong>nano</strong> or <strong>vi</strong>).</p>
-<h3 id="example">Example</h3>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p><strong>Changing the Start Time</strong></p>
 <p>Let's say our current cron job runs at 09:00 AM from Tuesday to Saturday:</p>
 <pre>

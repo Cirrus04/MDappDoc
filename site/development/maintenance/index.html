@@ -1506,9 +1506,9 @@
 
 
 
-<h1 id="maintenance-guide">Maintenance Guide</h1>
+<h1 id="maintenance-guide">Maintenance Guide<a class="headerlink" href="#maintenance-guide" title="Permanent link">&para;</a></h1>
 <p>This document outlines common maintenance tasks for the MarketData Analyzer application, including daily operations, data correction, and troubleshooting.</p>
-<h2 id="1-daily-operations-automated-via-cron">1. Daily Operations (Automated via Cron)</h2>
+<h2 id="1-daily-operations-automated-via-cron">1. Daily Operations (Automated via Cron)<a class="headerlink" href="#1-daily-operations-automated-via-cron" title="Permanent link">&para;</a></h2>
 <p>The application is designed to be self-maintaining through a nightly cron job that runs the <strong>load.sh</strong> script.</p>
 <pre>
 <code>
@@ -1524,20 +1524,20 @@
 <li>Pre-calculates summary tables (<code>Stock Metrics</code>, <code>Steep Slope</code>, <code>Golden &amp; Death CrossX</code>, etc.) for fast front-end performance.</li>
 </ul>
 <p>The cron job should be configured to run <strong>after the stock market closes and EODHD has updated its daily data</strong>.</p>
-<h3 id="monitoring">Monitoring</h3>
+<h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h3>
 <p>It is recommended to periodically review the log files located in the <strong>LOG/</strong> directory to ensure the nightly cron jobs are completing successfully.</p>
-<h2 id="2-handling-data-errors-and-reloading">2. Handling Data Errors and Reloading</h2>
+<h2 id="2-handling-data-errors-and-reloading">2. Handling Data Errors and Reloading<a class="headerlink" href="#2-handling-data-errors-and-reloading" title="Permanent link">&para;</a></h2>
 <p>Occasionally, the source data from EODHD may contain errors (e.g., incorrect split application, erroneous prices). The application has built-in features to correct this data.</p>
-<h3 id="scenario-a-reloading-full-price-history-for-a-single-symbol">Scenario A: Reloading Full Price History for a Single Symbol</h3>
+<h3 id="scenario-a-reloading-full-price-history-for-a-single-symbol">Scenario A: Reloading Full Price History for a Single Symbol<a class="headerlink" href="#scenario-a-reloading-full-price-history-for-a-single-symbol" title="Permanent link">&para;</a></h3>
 <p>This is the most common maintenance task, used after EODHD has confirmed a data correction for a specific symbol.</p>
 <p><strong>Step 1: Reload Price History</strong></p>
 <p>Run the <strong>load.sh</strong> script with the <strong>PricesDL</strong> step, specifying the symbol and exchange with the <strong>-s</strong> and <strong>-e</strong> flags. This will delete the old price history for the symbol and replace it with the fresh, corrected data from the API.</p>
-<h4 id="example-reload-full-history-for-saab-b-on-the-st-exchange">Example: Reload full history for SAAB-B on the ST exchange</h4>
+<h4 id="example-reload-full-history-for-saab-b-on-the-st-exchange">Example: Reload full history for SAAB-B on the ST exchange<a class="headerlink" href="#example-reload-full-history-for-saab-b-on-the-st-exchange" title="Permanent link">&para;</a></h4>
 <pre><code>./load.sh -s SAAB-B -e ST PricesDL</code></pre>
 
 <p><strong>Step 2: Recalculate All Indicators for that Symbol</strong></p>
 <p>After reloading the price history, you must recalculate all dependent indicators from scratch for that symbol. Start the script from the calcAdjustedClose step.</p>
-<h4 id="example-recalculate-all-indicators-for-saab-b">Example: Recalculate all indicators for SAAB-B</h4>
+<h4 id="example-recalculate-all-indicators-for-saab-b">Example: Recalculate all indicators for SAAB-B<a class="headerlink" href="#example-recalculate-all-indicators-for-saab-b" title="Permanent link">&para;</a></h4>
 <pre><code>./load.sh -s SAAB-B -e ST SMACALC
 ./load.sh -s SAAB-B -e ST EMACALC
 ./load.sh -s SAAB-B -e ST MACD
@@ -1545,23 +1545,23 @@
 ./load.sh -s SAAB-B -e ST BBandADX</code></pre>
 
 <p>This will run through SMA, EMA, MACD, RSI and Bollinger Bands and ADX calculation steps for only SAAB-B.</p>
-<h3 id="scenario-b-forcing-a-full-recalculation-for-all-symbols">Scenario B: Forcing a Full Recalculation for All Symbols</h3>
+<h3 id="scenario-b-forcing-a-full-recalculation-for-all-symbols">Scenario B: Forcing a Full Recalculation for All Symbols<a class="headerlink" href="#scenario-b-forcing-a-full-recalculation-for-all-symbols" title="Permanent link">&para;</a></h3>
 <p>This is a more drastic step and should only be used if there has been a major data issue affecting many symbols or a change in the calculation logic itself.</p>
 <p><strong>Note!</strong> This process can take a significant amount of time.</p>
 <p>Use the <strong>-f</strong> (full recalculation) flag and specify the starting step.</p>
-<h4 id="example-force-a-full-recalculation-of-all-emas-for-all-exchanges">Example: Force a full recalculation of all EMAs for all exchanges</h4>
+<h4 id="example-force-a-full-recalculation-of-all-emas-for-all-exchanges">Example: Force a full recalculation of all EMAs for all exchanges<a class="headerlink" href="#example-force-a-full-recalculation-of-all-emas-for-all-exchanges" title="Permanent link">&para;</a></h4>
 <pre><code>./load.sh -f EMACALC</code></pre>
 
-<h4 id="example-force-a-full-recalculation-of-everything-from-the-beginning">Example: Force a full recalculation of EVERYTHING from the beginning</h4>
+<h4 id="example-force-a-full-recalculation-of-everything-from-the-beginning">Example: Force a full recalculation of EVERYTHING from the beginning<a class="headerlink" href="#example-force-a-full-recalculation-of-everything-from-the-beginning" title="Permanent link">&para;</a></h4>
 <pre><code>./load.sh -f ALL</code></pre>
 
-<h2 id="3-database-schema-updates">3. Database Schema Updates</h2>
+<h2 id="3-database-schema-updates">3. Database Schema Updates<a class="headerlink" href="#3-database-schema-updates" title="Permanent link">&para;</a></h2>
 <p>If the database schema is changed (e.g., a new column is added to a <strong>tPrice_<exchange></strong> table), the stored procedures may need to be updated.</p>
 <p>Modify the SQL file containing the stored procedure definition (e.g., _ALL_SQL_STATEMENTS.sql).</p>
 <p>Connect to the database using a client like MySQL Workbench.</p>
 <p>DROP the old procedure and re-create it by running the updated CREATE PROCEDURE script.
 After updating the schema or procedures, it is often necessary to run a full recalculation (see Scenario B above) to populate the new columns.</p>
-<h2 id="4-troubleshooting">4. Troubleshooting</h2>
+<h2 id="4-troubleshooting">4. Troubleshooting<a class="headerlink" href="#4-troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Problem: Cron job fails.<ul>
 <li>Solution: Check the log file (LOG/logfile.log and the date-stamped load_YYYYMMDD.log). The error is most often related to PATH environment variables or database connection issues. Verify that the PATH is set correctly at the top of load.sh.</li>
