@@ -49,8 +49,11 @@ nav:
     - 'Cron & Crontab': 'glossary/cron.md'
     - 'Bash Shell': 'glossary/bash_shell.md'
     - 'nano & vi': 'glossary/nano_vi.md'
+    - 'Stop-Loss': 'glossary/stop_loss.md'
+    - 'not yet translated': 'glossary/README.md'
 
   - 'Development':
     - 'Database Schema': 'development/database_schema.md'
+    - 'SQL for Database Creation': 'development/database_create.md'
     - 'Data Sources': 'development/data_sources.md'
     - 'Maintenance': 'development/maintenance.md'

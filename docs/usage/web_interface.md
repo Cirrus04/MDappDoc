@@ -14,8 +14,8 @@ All controls are located in the right-hand panel, ready for you to make your sel
 
 The control panel on the right allows you to define what data is displayed.
 
-#### Exchange & Symbol Type
-Select the stock exchange (e.g., ST, NYSE, NASDAQ) and the type of instrument (e.g., Common Stock, ETF, FUND) you want to analyze. The available symbols in the dropdown list will update automatically based on your selection.
+#### Exchange & Symbol Type{#Exchange_Symbol_Type}
+SSelect the stock exchange (e.g., ST, NYSE, NASDAQ) and the type of instrument (e.g., Common Stock, ETF, FUND) you want to analyze. The available symbols in the dropdown list will update automatically based on your selection.
 
 #### Timeframe
 Enter the number of trading days you wish to view in the chart. The default is 360 days (approximately one and a half years of trading data).

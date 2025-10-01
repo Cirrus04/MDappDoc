@@ -15,7 +15,7 @@
 
 - Data Tables for Screening
 
-    - __Slope__: Identify stocks with the strongest positive or negative trends over a selected timeframe. Both logarithmic and percentage-based calculations are available.
+    - __Slope__: Identify stocks with the strongest positive or negative trends over a selected timeframe.
     - __Golden/Death Cross__: View lists of stocks that have recently experienced these significant trend-reversal signals.
     - __Stock Metrics__: Get a detailed statistical breakdown for all stocks, including Rate of Change (ROC), trendline Slope, and the trend's statistical reliability (R-Squared).
 
