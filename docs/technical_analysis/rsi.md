@@ -1,4 +1,4 @@
-### What is RSI?</span>__
+### What is RSI?  {#MA-RSI-help}</span>__
 The Relative Strength Index (RSI) is a __momentum oscillator__ that measures the speed and change of price movements. It oscillates on a scale of 0 to 100 and is used to identify potentially overbought or oversold conditions in a market.
 
 ![alt text](images/RSI_example.png)

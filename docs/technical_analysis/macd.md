@@ -1,4 +1,4 @@
-### What is MACD?</span>__
+### What is MACD?  {#MA-MACD-help}</span>__
 
 MACD (*Moving Average Convergence Divergence* ) is a trend-following momentum indicator.
 It shows the relationship between two Exponential Moving Averages (EMAs) of a security's price.

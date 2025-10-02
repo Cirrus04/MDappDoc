@@ -1,4 +1,4 @@
-### What is ADX?</span>__
+### What is ADX?  {#MA-ADX-help}</span>__
 The ADX is a __trend strength indicator__.<br>
 Its sole purpose is to measure the __strength or intensity of a trend__, not its direction.
 
