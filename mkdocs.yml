@@ -1,4 +1,5 @@
 site_name: MarketData Analyzer Documentation
+site_author: Matti Sirén
 site_url: https://Cirrus04.github.io/MDappDoc/
 
 theme:
@@ -62,3 +63,6 @@ markdown_extensions:
       permalink: true
   - admonition
   - attr_list
+custom_dir: theme_overrides
+extra:
+  version: "v.1.0.0"  # <-- Your version number goes here

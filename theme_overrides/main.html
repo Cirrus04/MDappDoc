@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+  {{ super() }}
+  <style>
+    .md-version {
+      font-size: 0.6rem;
+      font-weight: bold;
+      color: var(--md-primary-fg-color--light);
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  </style>
+  {% if config.extra.version %}
+    <span class="md-version">
+      {{ config.extra.version }}
+    </span>
+  {% endif %}
+{% endblock %}

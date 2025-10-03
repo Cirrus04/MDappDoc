@@ -40,13 +40,13 @@ Use these checkboxes to toggle the visibility of the different chart panels.
 
 Select a radio button to display a specific data table for the selected exchange and type. The tables provide a way to screen all stocks for specific criteria.
 
-**Increase {#MA-Increase-help}**: Provides a detailed table of calculated information of percentage raise of the adjusted Closeprice.
+**Increase**: Provides a detailed table of calculated information of percentage raise of the adjusted Closeprice.
 
-**Metrics {#MA-Metrics-help}**: Provides a detailed table of calculated metrics like ROC (Rate of Change) and R-Squared for all symbols.
+**Metrics**: Provides a detailed table of calculated metrics like ROC (Rate of Change) and R-Squared for all symbols.
 
-**Slope {#MA-Slope-help}**: Shows a ranked list of stocks based on the strength and direction of their price trend.
+**Slope**: Shows a ranked list of stocks based on the strength and direction of their price trend.
 
-**Golden/Death Cross {#MA-X-help}**: Displays lists of stocks that have recently experienced these bullish or bearish crossover signals.
+**Golden/Death Cross**: Displays lists of stocks that have recently experienced these bullish or bearish crossover signals.
 
 ### Analyzing a Symbol
 
