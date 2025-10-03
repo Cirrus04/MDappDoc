@@ -1,7 +1,6 @@
-{% extends "base.html" %}
+{% extends "partials/header.html" %}
 
-{% block header %}
-  {{ super() }}
+{% block extrahead %}
   <style>
     .md-version {
       font-size: 0.6rem;
@@ -11,9 +10,13 @@
       vertical-align: middle;
     }
   </style>
+{% endblock %}
+
+{% blocktabs %}
+  {{ super() }}
   {% if config.extra.version %}
     <span class="md-version">
       {{ config.extra.version }}
     </span>
   {% endif %}
-{% endblock %}
+{% endblocktabs %}
