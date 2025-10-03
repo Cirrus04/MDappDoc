@@ -1,0 +1,99 @@
+/* Define custom colors for the default (light) theme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        rgb(39, 76, 119);
+  --md-primary-fg-color--light: #4A6C8C; /* A slightly lighter version for hover/focus */
+  --md-primary-fg-color--dark:  #1A324A; /* A slightly darker version */
+
+  /* You can also define your accent color here */
+  --md-accent-fg-color:         #9C27B0; /* This is the hex code for 'purple' */
+  --md-accent-fg-color--transparent: rgba(156, 39, 176, 0.1);
+}
+
+/* Define custom colors for the slate (dark) theme */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #5C92C8; /* A lighter blue for better contrast on dark bg */
+
+  /* Accent color for dark mode */
+  --md-accent-fg-color:         #BA68C8; /* A lighter purple for dark mode */
+}
+
+/* --- FONT SIZE CUSTOMIZATIONS --- */
+/* These will apply to both light and dark themes */
+body {
+  /* Base text size */
+  --md-text-font-size: 0.6rem; /* This one might still work in :root, but putting it here is safer */
+
+  /* Heading sizes - THESE are the important ones to move */
+  --md-text-font-size--h1: 1.5rem;
+  --md-text-font-size--h2: 1.0rem;
+  --md-text-font-size--h3: 0.75rem;
+  --md-text-font-size--h4: 0.6rem;
+  --md-text-font-size--h5: 0.5rem;
+  --md-text-font-size: 0.5rem;
+  /* Code block size */
+  --md-code-font-size: 0.6rem;
+
+  --md-text-font-size: 0.6rem;
+  --md-code-font-size: 0.6rem;
+}
+
+/* --- FONT SIZE CUSTOMIZATIONS (Direct Override Method) --- */
+
+/* Base text size for paragraphs, lists, etc. */
+.md-typeset {
+  font-size: 0.6rem; /* ~15.2px */
+}
+
+/* Specific heading sizes */
+.md-typeset h1 {
+  font-size: 1.0rem;
+}
+
+.md-typeset h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color:rgba(255, 255, 255);
+  background-color:rgba(73, 136, 154);
+}
+
+.md-typeset h3 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color:rgba(255, 255, 255);
+  background-color:rgba(128,172,184);
+}
+
+.md-typeset h4 {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color:rgba(39, 76, 119);
+  background-color:rgba(200,219,225);
+}
+
+.md-typeset code {
+  font-size: 0.6rem;
+}
+
+.md-typeset pre.courier-tight {
+  font-family: monospace, Courier, "Courier New", sans-serif;
+  line-height: 1.0;
+  font-size: 0.6rem;
+  padding: 10px;
+  background-color: #d8d8d8; /* Optional: Add a background color for code blocks */
+  border-radius: 4px;       /* Optional: Add rounded corners */
+  white-space: pre-wrap;    /* Optional: Allows long lines to wrap */
+}
+
+.md-typeset blockquote {
+  border-left: .0rem solid var(--md-default-fg-color--lighter) !important;
+  color:rgba(0, 0, 0) !important;
+  padding-left: .625rem !important;
+}
+
+.md-header__title .md-version {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  opacity: 0.7;
+}
