@@ -21,11 +21,11 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.annotate
-
+custom_dir: theme_overrides
 extra_css:
   - assets/custom.css
-
-# Navigation Structure
+extra:
+  version: "v.1.0.0"
 nav:
   - 'Home': 'index.md'
   - 'Setup Guide':
@@ -63,6 +63,3 @@ markdown_extensions:
       permalink: true
   - admonition
   - attr_list
-custom_dir: theme_overrides
-extra:
-  version: "v.1.0.0"  # <-- Your version number goes here
