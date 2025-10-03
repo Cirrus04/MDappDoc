@@ -89,3 +89,11 @@ body {
   color:rgba(0, 0, 0) !important;
   padding-left: .625rem !important;
 }
+
+.md-header__title .md-version {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  opacity: 0.7;
+}

@@ -1,13 +1,1 @@
-<!-- theme_overrides/partials/header.html -->
-
-{% extends "partials/header.html" %}
-
-{% block site_name %}
-  {{ super() }}
-
-  {% if config.extra.version %}
-    <span class="md-version">
-      {{ config.extra.version }}
-    </span>
-  {% endif %}
-{% endblock %}
+<h1>HELLO FROM THE OVERRIDE FILE</h1>
