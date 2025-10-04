@@ -4,10 +4,8 @@
   {{ super() }}
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // --- 1. DEFINE YOUR VERSION NUMBER HERE ---
         const my_docs_version = "v.1.0.0";
 
-        // --- 2. THE INJECTION LOGIC ---
         if (my_docs_version) {
             const titleElement = document.querySelector(".md-header__title");
             if (titleElement) {
