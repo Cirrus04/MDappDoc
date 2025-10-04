@@ -4,3 +4,24 @@
   {{ super() }}
   <link rel="stylesheet" href="{{ 'assets/custom.css' | url }}">
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // --- 1. DEFINE YOUR VERSION NUMBER HERE ---
+        const my_docs_version = "v.1.0.0";
+
+        // --- 2. THE INJECTION LOGIC ---
+        if (my_docs_version) {
+            const titleElement = document.querySelector(".md-header__title");
+            if (titleElement) {
+                const versionSpan = document.createElement("span");
+                versionSpan.className = "md-version"; // Use the CSS class we already made
+                versionSpan.textContent = my_docs_version;
+                titleElement.appendChild(versionSpan);
+            }
+        }
+    });
+  </script>
+{% endblock %}
