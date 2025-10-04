@@ -26,17 +26,16 @@ extra_css:
 extra:
   version: "v.1.0.0"
 extra_javascript:
-  - |
-    document.addEventListener("DOMContentLoaded", function() {
-        const version = "{{ config.extra.version }}";
+  - document.addEventListener("DOMContentLoaded", function() {
+      const version = "{{ config.extra.version }}";
         if (version) {
-            const titleElement = document.querySelector(".md-header__title");
-            if (titleElement) {
-                const versionSpan = document.createElement("span");
-                versionSpan.className = "md-version";
-                versionSpan.textContent = version;
-                titleElement.appendChild(versionSpan);
-            }
+          const titleElement = document.querySelector(".md-header__title");
+          if (titleElement) {
+            const versionSpan = document.createElement("span");
+            versionSpan.className = "md-version";
+            versionSpan.textContent = version;
+            titleElement.appendChild(versionSpan);
+          }
         }
     });
 nav:

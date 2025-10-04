@@ -1450,6 +1450,20 @@
     
       <script src="assets/javascripts/bundle.50899def.min.js"></script>
       
+        <script src="document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
+    const version = &#34;{{ config.extra.version }}&#34;;
+    if (version) {
+        const titleElement = document.querySelector(&#34;.md-header__title&#34;);
+        if (titleElement) {
+            const versionSpan = document.createElement(&#34;span&#34;);
+            versionSpan.className = &#34;md-version&#34;;
+            versionSpan.textContent = version;
+            titleElement.appendChild(versionSpan);
+        }
+    }
+});
+"></script>
+      
     
   </body>
 </html>
