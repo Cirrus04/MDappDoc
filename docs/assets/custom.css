@@ -26,9 +26,9 @@ body {
   /* Heading sizes - THESE are the important ones to move */
   --md-text-font-size--h1: 1.5rem;
   --md-text-font-size--h2: 1.0rem;
-  --md-text-font-size--h3: 0.75rem;
-  --md-text-font-size--h4: 0.6rem;
-  --md-text-font-size--h5: 0.5rem;
+  --md-text-font-size--h3: 0.8rem;
+  --md-text-font-size--h4: 0.7rem;
+  --md-text-font-size--h5: 0.6rem;
   --md-text-font-size: 0.5rem;
   /* Code block size */
   --md-code-font-size: 0.6rem;
@@ -57,13 +57,20 @@ body {
 }
 
 .md-typeset h3 {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color:rgba(255, 255, 255);
   background-color:rgba(128,172,184);
 }
 
 .md-typeset h4 {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color:rgba(39, 76, 119);
+  background-color:rgba(200,219,225);
+}
+
+.md-typeset h5 {
   font-size: 0.6rem;
   font-weight: 400;
   color:rgba(39, 76, 119);
@@ -80,20 +87,12 @@ body {
   font-size: 0.6rem;
   padding: 10px;
   background-color: #d8d8d8; /* Optional: Add a background color for code blocks */
-  border-radius: 4px;       /* Optional: Add rounded corners */
-  white-space: pre-wrap;    /* Optional: Allows long lines to wrap */
+  border-radius: 4px;          /* Optional: Add rounded corners */
+  white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
 }
 
 .md-typeset blockquote {
   border-left: .0rem solid var(--md-default-fg-color--lighter) !important;
   color:rgba(0, 0, 0) !important;
   padding-left: .625rem !important;
-}
-
-.md-header__title .md-version {
-  margin-left: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--md-accent-fg-color);
-  opacity: 0.7;
 }

@@ -5,7 +5,7 @@ It consists of a main chart area on the left and a control panel on the right, a
 
 ### Initial View
 
-When you first load the page, the chart area will be blank with the message "**Symbol Not Selected**".<br>
+When you first load the page, the chart area will be blank with the message "**Symbol Not Selected**".
 All controls are located in the right-hand panel, ready for you to make your selections.
 
 ![alt text](images/initial_view.png)
@@ -54,20 +54,116 @@ Once you select a symbol from the dropdown list, the page will come to life.
 
 ![alt text](images/symbol_view.png)
 
-#### The Chart Area<br>
+#### The Chart Area
+
 The main chart area will display the price history for the selected symbol over your chosen timeframe.
 
 #### Customizing the Chart View (Chart Legend)
 
-By default, all available price indicators (like SMAs, EMAs, Bollinger Bands, etc.) are displayed on the chart. This can make the initial view look very busy.<br>
+By default, all available price indicators (like SMAs, EMAs, Bollinger Bands, etc.) are displayed on the chart. This can make the initial view look very busy.
 
-You have full control over what is visible using the interactive **chart legend** located at the top of the chart.<br>
+You have full control over what is visible using the interactive **chart legend** located at the top of the chart.
 
 **To Hide an Indicator**: Simply click on its name in the legend (e.g., click on "EMA50"). The line will disappear from the chart, and its legend item will become 'greyed out'.
 
 **To Show an Indicator**: Click on a greyed-out legend item to make its line reappear on the chart.
 
 This allows you to de-clutter the view and focus on only the indicators that are important for your current analysis. The application will remember your choices for the duration of your session.
+
+#### Split
+Find below the meaning of splitRatio. They indicates two very different types of corporate actions that SplitRatio can represent.
+
+##### Splitratio > 1
+If splitratio is > 1 it indicates a **Forward Split**
+
+**Example**
+
+  SplitRatio = 6.00000
+
+  - This signifies a standard 6-for-1 Forward Stock Split<br>
+  - This is very common when a company's stock price gets "too high" and they want to make it more accessible to regular investors
+
+  **What happens**
+
+  You get more shares, but each share is worth less
+
+  - Shares: Multiplied by 6<br>
+  - Price:  Divided by 6<br>
+  - Before: You own 100 shares at 600 each with a total Value of 60.000<br>
+  - After:  You now own 600 shares at 100 each with a total value of 60.000
+
+##### SplitRatio < 1
+  If splitratio < 1 it indicates a **Reverse Split** or a **Corporate Action Adjustment Factor** (if a "messy" decimal)
+
+**Example 1**
+
+  SplitRatio = 0.955172 (Adjustment Factor / Spinoff)
+
+  - When you see a **messy** decimal less than 1 like this, it is **almost never** a standard Reverse Split.
+  - It usually indicates a **Corporate Action Adjustment Factor**, most commonly due to a **Spinoff** or a **huge Special Dividend**.
+
+  **Why does this happen?**
+
+  Imagine Company A is worth 100 a share.
+
+  It decides to take one of its smaller divisions and turn it into a separate, new company (Company B). They give every shareholder of Company A some shares of Company B.
+
+  On the day this happens, Company A is now "worth less" because it no longer owns that division.
+
+  Let's say that division was roughly 4.5% of the company's total value. The stock price of Company A might instantly drop from 100 to roughly 95.50.
+
+  To prevent historical charts from showing a massive, fake "crash" on that day, data providers apply a SplitRatio of roughly 0.955 to all historical prices.
+
+  This smoothly connects the old "pre-spinoff" prices with the new "post-spinoff" prices.
+
+  **What happens**
+
+  You usually keep your original shares of the parent company, but you also get new shares of the spun-off company.
+  The "split" ratio here is just a mathematical tool to adjust historical charts so they look correct.
+
+  - Historical prices are multiplied by ~0.955 to adjust them downwards, matching the new reality of the company's smaller size.
+
+**Example 2**
+
+  SplitRatio = 0.5 signifies a 1-for-2 Reverse Stock Split.
+
+  **Number of Shares Decreases**
+
+  - For every two shares you owned before the split, you will own only one share after the split. The number of shares you hold is multiplied by the split ratio.
+
+  If you owned 100 shares, you will have 100 * 0.5 = 50 shares after the split.
+
+  **Share Price Increases**
+
+  - To keep the total value of your investment the same, the price per share is divided by the split ratio (which is the same as multiplying by 2).
+
+  If the stock was trading at 10 per share before the split, its price will theoretically adjust to 10 / 0.5 = 20 per share immediately after the split.
+
+  **Total Market Value Stays the Same**
+
+  - A reverse split does not, by itself, create or destroy value
+  - The total value of your holding remains unchanged at the moment of the split
+
+  >  | Metrics           | Before Split | After Split|
+  >  | ----------------- | ------------ | ---------- |
+  >  | Number of Shares  | 100          | 50         |
+  >  | Price per Share   | 10.00        | 20.00      |
+  >  | Total Value       | 1.000        | 1.000      |
+
+  **Why Do Companies Do This?**
+
+  Companies typically perform a reverse stock split for a few key reasons:
+  > To Meet Exchange Requirements
+  >> Major stock exchanges like the NASDAQ and NYSE require stocks to maintain a minimum price (e.g., $1.00 per share).
+
+  >> If a stock's price falls below this threshold for too long, it risks being delisted.
+
+  >> A reverse split artificially boosts the price back into compliance.
+
+  > To Attract Investors
+  >> Very low-priced stocks (often called "penny stocks") can be perceived as speculative or risky.
+
+  >> A higher stock price can improve market perception and attract more institutional investors and funds that may have rules against buying stocks below a certain price.
 
 ### Using the Data Tables
 
@@ -82,8 +178,10 @@ To view a specific analysis, simply select one of the radio buttons:
 
 > **Metrics**: Provides a comprehensive table with key calculated metrics for all stocks, including:
 
->> **ROC (Rate of Change)**: The percentage price change over the selected timeframe.<br>
->> **Slope**: The log-linear trendline slope, indicating the average daily compounded growth rate.<br>
+>> **ROC (Rate of Change)**: The percentage price change over the selected timeframe.
+
+>> **Slope**: The log-linear trendline slope, indicating the average daily compounded growth rate.
+
 >> **R2 (R-Squared)**: A statistical measure (from 0 to 1) of how consistently the price has followed its trendline. A higher value indicates a more reliable, steady trend.
 
 > **Slope**: Displays a ranked list of stocks based on the strength and direction of their price trend over the chosen timeframe. This helps you quickly find stocks with the strongest upward or downward momentum.
@@ -113,7 +211,7 @@ When you select a table for the first time or change a filter like Exchange, Sym
 
 All data presented in the tables is calculated in real-time based on your specific selections.
 
-This means that if you request a "Slope" analysis for all stocks on the NYSE over a 360-day period, the server will:<br>
+This means that if you request a "Slope" analysis for all stocks on the NYSE over a 360-day period, the server will:
 
 - Fetch the relevant price history for hundreds or thousands of stocks.
 - Perform a linear regression calculation for each one.

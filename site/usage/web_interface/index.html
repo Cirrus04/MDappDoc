@@ -87,10 +87,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -705,6 +701,39 @@
       Customizing the Chart View (Chart Legend)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      Split
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Split">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#splitratio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splitratio &gt; 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitratio-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SplitRatio &lt; 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1490,6 +1519,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      Split
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Split">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#splitratio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splitratio &gt; 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitratio-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SplitRatio &lt; 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1544,7 +1606,7 @@
 <p>The "<strong>Market Activity</strong>" page is the primary interface for analyzing individual stocks.<br>
 It consists of a main chart area on the left and a control panel on the right, allowing you to customize the data you see.</p>
 <h3 id="initial-view">Initial View<a class="headerlink" href="#initial-view" title="Permanent link">&para;</a></h3>
-<p>When you first load the page, the chart area will be blank with the message "<strong>Symbol Not Selected</strong>".<br>
+<p>When you first load the page, the chart area will be blank with the message "<strong>Symbol Not Selected</strong>".
 All controls are located in the right-hand panel, ready for you to make your selections.</p>
 <p><img alt="alt text" src="../images/initial_view.png" /></p>
 <h3 id="control-panel-overview">Control Panel Overview<a class="headerlink" href="#control-panel-overview" title="Permanent link">&para;</a></h3>
@@ -1570,14 +1632,113 @@ All controls are located in the right-hand panel, ready for you to make your sel
 <h3 id="analyzing-a-symbol">Analyzing a Symbol<a class="headerlink" href="#analyzing-a-symbol" title="Permanent link">&para;</a></h3>
 <p>Once you select a symbol from the dropdown list, the page will come to life.</p>
 <p><img alt="alt text" src="../images/symbol_view.png" /></p>
-<h4 id="the-chart-area">The Chart Area<br><a class="headerlink" href="#the-chart-area" title="Permanent link">&para;</a></h4>
+<h4 id="the-chart-area">The Chart Area<a class="headerlink" href="#the-chart-area" title="Permanent link">&para;</a></h4>
 <p>The main chart area will display the price history for the selected symbol over your chosen timeframe.</p>
 <h4 id="customizing-the-chart-view-chart-legend">Customizing the Chart View (Chart Legend)<a class="headerlink" href="#customizing-the-chart-view-chart-legend" title="Permanent link">&para;</a></h4>
-<p>By default, all available price indicators (like SMAs, EMAs, Bollinger Bands, etc.) are displayed on the chart. This can make the initial view look very busy.<br></p>
-<p>You have full control over what is visible using the interactive <strong>chart legend</strong> located at the top of the chart.<br></p>
+<p>By default, all available price indicators (like SMAs, EMAs, Bollinger Bands, etc.) are displayed on the chart. This can make the initial view look very busy.</p>
+<p>You have full control over what is visible using the interactive <strong>chart legend</strong> located at the top of the chart.</p>
 <p><strong>To Hide an Indicator</strong>: Simply click on its name in the legend (e.g., click on "EMA50"). The line will disappear from the chart, and its legend item will become 'greyed out'.</p>
 <p><strong>To Show an Indicator</strong>: Click on a greyed-out legend item to make its line reappear on the chart.</p>
 <p>This allows you to de-clutter the view and focus on only the indicators that are important for your current analysis. The application will remember your choices for the duration of your session.</p>
+<h4 id="split">Split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
+<p>Find below the meaning of splitRatio. They indicates two very different types of corporate actions that SplitRatio can represent.</p>
+<h5 id="splitratio-1">Splitratio &gt; 1<a class="headerlink" href="#splitratio-1" title="Permanent link">&para;</a></h5>
+<p>If splitratio is &gt; 1 it indicates a <strong>Forward Split</strong></p>
+<p><strong>Example</strong></p>
+<p>SplitRatio = 6.00000</p>
+<ul>
+<li>This signifies a standard 6-for-1 Forward Stock Split<br></li>
+<li>This is very common when a company's stock price gets "too high" and they want to make it more accessible to regular investors</li>
+</ul>
+<p><strong>What happens</strong></p>
+<p>You get more shares, but each share is worth less</p>
+<ul>
+<li>Shares: Multiplied by 6<br></li>
+<li>Price:  Divided by 6<br></li>
+<li>Before: You own 100 shares at 600 each with a total Value of 60.000<br></li>
+<li>After:  You now own 600 shares at 100 each with a total value of 60.000</li>
+</ul>
+<h5 id="splitratio-1_1">SplitRatio &lt; 1<a class="headerlink" href="#splitratio-1_1" title="Permanent link">&para;</a></h5>
+<p>If splitratio &lt; 1 it indicates a <strong>Reverse Split</strong> or a <strong>Corporate Action Adjustment Factor</strong> (if a "messy" decimal)</p>
+<p><strong>Example 1</strong></p>
+<p>SplitRatio = 0.955172 (Adjustment Factor / Spinoff)</p>
+<ul>
+<li>When you see a <strong>messy</strong> decimal less than 1 like this, it is <strong>almost never</strong> a standard Reverse Split.</li>
+<li>It usually indicates a <strong>Corporate Action Adjustment Factor</strong>, most commonly due to a <strong>Spinoff</strong> or a <strong>huge Special Dividend</strong>.</li>
+</ul>
+<p><strong>Why does this happen?</strong></p>
+<p>Imagine Company A is worth 100 a share.</p>
+<p>It decides to take one of its smaller divisions and turn it into a separate, new company (Company B). They give every shareholder of Company A some shares of Company B.</p>
+<p>On the day this happens, Company A is now "worth less" because it no longer owns that division.</p>
+<p>Let's say that division was roughly 4.5% of the company's total value. The stock price of Company A might instantly drop from 100 to roughly 95.50.</p>
+<p>To prevent historical charts from showing a massive, fake "crash" on that day, data providers apply a SplitRatio of roughly 0.955 to all historical prices.</p>
+<p>This smoothly connects the old "pre-spinoff" prices with the new "post-spinoff" prices.</p>
+<p><strong>What happens</strong></p>
+<p>You usually keep your original shares of the parent company, but you also get new shares of the spun-off company.
+  The "split" ratio here is just a mathematical tool to adjust historical charts so they look correct.</p>
+<ul>
+<li>Historical prices are multiplied by ~0.955 to adjust them downwards, matching the new reality of the company's smaller size.</li>
+</ul>
+<p><strong>Example 2</strong></p>
+<p>SplitRatio = 0.5 signifies a 1-for-2 Reverse Stock Split.</p>
+<p><strong>Number of Shares Decreases</strong></p>
+<ul>
+<li>For every two shares you owned before the split, you will own only one share after the split. The number of shares you hold is multiplied by the split ratio.</li>
+</ul>
+<p>If you owned 100 shares, you will have 100 * 0.5 = 50 shares after the split.</p>
+<p><strong>Share Price Increases</strong></p>
+<ul>
+<li>To keep the total value of your investment the same, the price per share is divided by the split ratio (which is the same as multiplying by 2).</li>
+</ul>
+<p>If the stock was trading at 10 per share before the split, its price will theoretically adjust to 10 / 0.5 = 20 per share immediately after the split.</p>
+<p><strong>Total Market Value Stays the Same</strong></p>
+<ul>
+<li>A reverse split does not, by itself, create or destroy value</li>
+<li>The total value of your holding remains unchanged at the moment of the split</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Metrics</th>
+<th>Before Split</th>
+<th>After Split</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of Shares</td>
+<td>100</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Price per Share</td>
+<td>10.00</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>Total Value</td>
+<td>1.000</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>Why Do Companies Do This?</strong></p>
+<p>Companies typically perform a reverse stock split for a few key reasons:</p>
+<blockquote>
+<p>To Meet Exchange Requirements</p>
+<blockquote>
+<p>Major stock exchanges like the NASDAQ and NYSE require stocks to maintain a minimum price (e.g., $1.00 per share).</p>
+<p>If a stock's price falls below this threshold for too long, it risks being delisted.</p>
+<p>A reverse split artificially boosts the price back into compliance.</p>
+</blockquote>
+<p>To Attract Investors</p>
+<blockquote>
+<p>Very low-priced stocks (often called "penny stocks") can be perceived as speculative or risky.</p>
+<p>A higher stock price can improve market perception and attract more institutional investors and funds that may have rules against buying stocks below a certain price.</p>
+</blockquote>
+</blockquote>
 <h3 id="using-the-data-tables">Using the Data Tables<a class="headerlink" href="#using-the-data-tables" title="Permanent link">&para;</a></h3>
 <p>The "Tables" section in the control panel provides a powerful way to screen and analyze all stocks on the selected exchange based on specific criteria.</p>
 <p>Instead of showing multiple tables at once, this area features a dynamic table that changes its content based on your selection.</p>
@@ -1587,9 +1748,9 @@ To view a specific analysis, simply select one of the radio buttons:</p>
 <p><strong>Increase</strong>:</p>
 <p><strong>Metrics</strong>: Provides a comprehensive table with key calculated metrics for all stocks, including:</p>
 <blockquote>
-<p><strong>ROC (Rate of Change)</strong>: The percentage price change over the selected timeframe.<br>
-<strong>Slope</strong>: The log-linear trendline slope, indicating the average daily compounded growth rate.<br>
-<strong>R2 (R-Squared)</strong>: A statistical measure (from 0 to 1) of how consistently the price has followed its trendline. A higher value indicates a more reliable, steady trend.</p>
+<p><strong>ROC (Rate of Change)</strong>: The percentage price change over the selected timeframe.</p>
+<p><strong>Slope</strong>: The log-linear trendline slope, indicating the average daily compounded growth rate.</p>
+<p><strong>R2 (R-Squared)</strong>: A statistical measure (from 0 to 1) of how consistently the price has followed its trendline. A higher value indicates a more reliable, steady trend.</p>
 </blockquote>
 <p><strong>Slope</strong>: Displays a ranked list of stocks based on the strength and direction of their price trend over the chosen timeframe. This helps you quickly find stocks with the strongest upward or downward momentum.</p>
 <p><strong>Golden Cross</strong>: Lists all stocks that have recently experienced a "Golden Cross" – a bullish signal where a short-term moving average (like the 50-day) crosses above a long-term one (like the 200-day).</p>
@@ -1611,7 +1772,7 @@ To view a specific analysis, simply select one of the radio buttons:</p>
 <h3 id="a-note-on-performance-and-real-time-data">A Note on Performance and Real-time Data<a class="headerlink" href="#a-note-on-performance-and-real-time-data" title="Permanent link">&para;</a></h3>
 <p>When you select a table for the first time or change a filter like Exchange, Symbol Type, or Timeframe, the application sends a request to the server to perform the necessary calculations.</p>
 <p>All data presented in the tables is calculated in real-time based on your specific selections.</p>
-<p>This means that if you request a "Slope" analysis for all stocks on the NYSE over a 360-day period, the server will:<br></p>
+<p>This means that if you request a "Slope" analysis for all stocks on the NYSE over a 360-day period, the server will:</p>
 <ul>
 <li>Fetch the relevant price history for hundreds or thousands of stocks.</li>
 <li>Perform a linear regression calculation for each one.</li>
@@ -1675,7 +1836,7 @@ To view a specific analysis, simply select one of the radio buttons:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v.1.0.0"}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.50899def.min.js"></script>

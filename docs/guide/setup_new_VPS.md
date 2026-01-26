@@ -473,7 +473,7 @@ När du sedan kör dina skript eller skriver ssh root@... i PowerShell eller CMD
 
 root user är numera ändrad till **mormaija123**
 
-### Om du behöver gå in i VNC-konsolen
+## Om du behöver gå in i VNC-konsolen
 
 ### Montera disken
 
@@ -482,7 +482,7 @@ mkdir -p /mnt/vps
 mount /dev/vda4 /mnt/vps
 ```
 
-## Ändra root lösenord
+### Ändra root lösenord
 
 ```ini
 chroot /mnt/vps passwd root

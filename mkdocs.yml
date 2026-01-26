@@ -1,7 +1,6 @@
 site_name: MarketData Analyzer Documentation
 site_author: Matti Sirén
 site_url: https://Cirrus04.github.io/MDappDoc/
-
 theme:
   name: material
   palette:
@@ -21,17 +20,15 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.annotate
-custom_dir: theme_overrides
 extra_css:
   - assets/custom.css
-extra:
-  version: "v.1.0.0"
 nav:
   - 'Home': 'index.md'
   - 'Setup Guide':
     - 'Installation': 'guide/installation.md'
     - 'Configuration': 'guide/configuration.md'
     - 'Deployment': 'guide/deployment.md'
+    - 'New VPS': 'guide/setup_new_VPS.md'
   - 'User Manual':
     - 'Web Interface': 'usage/web_interface.md'
     - 'Load Scripts': 'usage/shell_scripts.md'
@@ -52,7 +49,6 @@ nav:
     - 'nano & vi': 'glossary/nano_vi.md'
     - 'Stop-Loss': 'glossary/stop_loss.md'
     - 'not yet translated': 'glossary/README.md'
-
   - 'Development':
     - 'Database Schema': 'development/database_schema.md'
     - 'SQL for Database Creation': 'development/database_create.md'
