@@ -10,11 +10,13 @@
         <meta name="author" content="Matti Sirén">
       
       
-        <link rel="canonical" href="https://Cirrus04.github.io/MDappDoc/development/maintenance/">
+        <link rel="canonical" href="https://Cirrus04.github.io/MDappDoc/guide/setup_new_VPS/">
       
       
-        <link rel="prev" href="../data_sources/">
+        <link rel="prev" href="../deployment/">
       
+      
+        <link rel="next" href="../../usage/web_interface/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Maintenance - MarketData Analyzer Documentation</title>
+        <title>New VPS - MarketData Analyzer Documentation</title>
       
     
     
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Maintenance
+              New VPS
             
           </span>
         </div>
@@ -228,11 +230,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../guide/installation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
           
   
   
@@ -308,13 +312,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../database_schema/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../development/database_schema/" class="md-tabs__link">
           
   
   
@@ -385,24 +387,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -415,7 +422,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Setup Guide
@@ -429,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -452,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -475,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/deployment/" class="md-nav__link">
+      <a href="../deployment/" class="md-nav__link">
         
   
   
@@ -495,10 +502,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guide/setup_new_VPS/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    New VPS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -509,6 +538,341 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exempel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exempel:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-forberedelser-lokal-dator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Förberedelser (Lokal Dator)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Förberedelser (Lokal Dator)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skapa SSH-nyckel[^2].
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfigurera lokal SSH-config
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ominstallation-via-strato-panelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ominstallation via Strato-panelen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avtalsinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avtalsinformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serveruppgifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serveruppgifter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-grundlaggande-serverkonfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Grundläggande Serverkonfiguration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Grundläggande Serverkonfiguration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uppdatera-systemet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uppdatera systemet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installera-nodvandiga-verktyg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installera nödvändiga verktyg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-webbserver-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Webbserver (Apache)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-databas-mysql-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Databas (MySQL 8)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Databas (MySQL 8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forberedelse-och-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Förberedelse och Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aterstallning-av-root-losenord-safety-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Återställning av Root-lösenord ("Safety Mode")
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skapa-databas-och-anvandare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skapa Databas och Användare
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sakra-installationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Säkra installationen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-php-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. PHP-installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-du-skall-se-en-gron-text-som-sager-active-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Du skall se en grön text som säger "active (running)"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sakerhet-brandvagg-fail2ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Säkerhet (Brandvägg &amp; Fail2Ban)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Säkerhet (Brandvägg &amp; Fail2Ban)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konfigurera-brandvaggen-firewalld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfigurera Brandväggen (Firewalld)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installera-fail2ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installera Fail2Ban
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forklaring-av-installningarna" class="md-nav__link">
+    <span class="md-ellipsis">
+      Förklaring av inställningarna:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-starta-tjansten" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Starta tjänsten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verifiera-att-tjansten-fugerar" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verifiera att tjänsten fugerar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#om-jag-rakat-banna-mig-sjalv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Om jag råkat 'banna' mig själv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ssh-rattigheter-den-svara-biten" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. SSH &amp; Rättigheter (Den svåra biten)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. SSH &amp; Rättigheter (Den svåra biten)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixa-konfigurationen-om-inloggning-strular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixa konfigurationen om inloggning strular
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Lagra ditt SSH-lösenord (lokalt)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Lagra ditt SSH-lösenord (lokalt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starta-tjansten-gors-en-gang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starta tjänsten (Görs en gång)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagg-till-nyckeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lägg till nyckeln
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1060,29 +1424,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1095,7 +1454,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Development
@@ -1109,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database_schema/" class="md-nav__link">
+      <a href="../../development/database_schema/" class="md-nav__link">
         
   
   
@@ -1132,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database_create/" class="md-nav__link">
+      <a href="../../development/database_create/" class="md-nav__link">
         
   
   
@@ -1155,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_sources/" class="md-nav__link">
+      <a href="../../development/data_sources/" class="md-nav__link">
         
   
   
@@ -1175,32 +1534,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Maintenance
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../development/maintenance/" class="md-nav__link">
         
   
   
@@ -1211,341 +1548,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#exempel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exempel:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-forberedelser-lokal-dator" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Förberedelser (Lokal Dator)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Förberedelser (Lokal Dator)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa SSH-nyckel[^2].
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera lokal SSH-config
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ominstallation-via-strato-panelen" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Ominstallation via Strato-panelen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avtalsinformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avtalsinformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serveruppgifter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Serveruppgifter
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-grundlaggande-serverkonfiguration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Grundläggande Serverkonfiguration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Grundläggande Serverkonfiguration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uppdatera-systemet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Uppdatera systemet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installera-nodvandiga-verktyg" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installera nödvändiga verktyg
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-webbserver-apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Webbserver (Apache)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-databas-mysql-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Databas (MySQL 8)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Databas (MySQL 8)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forberedelse-och-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Förberedelse och Installation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aterstallning-av-root-losenord-safety-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Återställning av Root-lösenord ("Safety Mode")
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#skapa-databas-och-anvandare" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa Databas och Användare
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sakra-installationen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Säkra installationen
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-php-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. PHP-installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-du-skall-se-en-gron-text-som-sager-active-running" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Du skall se en grön text som säger "active (running)"
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-sakerhet-brandvagg-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Säkerhet (Brandvägg &amp; Fail2Ban)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Säkerhet (Brandvägg &amp; Fail2Ban)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-brandvaggen-firewalld" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera Brandväggen (Firewalld)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installera-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installera Fail2Ban
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forklaring-av-installningarna" class="md-nav__link">
-    <span class="md-ellipsis">
-      Förklaring av inställningarna:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-starta-tjansten" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Starta tjänsten
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-verifiera-att-tjansten-fugerar" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Verifiera att tjänsten fugerar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#om-jag-rakat-banna-mig-sjalv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Om jag råkat 'banna' mig själv
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-ssh-rattigheter-den-svara-biten" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. SSH &amp; Rättigheter (Den svåra biten)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8. SSH &amp; Rättigheter (Den svåra biten)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fixa-konfigurationen-om-inloggning-strular" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixa konfigurationen om inloggning strular
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Lagra ditt SSH-lösenord (lokalt)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="10. Lagra ditt SSH-lösenord (lokalt)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starta-tjansten-gors-en-gang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Starta tjänsten (Görs en gång)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lagg-till-nyckeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lägg till nyckeln
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resultat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultat
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2353,12 +2355,12 @@ När du sedan kör dina skript eller skriver ssh root@... i PowerShell eller CMD
 <h1 id="klart-din-server-ar-nu-fullt-installerad-och-sakrad">Klart! Din server är nu fullt installerad och säkrad<a class="headerlink" href="#klart-din-server-ar-nu-fullt-installerad-och-sakrad" title="Permanent link">&para;</a></h1>
 <h3 id="notera">NOTERA<a class="headerlink" href="#notera" title="Permanent link">&para;</a></h3>
 <p>root user är numera ändrad till <strong>mormaija123</strong></p>
-<h3 id="om-du-behover-ga-in-i-vnc-konsolen">Om du behöver gå in i VNC-konsolen<a class="headerlink" href="#om-du-behover-ga-in-i-vnc-konsolen" title="Permanent link">&para;</a></h3>
+<h2 id="om-du-behover-ga-in-i-vnc-konsolen">Om du behöver gå in i VNC-konsolen<a class="headerlink" href="#om-du-behover-ga-in-i-vnc-konsolen" title="Permanent link">&para;</a></h2>
 <h3 id="montera-disken">Montera disken<a class="headerlink" href="#montera-disken" title="Permanent link">&para;</a></h3>
 <pre><code class="language-ini">mkdir -p /mnt/vps
 mount /dev/vda4 /mnt/vps
 </code></pre>
-<h2 id="andra-root-losenord">Ändra root lösenord<a class="headerlink" href="#andra-root-losenord" title="Permanent link">&para;</a></h2>
+<h3 id="andra-root-losenord">Ändra root lösenord<a class="headerlink" href="#andra-root-losenord" title="Permanent link">&para;</a></h3>
 <pre><code class="language-ini">chroot /mnt/vps passwd root
 </code></pre>
 <p>[^1]: # Vad är AlmaLinux?</p>
