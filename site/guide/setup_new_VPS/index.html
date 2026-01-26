@@ -574,9 +574,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
+  <a href="#skapa-ssh-nyckel" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel[^2].
+      Skapa SSH-nyckel.
     </span>
   </a>
   
@@ -1606,9 +1606,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
+  <a href="#skapa-ssh-nyckel" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel[^2].
+      Skapa SSH-nyckel.
     </span>
   </a>
   
@@ -1919,7 +1919,7 @@
 
 <h1 id="installation-av-vps-server-hos-strato">Installation av VPS-server hos STRATO<a class="headerlink" href="#installation-av-vps-server-hos-strato" title="Permanent link">&para;</a></h1>
 <p>Om du någon gång beöver installera om din VPS-server från början så kan denna handledning vara till hjälp.</p>
-<p>Jag har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel och snabb som möjligt.\
+<p>Jag har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel och snabb som möjligt.<br>
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.</p>
 <pre><code class="language-ini">Alla kommandon är noterade i en sån här ruta
 </code></pre>
@@ -1927,9 +1927,9 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <p>Dialogen är då markerad på nedanstående sätt med, av mig, angivna svar i <strong>fet stil</strong></p>
 <h3 id="exempel"><strong>Exempel:</strong><a class="headerlink" href="#exempel" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><em>Securing the MySQL server deployment.</em>\
-<em>Enter password for user root:</em> <strong>Maija_2609</strong>\
-<em>The 'validate_password' component is installed on the server.</em>\
+<p><em>Securing the MySQL server deployment.</em><br>
+<em>Enter password for user root:</em> <strong>Maija_2609</strong><br>
+<em>The 'validate_password' component is installed on the server.</em><br>
 ...
 <em>Success.</em></p>
 </blockquote>
@@ -1938,26 +1938,26 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <hr />
 <h2 id="1-forberedelser-lokal-dator">1. Förberedelser (Lokal Dator)<a class="headerlink" href="#1-forberedelser-lokal-dator" title="Permanent link">&para;</a></h2>
 <p>Innan du rör servern, se till att du har en giltig <strong>SSH-nyckel</strong> på din lokala dator. Denna behövs för att automatisera inloggningen och öka säkerheten.</p>
-<h3 id="skapa-ssh-nyckel2">Skapa SSH-nyckel[^2].<a class="headerlink" href="#skapa-ssh-nyckel2" title="Permanent link">&para;</a></h3>
-<p>Jag som kör <strong>Mac</strong> öppnar ett terminalfönster och använder mig av ssh-keygen[^3].\
-<em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
+<h3 id="skapa-ssh-nyckel">Skapa SSH-nyckel.<a class="headerlink" href="#skapa-ssh-nyckel" title="Permanent link">&para;</a></h3>
+<p>För att skapa en SSH-nyckel[^2] i Mac-miljö använder jag mig av ssh-keygen[^3].</p>
+<p><em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
 <pre><code class="language-ini">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
 </code></pre>
 <p>Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.</p>
 <p>I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i fratiden. För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (<em>långa haranger av tecken</em>).</p>
 <blockquote>
-<p><em>Generating public/private rsa key pair.</em>\
-<em>Enter file in which to save the key (/Users/siren/.ssh/id_rsa):</em>\
-<strong>/Users/siren/.ssh/STRATO</strong>\
-<em>Enter passphrase (empty for no passphrase):</em>\
-<strong>MarketData</strong>\
-<em>Enter same passphrase again:</em>\
-<strong>MarketData</strong>\
-<em>Your identification has been saved in /Users/siren/.ssh/STRATO</em>\
-<em>Your public key has been saved in /Users/siren/.ssh/STRATO.pub</em>\
-<em>The key fingerprint is:</em>\
-...\
-<em>The key's randomart image is:</em>\
+<p><em>Generating public/private rsa key pair.</em><br>
+<em>Enter file in which to save the key (/Users/siren/.ssh/id_rsa):</em><br>
+<strong>/Users/siren/.ssh/STRATO</strong><br>
+<em>Enter passphrase (empty for no passphrase):</em><br>
+<strong>MarketData</strong><br>
+<em>Enter same passphrase again:</em><br>
+<strong>MarketData</strong><br>
+<em>Your identification has been saved in /Users/siren/.ssh/STRATO</em><br>
+<em>Your public key has been saved in /Users/siren/.ssh/STRATO.pub</em><br>
+<em>The key fingerprint is:</em><br>
+...<br>
+<em>The key's randomart image is:</em><br>
 ...</p>
 </blockquote>
 <h3 id="konfigurera-lokal-ssh-config">Konfigurera lokal SSH-config<a class="headerlink" href="#konfigurera-lokal-ssh-config" title="Permanent link">&para;</a></h3>
@@ -1977,26 +1977,26 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <p>Efter att du skapat din SSH-nyckel så skall du logga in mot Strato</p>
 <pre><code class="language-ini">https://www.strato.se/apps/CustomerService
 </code></pre>
-<p>Ditt kundnummer är : <strong>77971995</strong>\
+<p>Ditt kundnummer är : <strong>77971995</strong><br>
 och dit lösenord är : <strong>Maija---9377</strong></p>
 <p>Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
 <em>Jag skriver ner de som gäller idag så att vi har dem lagrade någonstans förutom hos Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.</em></p>
 <blockquote>
 <h2 id="avtalsinformation">Avtalsinformation<a class="headerlink" href="#avtalsinformation" title="Permanent link">&para;</a></h2>
-<p>Ordernummer : <em>9114028</em>\
-Paketnamn : <strong>STRATO VPS Linux VC4-8</strong> (12.se)\
-Pris / månad : <strong>120 kr/månad</strong>.\
-Beställningsdatum : <strong>27/11/2024</strong>\
-Aktiv sedan : <strong>27/11/2024</strong>\
-Nästa möjliga uppsägning : <strong>27/11/2026</strong>\</p>
+<p>Ordernummer : <em>9114028</em><br>
+Paketnamn : <strong>STRATO VPS Linux VC4-8</strong> (12.se)<br>
+Pris / månad : <strong>120 kr/månad</strong>.<br>
+Beställningsdatum : <strong>27/11/2024</strong><br>
+Aktiv sedan : <strong>27/11/2024</strong><br>
+Nästa möjliga uppsägning : <strong>27/11/2026</strong><br></p>
 <h2 id="serveruppgifter">Serveruppgifter<a class="headerlink" href="#serveruppgifter" title="Permanent link">&para;</a></h2>
-<p>Operativsystem : <strong>AlmaLinux 9</strong>\
-Processor : <strong>4 Kärnor</strong>\
-RAM : <strong>8 GB</strong>\
-Lagringsutrymme : <strong>240 GB</strong>\
-Användare : <strong>root</strong>\
-Värd : <strong>87.106.130.217</strong>\
-Server IP-adress (IPv4) : <strong>87.106.130.217</strong>\
+<p>Operativsystem : <strong>AlmaLinux 9</strong><br>
+Processor : <strong>4 Kärnor</strong><br>
+RAM : <strong>8 GB</strong><br>
+Lagringsutrymme : <strong>240 GB</strong><br>
+Användare : <strong>root</strong><br>
+Värd : <strong>87.106.130.217</strong><br>
+Server IP-adress (IPv4) : <strong>87.106.130.217</strong><br>
 Server IP-adress (IPv6) : <strong>2a01:239:363:8500::1</strong></p>
 </blockquote>
 <p>I slutet av sidan ser du ett antal knappar där "<strong>Ominstallation</strong>" är det val du skall göra när du avser att göra en ominstallation av VPS-servern.</p>
@@ -2022,7 +2022,7 @@ Server IP-adress (IPv6) : <strong>2a01:239:363:8500::1</strong></p>
 </code></pre>
 <p>om du konfigurerat din lokala SSH-config</p>
 <blockquote>
-<p>Enter passphrase for key '<strong>/Users/siren/.ssh/STRATO</strong>':\
+<p>Enter passphrase for key '<strong>/Users/siren/.ssh/STRATO</strong>':<br>
 <strong>MarketData</strong></p>
 </blockquote>
 <hr />
@@ -2115,7 +2115,7 @@ FLUSH PRIVILEGES;
 EXIT;
 </code></pre>
 <ul>
-<li>Varför två användare?\
+<li>Varför två användare?<br>
  MySQL ser User@% (fjärranvändare) och User@localhost (lokal användare) som två helt skilda konton. Utan localhost-användaren kommer dina importskript att misslyckas.</li>
 </ul>
 <h3 id="sakra-installationen">Säkra installationen<a class="headerlink" href="#sakra-installationen" title="Permanent link">&para;</a></h3>
@@ -2123,45 +2123,45 @@ EXIT;
 <pre><code class="language-ini">mysql_secure_installation
 </code></pre>
 <blockquote>
-<p><em>Securing the MySQL server deployment.</em>\</p>
-<p><em>Enter password for user root:</em>\
-  <strong>Maija_2609</strong>\
+<p><em>Securing the MySQL server deployment.</em><br></p>
+<p><em>Enter password for user root:</em><br>
+  <strong>Maija_2609</strong><br>
 <em>The 'validate_password' component is installed on the server.</em>
 <em>The subsequent steps will run with the existing configuration</em>
 <em>of the component.</em>
 <em>Using existing password for root.</em>
-<em>Estimated strength of the password: 100</em>\
+<em>Estimated strength of the password: 100</em><br>
 <em>Change the password for root ? ((Press y|Y for Yes, any other key for No) :</em></p>
-<p><em>... skipping.</em>\
+<p><em>... skipping.</em><br>
 <em>By default, a MySQL installation has an anonymous user,</em>
 <em>allowing anyone to log into MySQL without having to have</em>
 <em>a user account created for them. This is intended only for</em>
 <em>testing, and to make the installation go a bit smoother.</em>
 <em>You should remove them before moving into a production</em>
-<em>environment.</em>\
-<em>Remove anonymous users? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
+<em>environment.</em><br>
+<em>Remove anonymous users? (Press y|Y for Yes, any other key for No) :</em><br>
+<strong>y</strong><br>
 <em>Success</em>.</p>
 <p><em>Normally, root should only be allowed to connect from</em>
 <em>'localhost'. This ensures that someone cannot guess at</em>
 <em>the root password from the network</em>.</p>
-<p><em>Disallow root login remotely? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
+<p><em>Disallow root login remotely? (Press y|Y for Yes, any other key for No) :</em><br>
+<strong>y</strong><br>
 <em>Success</em>.</p>
 <p><em>By default, MySQL comes with a database named 'test' that</em>
 <em>anyone can access. This is also intended only for testing,</em>
 <em>and should be removed before moving into a production</em>
-<em>environment.</em>\
-<em>Remove test database and access to it? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
-<em>Dropping test database...</em>\
+<em>environment.</em><br>
+<em>Remove test database and access to it? (Press y|Y for Yes, any other key for No) :</em><br>
+<strong>y</strong><br>
+<em>Dropping test database...</em><br>
 <em>Success.</em></p>
-<p><em>Removing privileges on test database...</em>\
+<p><em>Removing privileges on test database...</em><br>
 <em>Success.</em></p>
 <p><em>Reloading the privilege tables will ensure that all changes</em>
 <em>made so far will take effect immediately.</em></p>
-<p><em>Reload privilege tables now? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
+<p><em>Reload privilege tables now? (Press y|Y for Yes, any other key for No) :</em><br>
+<strong>y</strong><br>
 <em>Success</em>.</p>
 <p><em>All done!</em></p>
 </blockquote>
@@ -2275,22 +2275,22 @@ backend = systemd
 <p>Om du inte kan logga in med SSH-nyckel direkt efter installationen kan AlmaLinux säkerhetsinställningar (SELinux) eller SSH-konfigurationen behöva justeras.</p>
 <p>Om du blir utlåst, använd VNC-konsolen i Strato och kör följande kommandon för att tvinga systemet att acceptera dig:</p>
 <ol>
-<li><strong>Tvinga in SSH-inställningar</strong>:\
-Istället för att editera originalfilen för SSH konfigurering (som i regel görs 'override' på) så skapar vi en sk "00"-fil.\
+<li><strong>Tvinga in SSH-inställningar</strong>:<br>
+Istället för att editera originalfilen för SSH konfigurering (som i regel görs 'override' på) så skapar vi en sk "00"-fil.<br>
 OpenSSH läser alltid in filer i alfabetisk ordning vilket gör att 00-fix.conf kommer att appliceras före normalkonfigureringen.</li>
 </ol>
-<pre><code class="language-ini">echo -e &quot;PermitRootLogin yes\nPasswordAuthentication yes&quot; &gt; /etc/ssh/sshd_config.d/00-fix.conf
+<pre><code class="language-ini">echo -e &quot;PermitRootLogin yes&lt;br&gt;nPasswordAuthentication yes&quot; &gt; /etc/ssh/sshd_config.d/00-fix.conf
 </code></pre>
 <ol>
-<li><strong>Sätt SELinux till Permissive (tillåtande)</strong>:\
+<li><strong>Sätt SELinux till Permissive (tillåtande)</strong>:<br>
 I AlmaLinux, räcker det inte med att filer har korrekta rättigheter, de måste även ha en korrekt sk "Security Context". Om Security Context är felaktig så kommer det att blockera dig. Ändra därför till "PERMISSIVE" så att blockerigen hävs.</li>
 </ol>
 <pre><code class="language-ini">nano /etc/selinux/config
 ````
-&gt;Find the line:\
-SELINUX=enforcing\
-Change it to:\
-SELINUX=permissive\
+&gt;Find the line:&lt;br&gt;
+SELINUX=enforcing&lt;br&gt;
+Change it to:&lt;br&gt;
+SELINUX=permissive&lt;br&gt;
 *Save the file (Ctrl+O, Enter) and Exit (Ctrl+X)*
 
 - ändra till **SELINUX=permissive**.
@@ -2307,12 +2307,12 @@ chown -R apache:apache /var/www/html/MD
 <ol>
 <li>Sätt rättigheter på mappar (755):</li>
 </ol>
-<pre><code class="language-ini">find /var/www/html/MD -type d -exec chmod 755 {} \;
+<pre><code class="language-ini">find /var/www/html/MD -type d -exec chmod 755 {} &lt;br&gt;;
 </code></pre>
 <ol>
 <li>Sätt rättigheter på filer (644):</li>
 </ol>
-<pre><code class="language-ini">find /var/www/html/MD -type f -exec chmod 644 {} \;
+<pre><code class="language-ini">find /var/www/html/MD -type f -exec chmod 644 {} &lt;br&gt;;
 </code></pre>
 <ol>
 <li>Tagga filer för SELinux (om du kör SELinux i Enforcing-läge):</li>
@@ -2328,7 +2328,7 @@ chown -R apache:apache /var/www/html/MD
 <p>Du aktiverar en Windows-tjänst som heter "<strong>OpenSSH Authentication Agent</strong>". Den skall fungera som en "hovmästare" som håller i nycklarna åt dig så att du slipper skriva lösenordet varje gång.</p>
 <h3 id="starta-tjansten-gors-en-gang">Starta tjänsten (Görs en gång)<a class="headerlink" href="#starta-tjansten-gors-en-gang" title="Permanent link">&para;</a></h3>
 <p>Som standard är denna tjänst ofta avstängd i Windows. Du måste slå på den.
-1. Öppna <strong>PowerShell</strong> som Administratör\
+1. Öppna <strong>PowerShell</strong> som Administratör<br>
 (<em>Högerklicka på Start-menyn -&gt; välj Terminal (Admin) eller PowerShell (Admin)</em>).
 2. Kör följande kommando för att ställa in så att tjänsten startar automatiskt:</p>
 <pre><code class="language-ini">Get-Service ssh-agent | Set-Service -StartupType Automatic
@@ -2341,7 +2341,7 @@ chown -R apache:apache /var/www/html/MD
 <h3 id="lagg-till-nyckeln">Lägg till nyckeln<a class="headerlink" href="#lagg-till-nyckeln" title="Permanent link">&para;</a></h3>
 <p>Nu när "hovmästaren" (agenten) är vaken, kan du ge nyckeln till honom.
 1. I samma PowerShell-fönster, kör:</p>
-<pre><code class="language-ini">ssh-add C:\Users\DittNamn\.ssh\STRATO
+<pre><code class="language-ini">ssh-add C:&lt;br&gt;Users&lt;br&gt;DittNamn&lt;br&gt;.ssh&lt;br&gt;STRATO
 </code></pre>
 <ul>
 <li>(<em>Byt ut DittNamn och sökvägen till där nyckeln ligger</em>).</li>
@@ -2432,10 +2432,10 @@ Den är inte hemlig och kan kopieras till hur många servrar som helst.
 
 ## En enkel liknelse
 För att förstå skillnaden kan man tänka på ett hänglås:
-  - Den **publika** nyckeln är som ett hänglås\
-    Du kan ge hänglåset till servern och säga "Sätt detta på dörren".\
+  - Den **publika** nyckeln är som ett hänglås&lt;br&gt;
+    Du kan ge hänglåset till servern och säga "Sätt detta på dörren".&lt;br&gt;
     Vem som helst kan se låset, men ingen kan öppna det utan rätt nyckel.
-  - Den **privata** nyckeln är den faktiska fysiska nyckeln som du har i fickan\
+  - Den **privata** nyckeln är den faktiska fysiska nyckeln som du har i fickan&lt;br&gt;
     Endast din nyckel kan öppna låset som sitter på servern.
 
 När du försöker logga in skickar servern en "utmaning" till din dator.
@@ -2445,15 +2445,15 @@ Din dator löser utmaningen med din privata nyckel.
 Om det matchar serverns publika nyckel (hänglåset), släpps du in.
 
 ## Varför använder vi SSH-nycklar?
-  - **Högre säkerhet**\
+  - **Högre säkerhet**&lt;br&gt;
     En SSH-nyckel är praktiskt taget omöjlig att knäcka med "brute-force" (gissningsattacker), till skillnad från korta lösenord.
-  - **Automatisering**\
+  - **Automatisering**&lt;br&gt;
     Det möjliggör inloggning utan att en människa behöver sitta och skriva in ett lösenord. Detta är ett krav för att kunna köra automatiska script (t.ex. backup-script eller deploy.sh) mellan dator och server.
-  - **Bekvämlighet**\
+  - **Bekvämlighet**&lt;br&gt;
     Du slipper komma ihåg komplexa lösenord för varje server.
 </code></pre>
 <p>[^3]: # En kort förklaring till argumenten för ssh-keygen
-    <strong>-t</strong> anger vilken metod (algoritm) som ska användas.\
+    <strong>-t</strong> anger vilken metod (algoritm) som ska användas.<br>
     <strong>-b</strong> anger hur svår (storlek) nyckeln ska vara att knäcka.</p>
 <pre><code>### **-t rsa**
 står för "Type" och bestämmer vilken matematisk algoritm som ska användas för att generera nyckelparet./
@@ -2462,18 +2462,18 @@ Den är "universell" och fungerar på precis alla system, även väldigt gamla s
 
 ### **-b 4096**
 står för "Bits" och bestämmer längden på nyckeln.
-4096 betyder att nyckeln består av 4096 ettor och nollor.\
-Ju högre siffra, desto svårare är nyckeln att knäcka med "brute force" (datorer som gissar).\
+4096 betyder att nyckeln består av 4096 ettor och nollor.&lt;br&gt;
+Ju högre siffra, desto svårare är nyckeln att knäcka med "brute force" (datorer som gissar).&lt;br&gt;
 En RSA-nyckel på 2048 bitar anses vara säker idag, men 4096 är "framtidssäkert" och anses vara extremt säkert. Nackdelen är att den är lite långsammare att generera och använda än kortare nycklar, men för SSH märks det knappt.
 
 ### **Notera** en viktig detalj
 
 ### RSA (4096)
-Den "gamla trotjänaren". Fungerar överallt. Nycklarna blir fysiskt väldigt långa textsträngar.\
+Den "gamla trotjänaren". Fungerar överallt. Nycklarna blir fysiskt väldigt långa textsträngar.&lt;br&gt;
 ### Ed25519
 Den "nya standarden". Den är säkrare än RSA och mycket snabbare, samtidigt som nyckeln är mycket kortare.
 
-Det verkar just nu som att Strato kräver användning av RSA men det kan ju ändras i framtiden.\
+Det verkar just nu som att Strato kräver användning av RSA men det kan ju ändras i framtiden.&lt;br&gt;
 Om de ändrar sin strategi så att de accepterar ed25519 så skall du istället använda dig av kommandot
   - **ssh-keygen -t ed25519 -C "MarketData-VPS"**
 
