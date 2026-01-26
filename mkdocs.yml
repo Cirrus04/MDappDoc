@@ -54,6 +54,7 @@ nav:
     - 'SQL for Database Creation': 'development/database_create.md'
     - 'Data Sources': 'development/data_sources.md'
     - 'Maintenance': 'development/maintenance.md'
+    - 'test': 'development/test.md'
 markdown_extensions:
   - toc:
       permalink: true

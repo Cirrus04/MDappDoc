@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation-av-vps-server-hos-strato" class="md-skip">
+        <a href="#maintenance-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -1228,37 +1228,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exempel" class="md-nav__link">
+  <a href="#1-daily-operations-automated-via-cron" class="md-nav__link">
     <span class="md-ellipsis">
-      Exempel:
+      1. Daily Operations (Automated via Cron)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-forberedelser-lokal-dator" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Förberedelser (Lokal Dator)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Förberedelser (Lokal Dator)">
+    <nav class="md-nav" aria-label="1. Daily Operations (Automated via Cron)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
+  <a href="#monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel[^2].
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera lokal SSH-config
+      Monitoring
     </span>
   </a>
   
@@ -1270,55 +1252,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ominstallation-via-strato-panelen" class="md-nav__link">
+  <a href="#2-handling-data-errors-and-reloading" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Ominstallation via Strato-panelen
+      2. Handling Data Errors and Reloading
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avtalsinformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avtalsinformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serveruppgifter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Serveruppgifter
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-grundlaggande-serverkonfiguration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Grundläggande Serverkonfiguration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Grundläggande Serverkonfiguration">
+    <nav class="md-nav" aria-label="2. Handling Data Errors and Reloading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uppdatera-systemet" class="md-nav__link">
+  <a href="#scenario-a-reloading-full-price-history-for-a-single-symbol" class="md-nav__link">
     <span class="md-ellipsis">
-      Uppdatera systemet
+      Scenario A: Reloading Full Price History for a Single Symbol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario A: Reloading Full Price History for a Single Symbol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-reload-full-history-for-saab-b-on-the-st-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Reload full history for SAAB-B on the ST exchange
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installera-nodvandiga-verktyg" class="md-nav__link">
+  <a href="#example-recalculate-all-indicators-for-saab-b" class="md-nav__link">
     <span class="md-ellipsis">
-      Installera nödvändiga verktyg
+      Example: Recalculate all indicators for SAAB-B
     </span>
   </a>
   
@@ -1328,57 +1293,30 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-webbserver-apache" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-b-forcing-a-full-recalculation-for-all-symbols" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Webbserver (Apache)
+      Scenario B: Forcing a Full Recalculation for All Symbols
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-databas-mysql-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Databas (MySQL 8)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Databas (MySQL 8)">
+    <nav class="md-nav" aria-label="Scenario B: Forcing a Full Recalculation for All Symbols">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forberedelse-och-installation" class="md-nav__link">
+  <a href="#example-force-a-full-recalculation-of-all-emas-for-all-exchanges" class="md-nav__link">
     <span class="md-ellipsis">
-      Förberedelse och Installation
+      Example: Force a full recalculation of all EMAs for all exchanges
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aterstallning-av-root-losenord-safety-mode" class="md-nav__link">
+  <a href="#example-force-a-full-recalculation-of-everything-from-the-beginning" class="md-nav__link">
     <span class="md-ellipsis">
-      Återställning av Root-lösenord ("Safety Mode")
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#skapa-databas-och-anvandare" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa Databas och Användare
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sakra-installationen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Säkra installationen
+      Example: Force a full recalculation of EVERYTHING from the beginning
     </span>
   </a>
   
@@ -1388,88 +1326,6 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6-php-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. PHP-installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-du-skall-se-en-gron-text-som-sager-active-running" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Du skall se en grön text som säger "active (running)"
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-sakerhet-brandvagg-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Säkerhet (Brandvägg &amp; Fail2Ban)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Säkerhet (Brandvägg &amp; Fail2Ban)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-brandvaggen-firewalld" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera Brandväggen (Firewalld)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installera-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installera Fail2Ban
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forklaring-av-installningarna" class="md-nav__link">
-    <span class="md-ellipsis">
-      Förklaring av inställningarna:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-starta-tjansten" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Starta tjänsten
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-verifiera-att-tjansten-fugerar" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Verifiera att tjänsten fugerar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#om-jag-rakat-banna-mig-sjalv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Om jag råkat 'banna' mig själv
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
@@ -1477,68 +1333,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-ssh-rattigheter-den-svara-biten" class="md-nav__link">
+  <a href="#4-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
-      8. SSH &amp; Rättigheter (Den svåra biten)
+      4. Troubleshooting
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="8. SSH &amp; Rättigheter (Den svåra biten)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fixa-konfigurationen-om-inloggning-strular" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixa konfigurationen om inloggning strular
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
+  <a href="#-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Lagra ditt SSH-lösenord (lokalt)
+      - Solution: This is a file permissions issue on the web server. Ensure the Apache user (www-data or apache) has execute permissions on the entire directory path leading to the application and read permissions on the files. If using SELinux, ensure the correct security context (httpd_sys_content_t) is applied to the web directory.
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="10. Lagra ditt SSH-lösenord (lokalt)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starta-tjansten-gors-en-gang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Starta tjänsten (Görs en gång)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lagg-till-nyckeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lägg till nyckeln
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resultat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultat
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1585,37 +1393,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exempel" class="md-nav__link">
+  <a href="#1-daily-operations-automated-via-cron" class="md-nav__link">
     <span class="md-ellipsis">
-      Exempel:
+      1. Daily Operations (Automated via Cron)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-forberedelser-lokal-dator" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Förberedelser (Lokal Dator)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Förberedelser (Lokal Dator)">
+    <nav class="md-nav" aria-label="1. Daily Operations (Automated via Cron)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#skapa-ssh-nyckel2" class="md-nav__link">
+  <a href="#monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel[^2].
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera lokal SSH-config
+      Monitoring
     </span>
   </a>
   
@@ -1627,55 +1417,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ominstallation-via-strato-panelen" class="md-nav__link">
+  <a href="#2-handling-data-errors-and-reloading" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Ominstallation via Strato-panelen
+      2. Handling Data Errors and Reloading
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avtalsinformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avtalsinformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serveruppgifter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Serveruppgifter
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-grundlaggande-serverkonfiguration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Grundläggande Serverkonfiguration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Grundläggande Serverkonfiguration">
+    <nav class="md-nav" aria-label="2. Handling Data Errors and Reloading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uppdatera-systemet" class="md-nav__link">
+  <a href="#scenario-a-reloading-full-price-history-for-a-single-symbol" class="md-nav__link">
     <span class="md-ellipsis">
-      Uppdatera systemet
+      Scenario A: Reloading Full Price History for a Single Symbol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario A: Reloading Full Price History for a Single Symbol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-reload-full-history-for-saab-b-on-the-st-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Reload full history for SAAB-B on the ST exchange
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installera-nodvandiga-verktyg" class="md-nav__link">
+  <a href="#example-recalculate-all-indicators-for-saab-b" class="md-nav__link">
     <span class="md-ellipsis">
-      Installera nödvändiga verktyg
+      Example: Recalculate all indicators for SAAB-B
     </span>
   </a>
   
@@ -1685,57 +1458,30 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-webbserver-apache" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-b-forcing-a-full-recalculation-for-all-symbols" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Webbserver (Apache)
+      Scenario B: Forcing a Full Recalculation for All Symbols
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-databas-mysql-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Databas (MySQL 8)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Databas (MySQL 8)">
+    <nav class="md-nav" aria-label="Scenario B: Forcing a Full Recalculation for All Symbols">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forberedelse-och-installation" class="md-nav__link">
+  <a href="#example-force-a-full-recalculation-of-all-emas-for-all-exchanges" class="md-nav__link">
     <span class="md-ellipsis">
-      Förberedelse och Installation
+      Example: Force a full recalculation of all EMAs for all exchanges
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aterstallning-av-root-losenord-safety-mode" class="md-nav__link">
+  <a href="#example-force-a-full-recalculation-of-everything-from-the-beginning" class="md-nav__link">
     <span class="md-ellipsis">
-      Återställning av Root-lösenord ("Safety Mode")
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#skapa-databas-och-anvandare" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa Databas och Användare
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sakra-installationen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Säkra installationen
+      Example: Force a full recalculation of EVERYTHING from the beginning
     </span>
   </a>
   
@@ -1745,88 +1491,6 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6-php-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. PHP-installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-du-skall-se-en-gron-text-som-sager-active-running" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Du skall se en grön text som säger "active (running)"
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-sakerhet-brandvagg-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Säkerhet (Brandvägg &amp; Fail2Ban)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Säkerhet (Brandvägg &amp; Fail2Ban)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#konfigurera-brandvaggen-firewalld" class="md-nav__link">
-    <span class="md-ellipsis">
-      Konfigurera Brandväggen (Firewalld)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installera-fail2ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installera Fail2Ban
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forklaring-av-installningarna" class="md-nav__link">
-    <span class="md-ellipsis">
-      Förklaring av inställningarna:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-starta-tjansten" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Starta tjänsten
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-verifiera-att-tjansten-fugerar" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Verifiera att tjänsten fugerar
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#om-jag-rakat-banna-mig-sjalv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Om jag råkat 'banna' mig själv
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
@@ -1834,68 +1498,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-ssh-rattigheter-den-svara-biten" class="md-nav__link">
+  <a href="#4-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
-      8. SSH &amp; Rättigheter (Den svåra biten)
+      4. Troubleshooting
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="8. SSH &amp; Rättigheter (Den svåra biten)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fixa-konfigurationen-om-inloggning-strular" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixa konfigurationen om inloggning strular
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
+  <a href="#-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Lagra ditt SSH-lösenord (lokalt)
+      - Solution: This is a file permissions issue on the web server. Ensure the Apache user (www-data or apache) has execute permissions on the entire directory path leading to the application and read permissions on the files. If using SELinux, ensure the correct security context (httpd_sys_content_t) is applied to the web directory.
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="10. Lagra ditt SSH-lösenord (lokalt)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starta-tjansten-gors-en-gang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Starta tjänsten (Görs en gång)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lagg-till-nyckeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lägg till nyckeln
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resultat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultat
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1915,572 +1531,10 @@
 
 
 
-<h1 id="installation-av-vps-server-hos-strato">Installation av VPS-server hos STRATO<a class="headerlink" href="#installation-av-vps-server-hos-strato" title="Permanent link">&para;</a></h1>
-<p>Om du någon gång beöver installera om din VPS-server från början så kan denna handledning vara till hjälp.</p>
-<p>Jag har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel och snabb som möjligt.\
-Har även försökt ge några kommentarer så att du vet vad du installerar och varför.</p>
-<pre><code class="language-ini">Alla kommandon är noterade i en sån här ruta
-</code></pre>
-<p>Ibland kan det finnas ett exempel på en dialog som kommandot kommer att ha med dig (för att erhålla ytterligare direktiv).</p>
-<p>Dialogen är då markerad på nedanstående sätt med, av mig, angivna svar i <strong>fet stil</strong></p>
-<h3 id="exempel"><strong>Exempel:</strong><a class="headerlink" href="#exempel" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><em>Securing the MySQL server deployment.</em>\
-<em>Enter password for user root:</em> <strong>Maija_2609</strong>\
-<em>The 'validate_password' component is installed on the server.</em>\
-...
-<em>Success.</em></p>
-</blockquote>
-<p>Naturligtvis kan vissa avsnitt vara lite blodfattiga och skulle må väl av lite mer beskrivande text men vi börjar så här och kompletterar med klargörande text om det visar sig nödvändigt.</p>
-<p>Notera att <strong>alla</strong> installationssteg är anpassade för valet av operativsystem - jag har valt att använda <strong>AlmaLinux</strong>[^1].</p>
-<hr />
-<h2 id="1-forberedelser-lokal-dator">1. Förberedelser (Lokal Dator)<a class="headerlink" href="#1-forberedelser-lokal-dator" title="Permanent link">&para;</a></h2>
-<p>Innan du rör servern, se till att du har en giltig <strong>SSH-nyckel</strong> på din lokala dator. Denna behövs för att automatisera inloggningen och öka säkerheten.</p>
-<h3 id="skapa-ssh-nyckel2">Skapa SSH-nyckel[^2].<a class="headerlink" href="#skapa-ssh-nyckel2" title="Permanent link">&para;</a></h3>
-<p>Jag som kör <strong>Mac</strong> öppnar ett terminalfönster och använder mig av ssh-keygen[^3].\
-<em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
-<pre><code class="language-ini">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
-</code></pre>
-<p>Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.</p>
-<p>I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i fratiden. För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (<em>långa haranger av tecken</em>).</p>
-<blockquote>
-<p><em>Generating public/private rsa key pair.</em>\
-<em>Enter file in which to save the key (/Users/siren/.ssh/id_rsa):</em>\
-<strong>/Users/siren/.ssh/STRATO</strong>\
-<em>Enter passphrase (empty for no passphrase):</em>\
-<strong>MarketData</strong>\
-<em>Enter same passphrase again:</em>\
-<strong>MarketData</strong>\
-<em>Your identification has been saved in /Users/siren/.ssh/STRATO</em>\
-<em>Your public key has been saved in /Users/siren/.ssh/STRATO.pub</em>\
-<em>The key fingerprint is:</em>\
-...\
-<em>The key's randomart image is:</em>\
-...</p>
-</blockquote>
-<h3 id="konfigurera-lokal-ssh-config">Konfigurera lokal SSH-config<a class="headerlink" href="#konfigurera-lokal-ssh-config" title="Permanent link">&para;</a></h3>
-<p>För att slippa ange vilken nyckelfil som ska användas vid varje inloggning, ställ in din lokala konfiguration.</p>
-<p>Detta gör att du kan skriva <strong>ssh root@87.106.130.217</strong> utan att behöva lägga till <strong>-i ~/.ssh/STRATO</strong> varje gång</p>
-<pre><code class="language-ini">nano ~/.ssh/config
-</code></pre>
-<p>Klistra in följande text</p>
-<pre><code class="language-ini">Host 87.106.130.217
-    User root
-    IdentityFile ~/.ssh/STRATO
-    IdentitiesOnly yes
-</code></pre>
-<p>Spara filen och avsluta nano med hjälp av : <strong>Ctrl+O, Enter, Ctrl+X</strong></p>
-<hr />
-<h2 id="2-ominstallation-via-strato-panelen">2. Ominstallation via Strato-panelen<a class="headerlink" href="#2-ominstallation-via-strato-panelen" title="Permanent link">&para;</a></h2>
-<p>Efter att du skapat din SSH-nyckel så skall du logga in mot Strato</p>
-<pre><code class="language-ini">https://www.strato.se/apps/CustomerService
-</code></pre>
-<p>Ditt kundnummer är : <strong>77971995</strong>\
-och dit lösenord är : <strong>Maija---9377</strong></p>
-<p>Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
-<em>Jag skriver ner de som gäller idag så att vi har dem lagrade någonstans förutom hos Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.</em></p>
-<blockquote>
-<h2 id="avtalsinformation">Avtalsinformation<a class="headerlink" href="#avtalsinformation" title="Permanent link">&para;</a></h2>
-<p>Ordernummer : <em>9114028</em>\
-Paketnamn : <strong>STRATO VPS Linux VC4-8</strong> (12.se)\
-Pris / månad : <strong>120 kr/månad</strong>.\
-Beställningsdatum : <strong>27/11/2024</strong>\
-Aktiv sedan : <strong>27/11/2024</strong>\
-Nästa möjliga uppsägning : <strong>27/11/2026</strong>\</p>
-<h2 id="serveruppgifter">Serveruppgifter<a class="headerlink" href="#serveruppgifter" title="Permanent link">&para;</a></h2>
-<p>Operativsystem : <strong>AlmaLinux 9</strong>\
-Processor : <strong>4 Kärnor</strong>\
-RAM : <strong>8 GB</strong>\
-Lagringsutrymme : <strong>240 GB</strong>\
-Användare : <strong>root</strong>\
-Värd : <strong>87.106.130.217</strong>\
-Server IP-adress (IPv4) : <strong>87.106.130.217</strong>\
-Server IP-adress (IPv6) : <strong>2a01:239:363:8500::1</strong></p>
-</blockquote>
-<p>I slutet av sidan ser du ett antal knappar där "<strong>Ominstallation</strong>" är det val du skall göra när du avser att göra en ominstallation av VPS-servern.</p>
-<p>När du klickar knappen "<strong>Ominstallation</strong>" så får du lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om du väljer att gå vidare.</p>
-<p>Din nuvarande installation kommer att helt raderas.</p>
-<p>När och om du väljer att gå vidare så vill Strato att du anger din SSH-nyckel.</p>
-<p>Du kopierar din SSH-nyckel (som är lååång och ligger i filen <strong>/Users/siren/.ssh/STRATO.pub</strong> (eller vilken fil du nu angav till ssh-keygen)). Kopiera och klistra in den i <strong>Strato Re-installation wizard</strong>.</p>
-<p>I Mac miljö hämtar du den enklast genom att köra kommandot</p>
-<pre><code class="language-ini">cat ~/.ssh/STRATO.pub
-</code></pre>
-<p>Just nu ser vår SSH-nyckel som följer (<em>inses lätt att det blir tämligen svårt att knappa in den koden manuellt)</em>:</p>
-<blockquote>
-<p><em>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDgxP5ButcDcA29EoX35TYCzkQrem8Vj0D2EG0RVYdfsBcmdVxhlXZiQLeMn6zWEevH+J73rQx0kGmeLxeclbHY/bdpLV1HdVQb3M4RjU+ry0Ki8BrujnO7yZ2J36uUZ7j9hvAfygOtGdqpwqkYntrJPL7LiEF6WvcVPF41NgZ4Q+e0LbGwqKjAVw5hR1u3ORG5sdhP5oYG6ICNz6ftJXSTc3SDTCgRT+rp3n5/xcuiOxIzngSMbXH31vyKmMNwADs9T4+0LNROlz5cCamoFHBjkYhIDqXOsrcDcqOYEwJEso+RjW9XmwwmdGHIX2m/fF26X3RaVwXLK9haqQD++CkDLkFfGzputGyR8mzTuPyw5OLs70i1RDNLMYLD/yF4WaHOupAcDgpsjjMULfVEiye28uemEkD0WLgJaCCWgAxW6W5IU1x/fUi3OQXLlG9Vpb2gYltZ7ojsiR8dXA4aZTAN2V78CeVchPJUdD4c6QoJmytgPK06iJFBiodSdGAj6vtbiqBQGVC74OPHdvPemY8GKlkoeAv+pXjaRkbao4oyZgZ5hbyyzS1IUyDbwexcyRRYrb1NQpvv70U0OQ+XOCORvarZZRQfuc16P6hB4C2u0eYlieHAZG3B2mnIzG6+FxyYQzTBbBN7GXO/49NydmA2cwZWJ17oQCIFzQMJbj3ww== MarketData-VPS</em></p>
-</blockquote>
-<p><strong>Notera</strong> att du måste även ange ett lösenord när du initierar en om-installation av VPS-servern.</p>
-<p>Jag använde <strong>MarketData2025</strong> som  lösenord. Du kanske vill ha något helt annat. Anteckna det lösenord du väljer att använda dig av på något säkert ställe då den är lätt att glömma.</p>
-<p>All data för den nuvarande installationen kommer nu att raderas</p>
-<p>Det dröjer en kort stund men strax är din nya VPS-server klar och du uppmanas att öppna en session mot din nya VPS-server.</p>
-<pre><code class="language-ini">ssh -i ~/.ssh/STRATO root@87.106.130.217
-</code></pre>
-<p>alternativt</p>
-<pre><code class="language-ini">ssh root@87.106.130.217
-</code></pre>
-<p>om du konfigurerat din lokala SSH-config</p>
-<blockquote>
-<p>Enter passphrase for key '<strong>/Users/siren/.ssh/STRATO</strong>':\
-<strong>MarketData</strong></p>
-</blockquote>
-<hr />
-<h2 id="3-grundlaggande-serverkonfiguration">3. Grundläggande Serverkonfiguration<a class="headerlink" href="#3-grundlaggande-serverkonfiguration" title="Permanent link">&para;</a></h2>
-<h3 id="uppdatera-systemet">Uppdatera systemet<a class="headerlink" href="#uppdatera-systemet" title="Permanent link">&para;</a></h3>
-<p>Det första du alltid ska göra är att hämta de senaste säkerhetsuppdateringarna.</p>
-<pre><code class="language-ini">dnf update -y
-</code></pre>
-<h3 id="installera-nodvandiga-verktyg">Installera nödvändiga verktyg<a class="headerlink" href="#installera-nodvandiga-verktyg" title="Permanent link">&para;</a></h3>
-<p>Installera textredigeraren 'nano' och kalkylatorn 'bc' (krävs för dina skript).</p>
-<pre><code class="language-ini">dnf install nano bc -y
-</code></pre>
-<hr />
-<h2 id="4-webbserver-apache">4. Webbserver (Apache)<a class="headerlink" href="#4-webbserver-apache" title="Permanent link">&para;</a></h2>
-<p>Vi installerar Apache (<em>kallas httpd i AlmaLinux</em>) för att kunna visa webbsidor.</p>
-<pre><code class="language-ini">dnf install httpd -y
-systemctl enable --now httpd
-</code></pre>
-<hr />
-<h2 id="5-databas-mysql-8">5. Databas (MySQL 8)<a class="headerlink" href="#5-databas-mysql-8" title="Permanent link">&para;</a></h2>
-<p>AlmaLinux kommer förinställt med MariaDB, men vi behöver äkta MySQL 8 för kompatibilitet med våra lagrade procedurer.</p>
-<h3 id="forberedelse-och-installation">Förberedelse och Installation<a class="headerlink" href="#forberedelse-och-installation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Installera det officiella MySQL-repositoryt:</li>
-</ol>
-<pre><code class="language-ini">dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y
-</code></pre>
-<ol>
-<li>Inaktivera den inbyggda modulen (för att undvika konflikter):</li>
-</ol>
-<pre><code class="language-ini">dnf module disable mysql -y
-</code></pre>
-<ol>
-<li>Installera MySQL Community Server:</li>
-</ol>
-<pre><code class="language-ini">dnf install mysql-community-server -y
-</code></pre>
-<ol>
-<li>Starta tjänsten</li>
-</ol>
-<pre><code class="language-ini">systemctl enable --now mysqld
-</code></pre>
-<h3 id="aterstallning-av-root-losenord-safety-mode">Återställning av Root-lösenord ("Safety Mode")<a class="headerlink" href="#aterstallning-av-root-losenord-safety-mode" title="Permanent link">&para;</a></h3>
-<p>MySQL 8 genererar ett tillfälligt lösenord som ofta är svårt att hitta eller använda.</p>
-<p>Vi går runt detta genom att starta databasen i ett läge där den inte kräver lösenord för att göra den initiala inställningen.
-1. Stoppa databasen:</p>
-<pre><code class="language-ini">systemctl stop mysqld
-</code></pre>
-<ol>
-<li>Starta i osäkert läge:</li>
-</ol>
-<pre><code class="language-ini">systemctl set-environment MYSQLD_OPTS=&quot;--skip-grant-tables&quot;
-systemctl start mysqld
-</code></pre>
-<ol>
-<li>Logga in och sätt nytt lösenord:</li>
-</ol>
-<pre><code class="language-ini">mysql -u root
-</code></pre>
-<ul>
-<li>Kör följande SQL-kommandon (byt ut Maija_2609 mot ditt valda lösenord):</li>
-</ul>
-<pre><code class="language-ini">FLUSH PRIVILEGES;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Maija_2609';
-FLUSH PRIVILEGES;
-EXIT;
-</code></pre>
-<ol>
-<li>Startat om i normalt läge:</li>
-</ol>
-<pre><code class="language-ini">systemctl stop mysqld
-systemctl unset-environment MYSQLD_OPTS
-systemctl start mysqld
-</code></pre>
-<h3 id="skapa-databas-och-anvandare">Skapa Databas och Användare<a class="headerlink" href="#skapa-databas-och-anvandare" title="Permanent link">&para;</a></h3>
-<p>Nu loggar vi in "på riktigt" och skapar applikationsdatabasen och användare.</p>
-<ul>
-<li><strong>mysql -u root -p</strong></li>
-</ul>
-<p>och ange lösenordet du satte ovan.</p>
-<pre><code class="language-ini">-- Skapa databasen
-CREATE DATABASE MD;
--- Skapa användaren 'Admin' som får logga in utifrån (för Workbench)
-CREATE USER 'Admin'@'%' IDENTIFIED BY 'Maija_2609';
-GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'%' WITH GRANT OPTION;
--- VIKTIGT: Skapa SAMMA användare för 'localhost' (för skript som körs på servern)
-CREATE USER IF NOT EXISTS 'Admin'@'localhost' IDENTIFIED BY 'Maija_2609';
-GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-EXIT;
-</code></pre>
-<ul>
-<li>Varför två användare?\
- MySQL ser User@% (fjärranvändare) och User@localhost (lokal användare) som två helt skilda konton. Utan localhost-användaren kommer dina importskript att misslyckas.</li>
-</ul>
-<h3 id="sakra-installationen">Säkra installationen<a class="headerlink" href="#sakra-installationen" title="Permanent link">&para;</a></h3>
-<p>Kör säkerhetsskriptet för att ta bort testdatabaser och anonyma användare.</p>
-<pre><code class="language-ini">mysql_secure_installation
-</code></pre>
-<blockquote>
-<p><em>Securing the MySQL server deployment.</em>\</p>
-<p><em>Enter password for user root:</em>\
-  <strong>Maija_2609</strong>\
-<em>The 'validate_password' component is installed on the server.</em>
-<em>The subsequent steps will run with the existing configuration</em>
-<em>of the component.</em>
-<em>Using existing password for root.</em>
-<em>Estimated strength of the password: 100</em>\
-<em>Change the password for root ? ((Press y|Y for Yes, any other key for No) :</em></p>
-<p><em>... skipping.</em>\
-<em>By default, a MySQL installation has an anonymous user,</em>
-<em>allowing anyone to log into MySQL without having to have</em>
-<em>a user account created for them. This is intended only for</em>
-<em>testing, and to make the installation go a bit smoother.</em>
-<em>You should remove them before moving into a production</em>
-<em>environment.</em>\
-<em>Remove anonymous users? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
-<em>Success</em>.</p>
-<p><em>Normally, root should only be allowed to connect from</em>
-<em>'localhost'. This ensures that someone cannot guess at</em>
-<em>the root password from the network</em>.</p>
-<p><em>Disallow root login remotely? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
-<em>Success</em>.</p>
-<p><em>By default, MySQL comes with a database named 'test' that</em>
-<em>anyone can access. This is also intended only for testing,</em>
-<em>and should be removed before moving into a production</em>
-<em>environment.</em>\
-<em>Remove test database and access to it? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
-<em>Dropping test database...</em>\
-<em>Success.</em></p>
-<p><em>Removing privileges on test database...</em>\
-<em>Success.</em></p>
-<p><em>Reloading the privilege tables will ensure that all changes</em>
-<em>made so far will take effect immediately.</em></p>
-<p><em>Reload privilege tables now? (Press y|Y for Yes, any other key for No) :</em>\
-<strong>y</strong>\
-<em>Success</em>.</p>
-<p><em>All done!</em></p>
-</blockquote>
-<hr />
-<h2 id="6-php-installation">6. PHP-installation<a class="headerlink" href="#6-php-installation" title="Permanent link">&para;</a></h2>
-<p>För att webbservern ska kunna köra din kod och prata med databasen.</p>
-<ol>
-<li>Installera PHP och nödvändiga moduler:</li>
-</ol>
-<pre><code class="language-ini">dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring -y
-</code></pre>
-<ol>
-<li>Starta PHP-processhanteraren:</li>
-</ol>
-<pre><code class="language-ini">systemctl enable --now php-fpm
-</code></pre>
-<ol>
-<li>Starta om Apache (så den hittar PHP):</li>
-</ol>
-<pre><code class="language-ini">systemctl restart httpd
-</code></pre>
-<ol>
-<li>Verifiera att det körs:</li>
-</ol>
-<pre><code class="language-ini">systemctl status php-fpm
-</code></pre>
-<h2 id="-du-skall-se-en-gron-text-som-sager-active-running">- <em>Du skall se en grön text som säger "</em><em>active (running)</em><em>"</em><a class="headerlink" href="#-du-skall-se-en-gron-text-som-sager-active-running" title="Permanent link">&para;</a></h2>
-<h2 id="7-sakerhet-brandvagg-fail2ban">7. Säkerhet (Brandvägg &amp; Fail2Ban)<a class="headerlink" href="#7-sakerhet-brandvagg-fail2ban" title="Permanent link">&para;</a></h2>
-<h3 id="konfigurera-brandvaggen-firewalld">Konfigurera Brandväggen (Firewalld)<a class="headerlink" href="#konfigurera-brandvaggen-firewalld" title="Permanent link">&para;</a></h3>
-<p>Vi måste stänga alla portar utom de vi faktiskt använder.</p>
-<pre><code class="language-ini">dnf install firewalld -y
-systemctl enable --now firewalld
-firewall-cmd --permanent --add-service=ssh
-firewall-cmd --permanent --add-service=http
-firewall-cmd --permanent --add-service=https
-firewall-cmd --permanent --add-port=3306/tcp
-firewall-cmd --reload
-</code></pre>
-<h3 id="installera-fail2ban">Installera Fail2Ban<a class="headerlink" href="#installera-fail2ban" title="Permanent link">&para;</a></h3>
-<p>Detta skyddar servern mot "brute-force"-attacker genom att bannlysa IP-adresser som gissar fel lösenord för många gånger.
-1. Installera EPEL (Extra Packages for Enterprise Linux):</p>
-<pre><code class="language-ini">dnf install epel-release -y
-</code></pre>
-<ol>
-<li>Installera Fail2Ban:</li>
-</ol>
-<pre><code class="language-ini">dnf install fail2ban fail2ban-firewalld -y
-</code></pre>
-<ol>
-<li>Konfigurera (skapa filen jail.local)</li>
-</ol>
-<pre><code class="language-ini">[DEFAULT]
-bantime = 24h
-findtime = 10m
-maxretry = 5
-# Lägg till din egen IP här för att undvika att du bannar dig själv!
-ignoreip = 127.0.0.1/8 ::1 192.168.50.47
-banaction = firewallcmd-rich-rules
-banaction_allports = firewallcmd-rich-rules
-
-[sshd]
-enabled = true
-backend = systemd
-</code></pre>
-<h3 id="forklaring-av-installningarna">Förklaring av inställningarna:<a class="headerlink" href="#forklaring-av-installningarna" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Inställning</th>
-<th>Beskrivning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>bantime</strong></td>
-<td>Hur länge en IP bannlyses (1h = 1 timme, 1d = 1 dag).</td>
-</tr>
-<tr>
-<td><strong>findtime</strong></td>
-<td>Tidsfönstret där misslyckade försök räknas.</td>
-</tr>
-<tr>
-<td><strong>maxretry</strong></td>
-<td>Antal tillåtna försök inom tidsfönstret (t.ex. 5).</td>
-</tr>
-<tr>
-<td><strong>ignoreip</strong></td>
-<td>IP-adresser som aldrig ska bannas (din egen dator)</td>
-</tr>
-<tr>
-<td><strong>banaction</strong></td>
-<td>Vilken metod som används för att blockera (Firewalld).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4-starta-tjansten">4. Starta tjänsten<a class="headerlink" href="#4-starta-tjansten" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">systemctl enable --now fail2ban
-</code></pre>
-<h3 id="5-verifiera-att-tjansten-fugerar">5. Verifiera att tjänsten fugerar<a class="headerlink" href="#5-verifiera-att-tjansten-fugerar" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">fail2ban-client status sshd
-</code></pre>
-<h3 id="om-jag-rakat-banna-mig-sjalv">Om jag råkat 'banna' mig själv<a class="headerlink" href="#om-jag-rakat-banna-mig-sjalv" title="Permanent link">&para;</a></h3>
-<p>Om du oavsiktligt råkat banna dig själv så kan du göra 'unban' av en specifik IP-adress mhanedanstående kommando (från en annan IP som till exempel VNC-konsolen)</p>
-<pre><code class="language-ini">fail2ban-client set sshd unbanip 83.251.178.197
-</code></pre>
-<hr />
-<h2 id="8-ssh-rattigheter-den-svara-biten">8. SSH &amp; Rättigheter (Den svåra biten)<a class="headerlink" href="#8-ssh-rattigheter-den-svara-biten" title="Permanent link">&para;</a></h2>
-<p><strong>Varning</strong>: Försök <strong>INTE</strong> skapa en separat <strong>webadmin</strong>-användare för deployment om du inte är mycket van vid SELinux. Det orsakade stora problem tidigare.</p>
-<p>Vi använder <strong>root</strong> för uppladdning och justerar rättigheterna efteråt.</p>
-<h3 id="fixa-konfigurationen-om-inloggning-strular">Fixa konfigurationen om inloggning strular<a class="headerlink" href="#fixa-konfigurationen-om-inloggning-strular" title="Permanent link">&para;</a></h3>
-<p>Om du inte kan logga in med SSH-nyckel direkt efter installationen kan AlmaLinux säkerhetsinställningar (SELinux) eller SSH-konfigurationen behöva justeras.</p>
-<p>Om du blir utlåst, använd VNC-konsolen i Strato och kör följande kommandon för att tvinga systemet att acceptera dig:</p>
-<ol>
-<li><strong>Tvinga in SSH-inställningar</strong>:\
-Istället för att editera originalfilen för SSH konfigurering (som i regel görs 'override' på) så skapar vi en sk "00"-fil.\
-OpenSSH läser alltid in filer i alfabetisk ordning vilket gör att 00-fix.conf kommer att appliceras före normalkonfigureringen.</li>
-</ol>
-<pre><code class="language-ini">echo -e &quot;PermitRootLogin yes\nPasswordAuthentication yes&quot; &gt; /etc/ssh/sshd_config.d/00-fix.conf
-</code></pre>
-<ol>
-<li><strong>Sätt SELinux till Permissive (tillåtande)</strong>:\
-I AlmaLinux, räcker det inte med att filer har korrekta rättigheter, de måste även ha en korrekt sk "Security Context". Om Security Context är felaktig så kommer det att blockera dig. Ändra därför till "PERMISSIVE" så att blockerigen hävs.</li>
-</ol>
-<pre><code class="language-ini">nano /etc/selinux/config
-````
-&gt;Find the line:\
-SELINUX=enforcing\
-Change it to:\
-SELINUX=permissive\
-*Save the file (Ctrl+O, Enter) and Exit (Ctrl+X)*
-
-- ändra till **SELINUX=permissive**.
-
-1. **Starta om**: reboot.
-## 9. Slutförande: Ladda upp och Sätt rättigheter
-När du laddat upp dina filer (via ditt **deploy.sh** skript), måste du se till att webbservern äger dem, annars kan inte sidan visas.
-
-Kör dessa kommandon efter varje stor uppladdning:
-1. Ge ägarskap till Apache:
-```ini
-chown -R apache:apache /var/www/html/MD
-</code></pre>
-<ol>
-<li>Sätt rättigheter på mappar (755):</li>
-</ol>
-<pre><code class="language-ini">find /var/www/html/MD -type d -exec chmod 755 {} \;
-</code></pre>
-<ol>
-<li>Sätt rättigheter på filer (644):</li>
-</ol>
-<pre><code class="language-ini">find /var/www/html/MD -type f -exec chmod 644 {} \;
-</code></pre>
-<ol>
-<li>Tagga filer för SELinux (om du kör SELinux i Enforcing-läge):</li>
-</ol>
-<pre><code class="language-ini">chcon -R -t httpd_sys_content_t /var/www/html/MD
-</code></pre>
-<h2 id="10-lagra-ditt-ssh-losenord-lokalt">10. Lagra ditt SSH-lösenord (lokalt)<a class="headerlink" href="#10-lagra-ditt-ssh-losenord-lokalt" title="Permanent link">&para;</a></h2>
-<p>Lagra SSH-lösenordet i 'Apple Keychain' (<em>gäller bara om du kör Mac</em>)</p>
-<pre><code class="language-ii">- **ssh-add --apple-use-keychain ~/.ssh/STRATO**
-</code></pre>
-<p>Om du däremot använder dig av Windows så måste du göra detta på ett helt annat sätt.</p>
-<p>Skulle gissa på att du där gör något i stil med följande.</p>
-<p>Du aktiverar en Windows-tjänst som heter "<strong>OpenSSH Authentication Agent</strong>". Den skall fungera som en "hovmästare" som håller i nycklarna åt dig så att du slipper skriva lösenordet varje gång.</p>
-<h3 id="starta-tjansten-gors-en-gang">Starta tjänsten (Görs en gång)<a class="headerlink" href="#starta-tjansten-gors-en-gang" title="Permanent link">&para;</a></h3>
-<p>Som standard är denna tjänst ofta avstängd i Windows. Du måste slå på den.
-1. Öppna <strong>PowerShell</strong> som Administratör\
-(<em>Högerklicka på Start-menyn -&gt; välj Terminal (Admin) eller PowerShell (Admin)</em>).
-2. Kör följande kommando för att ställa in så att tjänsten startar automatiskt:</p>
-<pre><code class="language-ini">Get-Service ssh-agent | Set-Service -StartupType Automatic
-</code></pre>
-<ol>
-<li>Starta tjänsten nu direkt:</li>
-</ol>
-<pre><code class="language-ini">Start-Service ssh-agent
-</code></pre>
-<h3 id="lagg-till-nyckeln">Lägg till nyckeln<a class="headerlink" href="#lagg-till-nyckeln" title="Permanent link">&para;</a></h3>
-<p>Nu när "hovmästaren" (agenten) är vaken, kan du ge nyckeln till honom.
-1. I samma PowerShell-fönster, kör:</p>
-<pre><code class="language-ini">ssh-add C:\Users\DittNamn\.ssh\STRATO
-</code></pre>
-<ul>
-<li>(<em>Byt ut DittNamn och sökvägen till där nyckeln ligger</em>).</li>
-<li>Windows kommer fråga efter "Passphrase" en gång.</li>
-<li>Skriv in lösenordet.</li>
-</ul>
-<h3 id="resultat">Resultat<a class="headerlink" href="#resultat" title="Permanent link">&para;</a></h3>
-<p>Nu ligger den upplåsta nyckeln i Windows minne (i SSH-agenten).
-När du sedan kör dina skript eller skriver ssh root@... i PowerShell eller CMD, kommer Windows automatiskt att använda den upplåsta nyckeln utan att fråga dig om lösenordet igen.</p>
-<hr />
-<h1 id="klart-din-server-ar-nu-fullt-installerad-och-sakrad">Klart! Din server är nu fullt installerad och säkrad<a class="headerlink" href="#klart-din-server-ar-nu-fullt-installerad-och-sakrad" title="Permanent link">&para;</a></h1>
-<h3 id="notera">NOTERA<a class="headerlink" href="#notera" title="Permanent link">&para;</a></h3>
-<p>root user är numera ändrad till <strong>mormaija123</strong></p>
-<h3 id="om-du-behover-ga-in-i-vnc-konsolen">Om du behöver gå in i VNC-konsolen<a class="headerlink" href="#om-du-behover-ga-in-i-vnc-konsolen" title="Permanent link">&para;</a></h3>
-<h3 id="montera-disken">Montera disken<a class="headerlink" href="#montera-disken" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">mkdir -p /mnt/vps
-mount /dev/vda4 /mnt/vps
-</code></pre>
-<h2 id="andra-root-losenord">Ändra root lösenord<a class="headerlink" href="#andra-root-losenord" title="Permanent link">&para;</a></h2>
-<pre><code class="language-ini">chroot /mnt/vps passwd root
-</code></pre>
-<p>[^1]: # Vad är AlmaLinux?</p>
-<pre><code>AlmaLinux är ett gratis, öppen källkods-operativsystem för servrar.
-
-Det är en så kallad "**Enterprise Linux**"-distribution.
-
-Det viktigaste att veta är att AlmaLinux är 1:1 binärt kompatibelt med RHEL (**Red Hat Enterprise Linux**).
-
-Det betyder att AlmaLinux i praktiken är Red Hat (*världens största kommersiella Linux*), men helt gratis och utan krav på dyra licenser eller supportavtal.
-
-## Bakgrund
-För att förstå AlmaLinux måste man känna till dramat kring CentOS.
-
-I decennier var CentOS standardvalet för servrar. Det var en gratis kopia av Red Hat. I slutet av 2020 meddelade Red Hat (som äger CentOS) att de lägger ner den stabila versionen och ersätter den med CentOS Stream (en testversion för framtida uppdateringar).
-
-Världens systemadministratörer fick panik. De behövde ett stabilt system, inte en testbädd.
-
-AlmaLinux skapades som direkt svar på detta för att fylla tomrummet.
-
-## Vem ligger bakom?
-AlmaLinux startades ursprungligen av företaget CloudLinux, som är giganter inom webbhotell-branschen. De insåg att deras kunder behövde ett alternativ till CentOS.
-
-För att garantera att projektet inte skulle köpas upp eller läggas ner (*som CentOS gjorde*), lämnade de dock snabbt över kontrollen till en **icke-vinstdrivande stiftelse** (*The AlmaLinux OS Foundation*).
-
-Idag backas projektet av jättar som:
-  - **Microsoft**
-  - **AWS (Amazon)**
-  - **ARM**
-  - **cPanel** (Standardverktyget för webbhotell)
-
-Detta gör att framtiden för operativsystemet anses vara mycket säker.
-
-## Hur bra är det?
-Kort sagt: **Det är så bra det kan bli för en server**.
-
- - **Stabilitet** AlmaLinux fokuserar på extrem stabilitet framför "nyhetens behag". Programvaror kraschar sällan. Uppdateringar testas mycket noga.
- - **Säkerhet** Det kommer med säkerhetsfunktioner aktiverade som standard (t.ex. SELinux och brandväggar), vilket du redan har märkt under din installation. Det är designat för att stå emot attacker.
- - **Lång support** Version 9 (som vi kör) stöds med säkerhetsuppdateringar ända till 2032. Vi behöver alltså inte installera om servern på nästan 10 år.
-
-## Hur populärt är det?
-Sedan lanseringen 2021 har AlmaLinux vuxit explosionsartat.
-Det är idag ett av de två dominerande valen för att ersätta CentOS (det andra är Rocky Linux).
-Det används av NASA, CERN och majoriteten av världens webbhotell.
-Om du hyr en VPS idag är AlmaLinux ofta standardvalet jämte Ubuntu LTS.
-
-AlmaLinux har blivit standard inom storföretag, banker och hosting-industrin.
-
-## Slutsats
-Att jag valde AlmaLinux för vår "**MarketData**"-applikation är troligtvis ett bra val.
-
-Det kräver lite mer konfiguration i början (som vi sett med SSH-nycklar och databaser), men när det väl rullar är det en "stridsvagn" som sällan går sönder.
-</code></pre>
-<p>[^2]: # En kort introduktiontill SSH</p>
-<pre><code>SSH-nycklar (**Secure Shell keys**) är en metod för att identifiera sig och logga in på en server utan att använda ett traditionellt lösenord. Det anses vara betydligt säkrare än vanliga lösenord och är industristandard för serverhantering.
-
-## Hur fungerar det?
-Tekniken bygger på kryptografi med ett nyckelpar. Dessa två nycklar hör ihop matematiskt, men fyller olika funktioner:
-
-## Den privata nyckeln (Private Key)
-Sparas på din lokala dator (t.ex. i **~/.ssh/id_ed25519**) och fungerar som din personliga ID-handling.
-
-Den får aldrig delas med någon. Om någon kommer över denna kan de logga in som du.
-
-## Den publika nyckeln (Public Key)
-Placeras på servern du vill ansluta till (i filen **~/.ssh/authorized_keys**) och används för att verifiera att den privata nyckeln är äkta.
-
-Den är inte hemlig och kan kopieras till hur många servrar som helst.
-
-## En enkel liknelse
-För att förstå skillnaden kan man tänka på ett hänglås:
-  - Den **publika** nyckeln är som ett hänglås\
-    Du kan ge hänglåset till servern och säga "Sätt detta på dörren".\
-    Vem som helst kan se låset, men ingen kan öppna det utan rätt nyckel.
-  - Den **privata** nyckeln är den faktiska fysiska nyckeln som du har i fickan\
-    Endast din nyckel kan öppna låset som sitter på servern.
-
-När du försöker logga in skickar servern en "utmaning" till din dator.
-
-Din dator löser utmaningen med din privata nyckel.
-
-Om det matchar serverns publika nyckel (hänglåset), släpps du in.
-
-## Varför använder vi SSH-nycklar?
-  - **Högre säkerhet**\
-    En SSH-nyckel är praktiskt taget omöjlig att knäcka med "brute-force" (gissningsattacker), till skillnad från korta lösenord.
-  - **Automatisering**\
-    Det möjliggör inloggning utan att en människa behöver sitta och skriva in ett lösenord. Detta är ett krav för att kunna köra automatiska script (t.ex. backup-script eller deploy.sh) mellan dator och server.
-  - **Bekvämlighet**\
-    Du slipper komma ihåg komplexa lösenord för varje server.
-</code></pre>
-<p>[^3]: # En kort förklaring till argumenten för ssh-keygen
-    <strong>-t</strong> anger vilken metod (algoritm) som ska användas.\
-    <strong>-b</strong> anger hur svår (storlek) nyckeln ska vara att knäcka.</p>
-<pre><code>### **-t rsa**
-står för "Type" och bestämmer vilken matematisk algoritm som ska användas för att generera nyckelparet./
-**RSA** (*Rivest–Shamir–Adleman*) är den äldsta och mest välkända algoritmen för kryptering./
-Den är "universell" och fungerar på precis alla system, även väldigt gamla servrar (vilket är dess största styrka).
-
-### **-b 4096**
-står för "Bits" och bestämmer längden på nyckeln.
-4096 betyder att nyckeln består av 4096 ettor och nollor.\
-Ju högre siffra, desto svårare är nyckeln att knäcka med "brute force" (datorer som gissar).\
-En RSA-nyckel på 2048 bitar anses vara säker idag, men 4096 är "framtidssäkert" och anses vara extremt säkert. Nackdelen är att den är lite långsammare att generera och använda än kortare nycklar, men för SSH märks det knappt.
-
-### **Notera** en viktig detalj
-
-### RSA (4096)
-Den "gamla trotjänaren". Fungerar överallt. Nycklarna blir fysiskt väldigt långa textsträngar.\
-### Ed25519
-Den "nya standarden". Den är säkrare än RSA och mycket snabbare, samtidigt som nyckeln är mycket kortare.
-
-Det verkar just nu som att Strato kräver användning av RSA men det kan ju ändras i framtiden.\
-Om de ändrar sin strategi så att de accepterar ed25519 så skall du istället använda dig av kommandot
-  - **ssh-keygen -t ed25519 -C "MarketData-VPS"**
-
-*Notera att -b inte behövs för ed25519 eftersom den alltid har en fast, säker längd*.
-</code></pre>
-<hr />
 <h1 id="maintenance-guide">Maintenance Guide<a class="headerlink" href="#maintenance-guide" title="Permanent link">&para;</a></h1>
 <p>This document outlines common maintenance tasks for the MarketData Analyzer application, including daily operations, data correction, and troubleshooting.</p>
 <h2 id="1-daily-operations-automated-via-cron">1. Daily Operations (Automated via Cron)<a class="headerlink" href="#1-daily-operations-automated-via-cron" title="Permanent link">&para;</a></h2>
+<p>Detta är ett test[^1].</p>
 <p>The application is designed to be self-maintaining through a nightly cron job that runs the <strong>load.sh</strong> script.</p>
 <pre>
 <code>
@@ -2541,181 +1595,10 @@ After updating the schema or procedures, it is often necessary to run a full rec
 <li>Solution: This usually means the stock doesn't have enough historical data to compute the indicator (e.g., fewer than 26 days of data for MACD). This is expected for newly listed stocks. If the stock has a long history, it may indicate a problem in the calculation logic for that specific symbol. Run a single-symbol recalculation in debug mode (-d) to see detailed logs.</li>
 </ul>
 </li>
-<li>Problem: The front-end website is not loading (403 Forbidden error).<ul>
-<li>Solution: This is a file permissions issue on the web server. Ensure the Apache user (www-data or apache) has execute permissions on the entire directory path leading to the application and read permissions on the files. If using SELinux, ensure the correct security context (httpd_sys_content_t) is applied to the web directory.</li>
-</ul>
+<li>Problem: The front-end website is not loading (403 Forbidden error).<h2 id="-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory">- Solution: This is a file permissions issue on the web server. Ensure the Apache user (www-data or apache) has execute permissions on the entire directory path leading to the application and read permissions on the files. If using SELinux, ensure the correct security context (httpd_sys_content_t) is applied to the web directory.<a class="headerlink" href="#-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory" title="Permanent link">&para;</a></h2>
+<p>[^1]: Detta är fotnoten.</p>
 </li>
 </ul>
-<p>Manual: Ominstallation av VPS-server (Strato)
-Senast uppdaterad: 2026-01-23
-System: AlmaLinux 9
-Databas: MySQL 8</p>
-<p>Denna guide beskriver steg-för-steg hur du ominstallerar din VPS-server från grunden. Guiden är anpassad för att återställa miljön för MarketData-applikationen.</p>
-<ol>
-<li>Förberedelser (Lokal Dator)
-Innan du rör servern, se till att du har en giltig SSH-nyckel på din lokala dator (Mac). Denna behövs för att automatisera inloggningen och öka säkerheten.</li>
-</ol>
-<h2 id="skapa-ssh-nyckel">Skapa SSH-nyckel<a class="headerlink" href="#skapa-ssh-nyckel" title="Permanent link">&para;</a></h2>
-<p>Om du inte redan har nyckeln STRATO skapad, kör följande i terminalen:
-ssh-keygen -t rsa -b 4096 -C "MarketData-VPS"
-Dialogen kommer se ut så här:
-Enter file in which to save the key: /Users/siren/.ssh/STRATO
-Enter passphrase: [Välj ett lösenord, t.ex. MarketData]
-Varför? SSH-nycklar är säkrare än lösenord och krävs för att skript (som deploy.sh) ska kunna köra automatiskt. Vi använder RSA 4096-bitars kryptering för hög säkerhet.
-Konfigurera lokal SSH-config
-För att slippa ange vilken nyckelfil som ska användas vid varje inloggning, ställ in din lokala konfiguration.
-nano ~/.ssh/config
-Klistra in följande:
-code
-Text
-Host 87.106.130.217
-    User root
-    IdentityFile ~/.ssh/STRATO
-    IdentitiesOnly yes
-Varför? Detta gör att du kan skriva ssh root@87.106.130.217 utan att behöva lägga till -i ~/.ssh/STRATO varje gång.
-2. Ominstallation via Strato-panelen
-Logga in på Strato Kundinloggning.
-Gå till din serveröversikt (VPS Linux VC4-8).
-Välj Ominstallation.
-Välj operativsystem: AlmaLinux 9.
-Viktigt: Under installationen kommer du ombedd att ange en "SSH Public Key".
-Kör detta kommando lokalt på din Mac för att få fram nyckeln:
-cat ~/.ssh/STRATO.pub
-Kopiera hela strängen (börjar med ssh-rsa...) och klistra in i Strato.
-Ange ett root-lösenord för servern (t.ex. MarketData2025).
-Starta installationen.
-Obs: Detta raderar ALL data på servern. Det tar ca 10–20 minuter innan servern är uppe igen.
-3. Grundläggande Serverkonfiguration
-När servern är ominstallerad, logga in via terminalen:
-ssh root@87.106.130.217
-Uppdatera systemet
-Det första du alltid ska göra är att hämta de senaste säkerhetsuppdateringarna.
-dnf update -y
-Installera nödvändiga verktyg
-Installera textredigeraren Nano och kalkylatorn BC (krävs för dina skript).
-dnf install nano bc -y
-4. Webbserver (Apache)
-Vi installerar Apache (kallas httpd i AlmaLinux) för att kunna visa webbsidor.
-dnf install httpd -y
-systemctl enable --now httpd
-5. Databas (MySQL 8)
-AlmaLinux kommer förinställt med MariaDB, men vi behöver äkta MySQL 8 för kompatibilitet med dina lagrade procedurer.
-Förberedelse och Installation
-Installera det officiella MySQL-repositoryt:
-dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y
-Inaktivera den inbyggda modulen (för att undvika konflikter):
-dnf module disable mysql -y
-Installera MySQL Community Server:
-dnf install mysql-community-server -y
-Starta tjänsten:
-systemctl enable --now mysqld
-Återställning av Root-lösenord ("Safety Mode")
-MySQL 8 genererar ett tillfälligt lösenord som ofta är svårt att hitta eller använda. Vi går runt detta genom att starta databasen i ett läge där den inte kräver lösenord för att göra den initiala inställningen.
-Stoppa databasen:
-systemctl stop mysqld
-Starta i osäkert läge:
-systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
-systemctl start mysqld
-Logga in och sätt nytt lösenord:
-mysql -u root
-Kör följande SQL-kommandon (byt ut Maija_2609 mot ditt valda lösenord):
-code
-SQL
-FLUSH PRIVILEGES;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Maija_2609';
-FLUSH PRIVILEGES;
-EXIT;
-Starta om i normalt läge:
-systemctl stop mysqld
-systemctl unset-environment MYSQLD_OPTS
-systemctl start mysqld
-Skapa Databas och Användare
-Nu loggar vi in "på riktigt" och skapar din applikationsdatabas och användare.
-mysql -u root -p (Ange lösenordet du satte ovan)
-Kör följande SQL:
-code
-SQL
--- Skapa databasen
-CREATE DATABASE MD;</p>
-<p>-- Skapa användaren 'Admin' som får logga in utifrån (för Workbench)
-CREATE USER 'Admin'@'%' IDENTIFIED BY 'Maija_2609';
-GRANT ALL PRIVILEGES ON <em>.</em> TO 'Admin'@'%' WITH GRANT OPTION;</p>
-<p>-- VIKTIGT: Skapa SAMMA användare för 'localhost' (för skript som körs på servern)
-CREATE USER IF NOT EXISTS 'Admin'@'localhost' IDENTIFIED BY 'Maija_2609';
-GRANT ALL PRIVILEGES ON <em>.</em> TO 'Admin'@'localhost' WITH GRANT OPTION;</p>
-<p>FLUSH PRIVILEGES;
-EXIT;
-Varför två användare? MySQL ser User@% (fjärranvändare) och User@localhost (lokal användare) som två helt skilda konton. Utan localhost-användaren kommer dina importskript att misslyckas.
-Säkra installationen
-Kör säkerhetsskriptet för att ta bort testdatabaser och anonyma användare.
-mysql_secure_installation
-Svara Y (Yes) på alla frågor (Remove anonymous users, Disallow root login remotely, Remove test database).
-6. PHP-installation
-För att webbservern ska kunna köra din kod och prata med databasen.
-Installera PHP och nödvändiga moduler:
-dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring -y
-Starta PHP-processhanteraren:
-systemctl enable --now php-fpm
-Starta om Apache (så den hittar PHP):
-systemctl restart httpd
-Verifiera att det körs:
-systemctl status php-fpm
-7. Säkerhet (Brandvägg &amp; Fail2Ban)
-Konfigurera Brandväggen (Firewalld)
-Vi måste stänga alla portar utom de vi faktiskt använder.
-dnf install firewalld -y
-systemctl enable --now firewalld
-firewall-cmd --permanent --add-service=ssh
-firewall-cmd --permanent --add-service=http
-firewall-cmd --permanent --add-service=https
-firewall-cmd --permanent --add-port=3306/tcp (För MySQL Workbench)
-firewall-cmd --reload
-Installera Fail2Ban
-Detta skyddar servern mot "brute-force"-attacker genom att bannlysa IP-adresser som gissar fel lösenord för många gånger.
-Installera EPEL (Extra Packages for Enterprise Linux):
-dnf install epel-release -y
-Installera Fail2Ban:
-dnf install fail2ban fail2ban-firewalld -y
-Konfigurera (skapa filen jail.local):
-nano /etc/fail2ban/jail.local
-Klistra in:
-code
-Ini
-[DEFAULT]
-bantime = 24h
-findtime = 10m
-maxretry = 5</p>
-<h1 id="lagg-till-din-egen-ip-har-for-att-undvika-att-du-bannar-dig-sjalv">Lägg till din egen IP här för att undvika att du bannar dig själv!<a class="headerlink" href="#lagg-till-din-egen-ip-har-for-att-undvika-att-du-bannar-dig-sjalv" title="Permanent link">&para;</a></h1>
-<p>ignoreip = 127.0.0.1/8 ::1 192.168.50.47
-banaction = firewallcmd-rich-rules
-banaction_allports = firewallcmd-rich-rules</p>
-<p>[sshd]
-enabled = true
-backend = systemd
-Starta tjänsten:
-systemctl enable --now fail2ban
-8. SSH &amp; Rättigheter (Den svåra biten)
-Varning: Försök INTE skapa en separat webadmin-användare för deployment om du inte är mycket van vid SELinux. Det orsakade stora problem tidigare. Vi använder root för uppladdning och justerar rättigheterna efteråt.
-Fixa konfigurationen om inloggning strular
-Om du inte kan logga in med SSH-nyckel direkt efter installationen kan AlmaLinux säkerhetsinställningar (SELinux) eller SSH-konfigurationen behöva justeras.
-Om du blir utlåst, använd VNC-konsolen i Strato och kör följande kommandon för att tvinga systemet att acceptera dig:
-Tvinga in SSH-inställningar:
-echo -e "PermitRootLogin yes\nPasswordAuthentication yes" &gt; /etc/ssh/sshd_config.d/00-fix.conf
-Sätt SELinux till Permissive (tillåtande):
-Editera /etc/selinux/config och ändra till SELINUX=permissive.
-Starta om: reboot.
-9. Slutförande: Ladda upp och Sätt rättigheter
-När du laddat upp dina filer (via ditt deploy.sh skript), måste du se till att webbservern äger dem, annars kan inte sidan visas.
-Kör dessa kommandon efter varje stor uppladdning:
-Ge ägarskap till Apache:
-chown -R apache:apache /var/www/html/MD
-Sätt rättigheter på mappar (755):
-find /var/www/html/MD -type d -exec chmod 755 {} \;
-Sätt rättigheter på filer (644):
-find /var/www/html/MD -type f -exec chmod 644 {} \;
-Tagga filer för SELinux (om du kör SELinux i Enforcing-läge):
-chcon -R -t httpd_sys_content_t /var/www/html/MD
-Klart! Din server är nu fullt installerad och säkrad.</p>
 
 
 
