@@ -576,16 +576,16 @@
           <li class="md-nav__item">
   <a href="#skapa-ssh-nyckel" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel.
+      Skapa SSH-nyckel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
+  <a href="#konfigurera-lokal-ssh-konfigurering" class="md-nav__link">
     <span class="md-ellipsis">
-      Konfigurera lokal SSH-config
+      Konfigurera lokal SSH-konfigurering
     </span>
   </a>
   
@@ -1631,16 +1631,16 @@
           <li class="md-nav__item">
   <a href="#skapa-ssh-nyckel" class="md-nav__link">
     <span class="md-ellipsis">
-      Skapa SSH-nyckel.
+      Skapa SSH-nyckel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#konfigurera-lokal-ssh-config" class="md-nav__link">
+  <a href="#konfigurera-lokal-ssh-konfigurering" class="md-nav__link">
     <span class="md-ellipsis">
-      Konfigurera lokal SSH-config
+      Konfigurera lokal SSH-konfigurering
     </span>
   </a>
   
@@ -1941,10 +1941,10 @@
 
 
 <h1 id="installation-av-vps-server-hos-strato">Installation av VPS-server hos STRATO<a class="headerlink" href="#installation-av-vps-server-hos-strato" title="Permanent link">&para;</a></h1>
-<p>Om du någon gång beöver installera om din VPS-server från början så kan denna handledning vara till hjälp.</p>
-<p>Jag har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel och snabb som möjligt.<br>
+<p>Om du någon gång behöver installera om din VPS-server från början så kan denna handledning vara till viss hjälp.</p>
+<p>Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.</p>
-<pre><code class="language-ini">Alla kommandon är noterade i en sån här ruta
+<pre><code class="language-text">Alla kommandon är noterade i en sån här ruta
 </code></pre>
 <p>Ibland kan det finnas ett exempel på en dialog som kommandot kommer att ha med dig (för att erhålla ytterligare direktiv).</p>
 <p>Dialogen är då markerad på nedanstående sätt med, av mig, angivna svar i <strong>fet stil</strong></p>
@@ -1961,13 +1961,14 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <hr />
 <h2 id="1-forberedelser-lokal-dator">1. Förberedelser (Lokal Dator)<a class="headerlink" href="#1-forberedelser-lokal-dator" title="Permanent link">&para;</a></h2>
 <p>Innan du rör servern, se till att du har en giltig <strong>SSH-nyckel</strong> på din lokala dator. Denna behövs för att automatisera inloggningen och öka säkerheten.</p>
-<h3 id="skapa-ssh-nyckel">Skapa SSH-nyckel.<a class="headerlink" href="#skapa-ssh-nyckel" title="Permanent link">&para;</a></h3>
+<h3 id="skapa-ssh-nyckel">Skapa SSH-nyckel<a class="headerlink" href="#skapa-ssh-nyckel" title="Permanent link">&para;</a></h3>
 <p>För att skapa en SSH-nyckel<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> i Mac-miljö använder jag mig av ssh-keygen<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <p><em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
-<pre><code class="language-ini">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
 </code></pre>
 <p>Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.</p>
-<p>I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i fratiden. För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (<em>långa haranger av tecken</em>).</p>
+<p>I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.</p>
+<p>För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (<em>långa haranger av tecken</em>).</p>
 <blockquote>
 <p><em>Generating public/private rsa key pair.</em><br>
 <em>Enter file in which to save the key (/Users/siren/.ssh/id_rsa):</em><br>
@@ -1983,10 +1984,10 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <em>The key's randomart image is:</em><br>
 ...</p>
 </blockquote>
-<h3 id="konfigurera-lokal-ssh-config">Konfigurera lokal SSH-config<a class="headerlink" href="#konfigurera-lokal-ssh-config" title="Permanent link">&para;</a></h3>
+<h3 id="konfigurera-lokal-ssh-konfigurering">Konfigurera lokal SSH-konfigurering<a class="headerlink" href="#konfigurera-lokal-ssh-konfigurering" title="Permanent link">&para;</a></h3>
 <p>För att slippa ange vilken nyckelfil som ska användas vid varje inloggning, ställ in din lokala konfiguration.</p>
 <p>Detta gör att du kan skriva <strong>ssh root@87.106.130.217</strong> utan att behöva lägga till <strong>-i ~/.ssh/STRATO</strong> varje gång</p>
-<pre><code class="language-ini">nano ~/.ssh/config
+<pre><code class="language-bash">nano ~/.ssh/config
 </code></pre>
 <p>Klistra in följande text</p>
 <pre><code class="language-ini">Host 87.106.130.217
@@ -2001,9 +2002,9 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <pre><code class="language-ini">https://www.strato.se/apps/CustomerService
 </code></pre>
 <p>Ditt kundnummer är : <strong>77971995</strong><br>
-och dit lösenord är : <strong>Maija---9377</strong></p>
+och ditt lösenord är : <strong>Maija---9377</strong></p>
 <p>Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
-<em>Jag skriver ner de som gäller idag så att vi har dem lagrade någonstans förutom hos Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.</em></p>
+<em>Jag skriver ner de som gäller idag så att vi har dem lagrade även utanför Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.</em></p>
 <blockquote>
 <h2 id="avtalsinformation">Avtalsinformation<a class="headerlink" href="#avtalsinformation" title="Permanent link">&para;</a></h2>
 <p>Ordernummer : <em>9114028</em><br>
@@ -2023,27 +2024,27 @@ Server IP-adress (IPv4) : <strong>87.106.130.217</strong><br>
 Server IP-adress (IPv6) : <strong>2a01:239:363:8500::1</strong></p>
 </blockquote>
 <p>I slutet av sidan ser du ett antal knappar där "<strong>Ominstallation</strong>" är det val du skall göra när du avser att göra en ominstallation av VPS-servern.</p>
-<p>När du klickar knappen "<strong>Ominstallation</strong>" så får du lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om du väljer att gå vidare.</p>
-<p>Din nuvarande installation kommer att helt raderas.</p>
-<p>När och om du väljer att gå vidare så vill Strato att du anger din SSH-nyckel.</p>
+<p>När du klickar knappen "<strong>Ominstallation</strong>" så erhålls lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om valet är att gå vidare.</p>
+<p>Den aktuella installationen kommer att helt raderas.</p>
+<p>När du väljer att gå vidare så måste du ange din SSH-nyckel.</p>
 <p>Du kopierar din SSH-nyckel (som är lååång och ligger i filen <strong>/Users/siren/.ssh/STRATO.pub</strong> (eller vilken fil du nu angav till ssh-keygen)). Kopiera och klistra in den i <strong>Strato Re-installation wizard</strong>.</p>
-<p>I Mac miljö hämtar du den enklast genom att köra kommandot</p>
-<pre><code class="language-ini">cat ~/.ssh/STRATO.pub
+<p>I Mac miljö hämtar du den enklast mha</p>
+<pre><code class="language-bash">cat ~/.ssh/STRATO.pub
 </code></pre>
 <p>Just nu ser vår SSH-nyckel som följer (<em>inses lätt att det blir tämligen svårt att knappa in den koden manuellt)</em>:</p>
 <blockquote>
 <p><em>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDgxP5ButcDcA29EoX35TYCzkQrem8Vj0D2EG0RVYdfsBcmdVxhlXZiQLeMn6zWEevH+J73rQx0kGmeLxeclbHY/bdpLV1HdVQb3M4RjU+ry0Ki8BrujnO7yZ2J36uUZ7j9hvAfygOtGdqpwqkYntrJPL7LiEF6WvcVPF41NgZ4Q+e0LbGwqKjAVw5hR1u3ORG5sdhP5oYG6ICNz6ftJXSTc3SDTCgRT+rp3n5/xcuiOxIzngSMbXH31vyKmMNwADs9T4+0LNROlz5cCamoFHBjkYhIDqXOsrcDcqOYEwJEso+RjW9XmwwmdGHIX2m/fF26X3RaVwXLK9haqQD++CkDLkFfGzputGyR8mzTuPyw5OLs70i1RDNLMYLD/yF4WaHOupAcDgpsjjMULfVEiye28uemEkD0WLgJaCCWgAxW6W5IU1x/fUi3OQXLlG9Vpb2gYltZ7ojsiR8dXA4aZTAN2V78CeVchPJUdD4c6QoJmytgPK06iJFBiodSdGAj6vtbiqBQGVC74OPHdvPemY8GKlkoeAv+pXjaRkbao4oyZgZ5hbyyzS1IUyDbwexcyRRYrb1NQpvv70U0OQ+XOCORvarZZRQfuc16P6hB4C2u0eYlieHAZG3B2mnIzG6+FxyYQzTBbBN7GXO/49NydmA2cwZWJ17oQCIFzQMJbj3ww== MarketData-VPS</em></p>
 </blockquote>
-<p><strong>Notera</strong> att du måste även ange ett lösenord när du initierar en om-installation av VPS-servern.</p>
+<p><strong>Observera</strong> att ett lösenord måste anges när du startar en om-installation av VPS-servern.</p>
 <p>Jag använde <strong>MarketData2025</strong> som  lösenord. Du kanske vill ha något helt annat. Anteckna det lösenord du väljer att använda dig av på något säkert ställe då den är lätt att glömma.</p>
-<p>All data för den nuvarande installationen kommer nu att raderas</p>
-<p>Det dröjer en kort stund men strax är din nya VPS-server klar och du uppmanas att öppna en session mot din nya VPS-server.</p>
-<pre><code class="language-ini">ssh -i ~/.ssh/STRATO root@87.106.130.217
+<p>All data för den nuvarande installationen kommer nu att raderas.</p>
+<p>När den nya VPS-server är klar uppmanas du att öppna en session mot den nya VPS-server.</p>
+<pre><code class="language-bash">ssh -i ~/.ssh/STRATO root@87.106.130.217
 </code></pre>
 <p>alternativt</p>
-<pre><code class="language-ini">ssh root@87.106.130.217
+<pre><code class="language-bash">ssh root@87.106.130.217
 </code></pre>
-<p>om du konfigurerat din lokala SSH-config</p>
+<p>om du konfigurerat din lokala SSH-konfiguration.</p>
 <blockquote>
 <p>Enter passphrase for key '<strong>/Users/siren/.ssh/STRATO</strong>':<br>
 <strong>MarketData</strong></p>
@@ -2052,16 +2053,16 @@ Server IP-adress (IPv6) : <strong>2a01:239:363:8500::1</strong></p>
 <h2 id="3-grundlaggande-serverkonfiguration">3. Grundläggande Serverkonfiguration<a class="headerlink" href="#3-grundlaggande-serverkonfiguration" title="Permanent link">&para;</a></h2>
 <h3 id="uppdatera-systemet">Uppdatera systemet<a class="headerlink" href="#uppdatera-systemet" title="Permanent link">&para;</a></h3>
 <p>Det första du alltid ska göra är att hämta de senaste säkerhetsuppdateringarna.</p>
-<pre><code class="language-ini">dnf update -y
+<pre><code class="language-bash">dnf update -y
 </code></pre>
 <h3 id="installera-nodvandiga-verktyg">Installera nödvändiga verktyg<a class="headerlink" href="#installera-nodvandiga-verktyg" title="Permanent link">&para;</a></h3>
 <p>Installera textredigeraren 'nano' och kalkylatorn 'bc' (krävs för dina skript).</p>
-<pre><code class="language-ini">dnf install nano bc -y
+<pre><code class="language-bash">dnf install nano bc -y
 </code></pre>
 <hr />
 <h2 id="4-webbserver-apache">4. Webbserver (Apache)<a class="headerlink" href="#4-webbserver-apache" title="Permanent link">&para;</a></h2>
 <p>Vi installerar Apache (<em>kallas httpd i AlmaLinux</em>) för att kunna visa webbsidor.</p>
-<pre><code class="language-ini">dnf install httpd -y
+<pre><code class="language-bash">dnf install httpd -y
 systemctl enable --now httpd
 </code></pre>
 <hr />
@@ -2071,44 +2072,47 @@ systemctl enable --now httpd
 <ol>
 <li>Installera det officiella MySQL-repositoryt:</li>
 </ol>
-<pre><code class="language-ini">dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y
+<pre><code class="language-bash">dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y
 </code></pre>
 <ol>
 <li>Inaktivera den inbyggda modulen (för att undvika konflikter):</li>
 </ol>
-<pre><code class="language-ini">dnf module disable mysql -y
+<pre><code class="language-bash">dnf module disable mysql -y
 </code></pre>
 <ol>
 <li>Installera MySQL Community Server:</li>
 </ol>
-<pre><code class="language-ini">dnf install mysql-community-server -y
+<pre><code class="language-bash">dnf install mysql-community-server -y
 </code></pre>
 <ol>
-<li>Starta tjänsten</li>
+<li>Starta tjänsten
+5.</li>
 </ol>
-<pre><code class="language-ini">systemctl enable --now mysqld
+<pre><code class="language-bash">systemctl enable --now mysqld
 </code></pre>
 <h3 id="aterstallning-av-root-losenord-safety-mode">Återställning av Root-lösenord ("Safety Mode")<a class="headerlink" href="#aterstallning-av-root-losenord-safety-mode" title="Permanent link">&para;</a></h3>
 <p>MySQL 8 genererar ett tillfälligt lösenord som ofta är svårt att hitta eller använda.</p>
-<p>Vi går runt detta genom att starta databasen i ett läge där den inte kräver lösenord för att göra den initiala inställningen.
-1. Stoppa databasen:</p>
-<pre><code class="language-ini">systemctl stop mysqld
+<p>Vi går runt detta genom att starta databasen i ett läge där den inte kräver lösenord för att göra den initiala inställningen.</p>
+<ol>
+<li>Stoppa databasen:</li>
+</ol>
+<pre><code class="language-bash">systemctl stop mysqld
 </code></pre>
 <ol>
 <li>Starta i osäkert läge:</li>
 </ol>
-<pre><code class="language-ini">systemctl set-environment MYSQLD_OPTS=&quot;--skip-grant-tables&quot;
+<pre><code class="language-bash">systemctl set-environment MYSQLD_OPTS=&quot;--skip-grant-tables&quot;
 systemctl start mysqld
 </code></pre>
 <ol>
 <li>Logga in och sätt nytt lösenord:</li>
 </ol>
-<pre><code class="language-ini">mysql -u root
+<pre><code class="language-bash">mysql -u root
 </code></pre>
 <ul>
 <li>Kör följande SQL-kommandon (byt ut Maija_2609 mot ditt valda lösenord):</li>
 </ul>
-<pre><code class="language-ini">FLUSH PRIVILEGES;
+<pre><code class="language-bash">FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Maija_2609';
 FLUSH PRIVILEGES;
 EXIT;
@@ -2116,17 +2120,19 @@ EXIT;
 <ol>
 <li>Startat om i normalt läge:</li>
 </ol>
-<pre><code class="language-ini">systemctl stop mysqld
+<pre><code class="language-bash">systemctl stop mysqld
 systemctl unset-environment MYSQLD_OPTS
 systemctl start mysqld
 </code></pre>
 <h3 id="skapa-databas-och-anvandare">Skapa Databas och Användare<a class="headerlink" href="#skapa-databas-och-anvandare" title="Permanent link">&para;</a></h3>
 <p>Nu loggar vi in "på riktigt" och skapar applikationsdatabasen och användare.</p>
-<ul>
-<li><strong>mysql -u root -p</strong></li>
-</ul>
-<p>och ange lösenordet du satte ovan.</p>
-<pre><code class="language-ini">-- Skapa databasen
+<pre><code class="language-bash">mysql -u root -p
+````
+
+och ange lösenordet du satte ovan.
+
+```bash
+-- Skapa databasen
 CREATE DATABASE MD;
 -- Skapa användaren 'Admin' som får logga in utifrån (för Workbench)
 CREATE USER 'Admin'@'%' IDENTIFIED BY 'Maija_2609';
@@ -2143,7 +2149,7 @@ EXIT;
 </ul>
 <h3 id="sakra-installationen">Säkra installationen<a class="headerlink" href="#sakra-installationen" title="Permanent link">&para;</a></h3>
 <p>Kör säkerhetsskriptet för att ta bort testdatabaser och anonyma användare.</p>
-<pre><code class="language-ini">mysql_secure_installation
+<pre><code class="language-bash">mysql_secure_installation
 </code></pre>
 <blockquote>
 <p><em>Securing the MySQL server deployment.</em><br></p>

@@ -238,7 +238,7 @@ Nu loggar vi in "på riktigt" och skapar applikationsdatabasen och användare.
 
 ```bash
 mysql -u root -p
-````
+```
 
 och ange lösenordet du satte ovan.
 
