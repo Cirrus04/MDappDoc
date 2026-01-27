@@ -86,7 +86,7 @@ body {
   line-height: 1.0;
   font-size: 0.6rem;
   padding: 10px;
-  background-color: #d8d8d8; /* Optional: Add a background color for code blocks */
+  background-color: #e7e5e5; /* Optional: Add a background color for code blocks */
   border-radius: 4px;          /* Optional: Add rounded corners */
   white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
 }
@@ -99,7 +99,7 @@ body {
   line-height: 1.0;
   font-size: 0.6rem;
   padding: 10px;
-  background-color: #8FC3E9; /* Optional: Add a background color for code blocks */
+  background-color: #d9e7f2; /* Optional: Add a background color for code blocks */
   border-radius: 4px;          /* Optional: Add rounded corners */
   white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
 

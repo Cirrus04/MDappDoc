@@ -1,11 +1,11 @@
 # Installation av VPS-server hos STRATO
 
-Om du någon gång beöver installera om din VPS-server från början så kan denna handledning vara till hjälp.
+Om du någon gång behöver installera om din VPS-server från början så kan denna handledning vara till viss hjälp.
 
-Jag har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel och snabb som möjligt.<br>
+Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.
 
-```ini
+```text
 Alla kommandon är noterade i en sån här ruta
 ```
 
@@ -28,19 +28,22 @@ Notera att **alla** installationssteg är anpassade för valet av operativsystem
 ## 1. Förberedelser (Lokal Dator)
 Innan du rör servern, se till att du har en giltig **SSH-nyckel** på din lokala dator. Denna behövs för att automatisera inloggningen och öka säkerheten.
 
-### Skapa SSH-nyckel.
+### Skapa SSH-nyckel
 
 För att skapa en SSH-nyckel[^2] i Mac-miljö använder jag mig av ssh-keygen[^3].
 
 *(Du kanske föredrar **Windows** och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)*
-```ini
+
+```bash
 ssh-keygen -t rsa -b 4096 -C "MarketData-VPS"
 ```
 Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.
 
-I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i fratiden. För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (*långa haranger av tecken*).
+I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.
 
-> *Generating public/private rsa key pair.*<br>
+För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (*långa haranger av tecken*).
+
+>*Generating public/private rsa key pair.*<br>
 *Enter file in which to save the key (/Users/siren/.ssh/id_rsa):*<br>
 >**/Users/siren/.ssh/STRATO**<br>
 >*Enter passphrase (empty for no passphrase):*<br>
@@ -54,13 +57,13 @@ I dialogen nedan så ser du de namn jag valt för den nuvarande installationen a
 *The key's randomart image is:*<br>
 ...
 
-### Konfigurera lokal SSH-config
+### Konfigurera lokal SSH-konfigurering
 
 För att slippa ange vilken nyckelfil som ska användas vid varje inloggning, ställ in din lokala konfiguration.
 
 Detta gör att du kan skriva **ssh root@87.106.130.217** utan att behöva lägga till **-i ~/.ssh/STRATO** varje gång
 
-```ini
+```bash
 nano ~/.ssh/config
 ```
 Klistra in följande text
@@ -80,10 +83,11 @@ Efter att du skapat din SSH-nyckel så skall du logga in mot Strato
 https://www.strato.se/apps/CustomerService
 ```
 Ditt kundnummer är : **77971995**<br>
-och dit lösenord är : **Maija---9377**
+och ditt lösenord är : **Maija---9377**
 
 Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
-*Jag skriver ner de som gäller idag så att vi har dem lagrade någonstans förutom hos Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.*
+*Jag skriver ner de som gäller idag så att vi har dem lagrade även utanför Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.*
+
 >## Avtalsinformation
 >Ordernummer : *9114028*<br>
 >Paketnamn : **STRATO VPS Linux VC4-8** (12.se)<br>
@@ -104,38 +108,41 @@ Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
 
 I slutet av sidan ser du ett antal knappar där "**Ominstallation**" är det val du skall göra när du avser att göra en ominstallation av VPS-servern.
 
-När du klickar knappen "**Ominstallation**" så får du lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om du väljer att gå vidare.
+När du klickar knappen "**Ominstallation**" så erhålls lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om valet är att gå vidare.
 
-Din nuvarande installation kommer att helt raderas.
+Den aktuella installationen kommer att helt raderas.
 
-När och om du väljer att gå vidare så vill Strato att du anger din SSH-nyckel.
+När du väljer att gå vidare så måste du ange din SSH-nyckel.
 
 Du kopierar din SSH-nyckel (som är lååång och ligger i filen **/Users/siren/.ssh/STRATO.pub** (eller vilken fil du nu angav till ssh-keygen)). Kopiera och klistra in den i **Strato Re-installation wizard**.
 
-I Mac miljö hämtar du den enklast genom att köra kommandot
-```ini
+I Mac miljö hämtar du den enklast mha
+
+```bash
 cat ~/.ssh/STRATO.pub
 ```
 Just nu ser vår SSH-nyckel som följer (*inses lätt att det blir tämligen svårt att knappa in den koden manuellt)*:
 
 >*ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDgxP5ButcDcA29EoX35TYCzkQrem8Vj0D2EG0RVYdfsBcmdVxhlXZiQLeMn6zWEevH+J73rQx0kGmeLxeclbHY/bdpLV1HdVQb3M4RjU+ry0Ki8BrujnO7yZ2J36uUZ7j9hvAfygOtGdqpwqkYntrJPL7LiEF6WvcVPF41NgZ4Q+e0LbGwqKjAVw5hR1u3ORG5sdhP5oYG6ICNz6ftJXSTc3SDTCgRT+rp3n5/xcuiOxIzngSMbXH31vyKmMNwADs9T4+0LNROlz5cCamoFHBjkYhIDqXOsrcDcqOYEwJEso+RjW9XmwwmdGHIX2m/fF26X3RaVwXLK9haqQD++CkDLkFfGzputGyR8mzTuPyw5OLs70i1RDNLMYLD/yF4WaHOupAcDgpsjjMULfVEiye28uemEkD0WLgJaCCWgAxW6W5IU1x/fUi3OQXLlG9Vpb2gYltZ7ojsiR8dXA4aZTAN2V78CeVchPJUdD4c6QoJmytgPK06iJFBiodSdGAj6vtbiqBQGVC74OPHdvPemY8GKlkoeAv+pXjaRkbao4oyZgZ5hbyyzS1IUyDbwexcyRRYrb1NQpvv70U0OQ+XOCORvarZZRQfuc16P6hB4C2u0eYlieHAZG3B2mnIzG6+FxyYQzTBbBN7GXO/49NydmA2cwZWJ17oQCIFzQMJbj3ww== MarketData-VPS*
 
-**Notera** att du måste även ange ett lösenord när du initierar en om-installation av VPS-servern.
+**Observera** att ett lösenord måste anges när du startar en om-installation av VPS-servern.
 
 Jag använde **MarketData2025** som  lösenord. Du kanske vill ha något helt annat. Anteckna det lösenord du väljer att använda dig av på något säkert ställe då den är lätt att glömma.
 
-All data för den nuvarande installationen kommer nu att raderas
+All data för den nuvarande installationen kommer nu att raderas.
 
-Det dröjer en kort stund men strax är din nya VPS-server klar och du uppmanas att öppna en session mot din nya VPS-server.
+När den nya VPS-server är klar uppmanas du att öppna en session mot den nya VPS-server.
 
-```ini
+```bash
 ssh -i ~/.ssh/STRATO root@87.106.130.217
 ```
+
 alternativt
-```ini
+
+```bash
 ssh root@87.106.130.217
 ```
-om du konfigurerat din lokala SSH-config
+om du konfigurerat din lokala SSH-konfiguration.
 
 >Enter passphrase for key '**/Users/siren/.ssh/STRATO**':<br>
 >**MarketData**
@@ -144,19 +151,22 @@ om du konfigurerat din lokala SSH-config
 ## 3. Grundläggande Serverkonfiguration
 ### Uppdatera systemet
 Det första du alltid ska göra är att hämta de senaste säkerhetsuppdateringarna.
-```ini
+
+```bash
 dnf update -y
 ```
 
 ### Installera nödvändiga verktyg
 Installera textredigeraren 'nano' och kalkylatorn 'bc' (krävs för dina skript).
-```ini
+
+```bash
 dnf install nano bc -y
 ```
 ---
 ## 4. Webbserver (Apache)
 Vi installerar Apache (*kallas httpd i AlmaLinux*) för att kunna visa webbsidor.
-```ini
+
+```bash
 dnf install httpd -y
 systemctl enable --now httpd
 ```
@@ -166,19 +176,23 @@ AlmaLinux kommer förinställt med MariaDB, men vi behöver äkta MySQL 8 för k
 
 ### Förberedelse och Installation
 1. Installera det officiella MySQL-repositoryt:
-```ini
+
+```bash
 dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y
 ```
 2. Inaktivera den inbyggda modulen (för att undvika konflikter):
-```ini
+
+```bash
 dnf module disable mysql -y
 ```
 3. Installera MySQL Community Server:
-```ini
+
+```bash
 dnf install mysql-community-server -y
 ```
 4. Starta tjänsten
-```ini
+5.
+```bash
 systemctl enable --now mysqld
 ```
 
@@ -186,28 +200,34 @@ systemctl enable --now mysqld
 MySQL 8 genererar ett tillfälligt lösenord som ofta är svårt att hitta eller använda.
 
 Vi går runt detta genom att starta databasen i ett läge där den inte kräver lösenord för att göra den initiala inställningen.
+
 1. Stoppa databasen:
-```ini
+
+```bash
 systemctl stop mysqld
 ```
 2. Starta i osäkert läge:
-```ini
+
+```bash
 systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
 systemctl start mysqld
 ```
 3. Logga in och sätt nytt lösenord:
-```ini
+
+```bash
 mysql -u root
 ```
    - Kör följande SQL-kommandon (byt ut Maija_2609 mot ditt valda lösenord):
-```ini
+
+```bash
 FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Maija_2609';
 FLUSH PRIVILEGES;
 EXIT;
 ```
-4. Startat om i normalt läge:
-```ini
+1. Startat om i normalt läge:
+
+```bash
 systemctl stop mysqld
 systemctl unset-environment MYSQLD_OPTS
 systemctl start mysqld
@@ -216,10 +236,13 @@ systemctl start mysqld
 ### Skapa Databas och Användare
 Nu loggar vi in "på riktigt" och skapar applikationsdatabasen och användare.
 
-- **mysql -u root -p**
+```bash
+mysql -u root -p
+````
 
 och ange lösenordet du satte ovan.
-```ini
+
+```bash
 -- Skapa databasen
 CREATE DATABASE MD;
 -- Skapa användaren 'Admin' som får logga in utifrån (för Workbench)
@@ -231,13 +254,14 @@ GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EXIT;
 ```
+
 - Varför två användare?<br>
  MySQL ser User@% (fjärranvändare) och User@localhost (lokal användare) som två helt skilda konton. Utan localhost-användaren kommer dina importskript att misslyckas.
 
 ### Säkra installationen
 
 Kör säkerhetsskriptet för att ta bort testdatabaser och anonyma användare.
-```ini
+```bash
 mysql_secure_installation
 ```
 
