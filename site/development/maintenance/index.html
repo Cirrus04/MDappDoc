@@ -1559,7 +1559,7 @@
 <h1 id="maintenance-guide">Maintenance Guide<a class="headerlink" href="#maintenance-guide" title="Permanent link">&para;</a></h1>
 <p>This document outlines common maintenance tasks for the MarketData Analyzer application, including daily operations, data correction, and troubleshooting.</p>
 <h2 id="1-daily-operations-automated-via-cron">1. Daily Operations (Automated via Cron)<a class="headerlink" href="#1-daily-operations-automated-via-cron" title="Permanent link">&para;</a></h2>
-<p>Detta är ett test[^1].</p>
+<p>Detta är ett test<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>The application is designed to be self-maintaining through a nightly cron job that runs the <strong>load.sh</strong> script.</p>
 <pre>
 <code>
@@ -1621,9 +1621,16 @@ After updating the schema or procedures, it is often necessary to run a full rec
 </ul>
 </li>
 <li>Problem: The front-end website is not loading (403 Forbidden error).<h2 id="-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory">- Solution: This is a file permissions issue on the web server. Ensure the Apache user (www-data or apache) has execute permissions on the entire directory path leading to the application and read permissions on the files. If using SELinux, ensure the correct security context (httpd_sys_content_t) is applied to the web directory.<a class="headerlink" href="#-solution-this-is-a-file-permissions-issue-on-the-web-server-ensure-the-apache-user-www-data-or-apache-has-execute-permissions-on-the-entire-directory-path-leading-to-the-application-and-read-permissions-on-the-files-if-using-selinux-ensure-the-correct-security-context-httpd_sys_content_t-is-applied-to-the-web-directory" title="Permanent link">&para;</a></h2>
-<p>[^1]: Detta är fotnoten.</p>
 </li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Detta är fotnoten.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

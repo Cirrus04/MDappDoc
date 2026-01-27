@@ -1957,12 +1957,12 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <em>Success.</em></p>
 </blockquote>
 <p>Naturligtvis kan vissa avsnitt vara lite blodfattiga och skulle må väl av lite mer beskrivande text men vi börjar så här och kompletterar med klargörande text om det visar sig nödvändigt.</p>
-<p>Notera att <strong>alla</strong> installationssteg är anpassade för valet av operativsystem - jag har valt att använda <strong>AlmaLinux</strong>[^1].</p>
+<p>Notera att <strong>alla</strong> installationssteg är anpassade för valet av operativsystem - jag har valt att använda <strong>AlmaLinux</strong><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <hr />
 <h2 id="1-forberedelser-lokal-dator">1. Förberedelser (Lokal Dator)<a class="headerlink" href="#1-forberedelser-lokal-dator" title="Permanent link">&para;</a></h2>
 <p>Innan du rör servern, se till att du har en giltig <strong>SSH-nyckel</strong> på din lokala dator. Denna behövs för att automatisera inloggningen och öka säkerheten.</p>
 <h3 id="skapa-ssh-nyckel">Skapa SSH-nyckel.<a class="headerlink" href="#skapa-ssh-nyckel" title="Permanent link">&para;</a></h3>
-<p>För att skapa en SSH-nyckel[^2] i Mac-miljö använder jag mig av ssh-keygen[^3].</p>
+<p>För att skapa en SSH-nyckel<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> i Mac-miljö använder jag mig av ssh-keygen<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <p><em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
 <pre><code class="language-ini">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
 </code></pre>
@@ -2386,122 +2386,103 @@ mount /dev/vda4 /mnt/vps
 <h3 id="andra-root-losenord">Ändra root lösenord<a class="headerlink" href="#andra-root-losenord" title="Permanent link">&para;</a></h3>
 <pre><code class="language-ini">chroot /mnt/vps passwd root
 </code></pre>
-<p>[^1]: # Vad är AlmaLinux?</p>
-<pre><code>AlmaLinux är ett gratis, öppen källkods-operativsystem för servrar.
-
-Det är en så kallad "**Enterprise Linux**"-distribution.
-
-Det viktigaste att veta är att AlmaLinux är 1:1 binärt kompatibelt med RHEL (**Red Hat Enterprise Linux**).
-
-Det betyder att AlmaLinux i praktiken är Red Hat (*världens största kommersiella Linux*), men helt gratis och utan krav på dyra licenser eller supportavtal.
-
-## Bakgrund
-För att förstå AlmaLinux måste man känna till dramat kring CentOS.
-
-I decennier var CentOS standardvalet för servrar. Det var en gratis kopia av Red Hat. I slutet av 2020 meddelade Red Hat (som äger CentOS) att de lägger ner den stabila versionen och ersätter den med CentOS Stream (en testversion för framtida uppdateringar).
-
-Världens systemadministratörer fick panik. De behövde ett stabilt system, inte en testbädd.
-
-AlmaLinux skapades som direkt svar på detta för att fylla tomrummet.
-
-## Vem ligger bakom?
-AlmaLinux startades ursprungligen av företaget CloudLinux, som är giganter inom webbhotell-branschen. De insåg att deras kunder behövde ett alternativ till CentOS.
-
-För att garantera att projektet inte skulle köpas upp eller läggas ner (*som CentOS gjorde*), lämnade de dock snabbt över kontrollen till en **icke-vinstdrivande stiftelse** (*The AlmaLinux OS Foundation*).
-
-Idag backas projektet av jättar som:
-  - **Microsoft**
-  - **AWS (Amazon)**
-  - **ARM**
-  - **cPanel** (Standardverktyget för webbhotell)
-
-Detta gör att framtiden för operativsystemet anses vara mycket säker.
-
-## Hur bra är det?
-Kort sagt: **Det är så bra det kan bli för en server**.
-
- - **Stabilitet** AlmaLinux fokuserar på extrem stabilitet framför "nyhetens behag". Programvaror kraschar sällan. Uppdateringar testas mycket noga.
- - **Säkerhet** Det kommer med säkerhetsfunktioner aktiverade som standard (t.ex. SELinux och brandväggar), vilket du redan har märkt under din installation. Det är designat för att stå emot attacker.
- - **Lång support** Version 9 (som vi kör) stöds med säkerhetsuppdateringar ända till 2032. Vi behöver alltså inte installera om servern på nästan 10 år.
-
-## Hur populärt är det?
-Sedan lanseringen 2021 har AlmaLinux vuxit explosionsartat.
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<h1 id="vad-ar-almalinux">Vad är AlmaLinux?<a class="headerlink" href="#vad-ar-almalinux" title="Permanent link">&para;</a></h1>
+<p>AlmaLinux är ett gratis, öppen källkods-operativsystem för servrar.</p>
+<p>Det är en så kallad "<strong>Enterprise Linux</strong>"-distribution.</p>
+<p>Det viktigaste att veta är att AlmaLinux är 1:1 binärt kompatibelt med RHEL (<strong>Red Hat Enterprise Linux</strong>).</p>
+<p>Det betyder att AlmaLinux i praktiken är Red Hat (<em>världens största kommersiella Linux</em>), men helt gratis och utan krav på dyra licenser eller supportavtal.</p>
+<h2 id="bakgrund">Bakgrund<a class="headerlink" href="#bakgrund" title="Permanent link">&para;</a></h2>
+<p>För att förstå AlmaLinux måste man känna till dramat kring CentOS.</p>
+<p>I decennier var CentOS standardvalet för servrar. Det var en gratis kopia av Red Hat. I slutet av 2020 meddelade Red Hat (som äger CentOS) att de lägger ner den stabila versionen och ersätter den med CentOS Stream (en testversion för framtida uppdateringar).</p>
+<p>Världens systemadministratörer fick panik. De behövde ett stabilt system, inte en testbädd.</p>
+<p>AlmaLinux skapades som direkt svar på detta för att fylla tomrummet.</p>
+<h2 id="vem-ligger-bakom">Vem ligger bakom?<a class="headerlink" href="#vem-ligger-bakom" title="Permanent link">&para;</a></h2>
+<p>AlmaLinux startades ursprungligen av företaget CloudLinux, som är giganter inom webbhotell-branschen. De insåg att deras kunder behövde ett alternativ till CentOS.</p>
+<p>För att garantera att projektet inte skulle köpas upp eller läggas ner (<em>som CentOS gjorde</em>), lämnade de dock snabbt över kontrollen till en <strong>icke-vinstdrivande stiftelse</strong> (<em>The AlmaLinux OS Foundation</em>).</p>
+<p>Idag backas projektet av jättar som:
+  - <strong>Microsoft</strong>
+  - <strong>AWS (Amazon)</strong>
+  - <strong>ARM</strong>
+  - <strong>cPanel</strong> (Standardverktyget för webbhotell)</p>
+<p>Detta gör att framtiden för operativsystemet anses vara mycket säker.</p>
+<h2 id="hur-bra-ar-det">Hur bra är det?<a class="headerlink" href="#hur-bra-ar-det" title="Permanent link">&para;</a></h2>
+<p>Kort sagt: <strong>Det är så bra det kan bli för en server</strong>.</p>
+<ul>
+<li><strong>Stabilitet</strong> AlmaLinux fokuserar på extrem stabilitet framför "nyhetens behag". Programvaror kraschar sällan. Uppdateringar testas mycket noga.</li>
+<li><strong>Säkerhet</strong> Det kommer med säkerhetsfunktioner aktiverade som standard (t.ex. SELinux och brandväggar), vilket du redan har märkt under din installation. Det är designat för att stå emot attacker.</li>
+<li><strong>Lång support</strong> Version 9 (som vi kör) stöds med säkerhetsuppdateringar ända till 2032. Vi behöver alltså inte installera om servern på nästan 10 år.</li>
+</ul>
+<h2 id="hur-populart-ar-det">Hur populärt är det?<a class="headerlink" href="#hur-populart-ar-det" title="Permanent link">&para;</a></h2>
+<p>Sedan lanseringen 2021 har AlmaLinux vuxit explosionsartat.
 Det är idag ett av de två dominerande valen för att ersätta CentOS (det andra är Rocky Linux).
 Det används av NASA, CERN och majoriteten av världens webbhotell.
-Om du hyr en VPS idag är AlmaLinux ofta standardvalet jämte Ubuntu LTS.
-
-AlmaLinux har blivit standard inom storföretag, banker och hosting-industrin.
-
-## Slutsats
-Att jag valde AlmaLinux för vår "**MarketData**"-applikation är troligtvis ett bra val.
-
-Det kräver lite mer konfiguration i början (som vi sett med SSH-nycklar och databaser), men när det väl rullar är det en "stridsvagn" som sällan går sönder.
-</code></pre>
-<p>[^2]: # En kort introduktiontill SSH</p>
-<pre><code>SSH-nycklar (**Secure Shell keys**) är en metod för att identifiera sig och logga in på en server utan att använda ett traditionellt lösenord. Det anses vara betydligt säkrare än vanliga lösenord och är industristandard för serverhantering.
-
-## Hur fungerar det?
-Tekniken bygger på kryptografi med ett nyckelpar. Dessa två nycklar hör ihop matematiskt, men fyller olika funktioner:
-
-## Den privata nyckeln (Private Key)
-Sparas på din lokala dator (t.ex. i **~/.ssh/id_ed25519**) och fungerar som din personliga ID-handling.
-
-Den får aldrig delas med någon. Om någon kommer över denna kan de logga in som du.
-
-## Den publika nyckeln (Public Key)
-Placeras på servern du vill ansluta till (i filen **~/.ssh/authorized_keys**) och används för att verifiera att den privata nyckeln är äkta.
-
-Den är inte hemlig och kan kopieras till hur många servrar som helst.
-
-## En enkel liknelse
-För att förstå skillnaden kan man tänka på ett hänglås:
-  - Den **publika** nyckeln är som ett hänglås&lt;br&gt;
-    Du kan ge hänglåset till servern och säga "Sätt detta på dörren".&lt;br&gt;
+Om du hyr en VPS idag är AlmaLinux ofta standardvalet jämte Ubuntu LTS.</p>
+<p>AlmaLinux har blivit standard inom storföretag, banker och hosting-industrin.</p>
+<h2 id="slutsats">Slutsats<a class="headerlink" href="#slutsats" title="Permanent link">&para;</a></h2>
+<p>Att jag valde AlmaLinux för vår "<strong>MarketData</strong>"-applikation är troligtvis ett bra val.</p>
+<p>Det kräver lite mer konfiguration i början (som vi sett med SSH-nycklar och databaser), men när det väl rullar är det en "stridsvagn" som sällan går sönder.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<h1 id="en-kort-introduktiontill-ssh">En kort introduktiontill SSH<a class="headerlink" href="#en-kort-introduktiontill-ssh" title="Permanent link">&para;</a></h1>
+<p>SSH-nycklar (<strong>Secure Shell keys</strong>) är en metod för att identifiera sig och logga in på en server utan att använda ett traditionellt lösenord. Det anses vara betydligt säkrare än vanliga lösenord och är industristandard för serverhantering.</p>
+<h2 id="hur-fungerar-det">Hur fungerar det?<a class="headerlink" href="#hur-fungerar-det" title="Permanent link">&para;</a></h2>
+<p>Tekniken bygger på kryptografi med ett nyckelpar. Dessa två nycklar hör ihop matematiskt, men fyller olika funktioner:</p>
+<h2 id="den-privata-nyckeln-private-key">Den privata nyckeln (Private Key)<a class="headerlink" href="#den-privata-nyckeln-private-key" title="Permanent link">&para;</a></h2>
+<p>Sparas på din lokala dator (t.ex. i <strong>~/.ssh/id_ed25519</strong>) och fungerar som din personliga ID-handling.</p>
+<p>Den får aldrig delas med någon. Om någon kommer över denna kan de logga in som du.</p>
+<h2 id="den-publika-nyckeln-public-key">Den publika nyckeln (Public Key)<a class="headerlink" href="#den-publika-nyckeln-public-key" title="Permanent link">&para;</a></h2>
+<p>Placeras på servern du vill ansluta till (i filen <strong>~/.ssh/authorized_keys</strong>) och används för att verifiera att den privata nyckeln är äkta.</p>
+<p>Den är inte hemlig och kan kopieras till hur många servrar som helst.</p>
+<h2 id="en-enkel-liknelse">En enkel liknelse<a class="headerlink" href="#en-enkel-liknelse" title="Permanent link">&para;</a></h2>
+<p>För att förstå skillnaden kan man tänka på ett hänglås:
+  - Den <strong>publika</strong> nyckeln är som ett hänglås<br>
+    Du kan ge hänglåset till servern och säga "Sätt detta på dörren".<br>
     Vem som helst kan se låset, men ingen kan öppna det utan rätt nyckel.
-  - Den **privata** nyckeln är den faktiska fysiska nyckeln som du har i fickan&lt;br&gt;
-    Endast din nyckel kan öppna låset som sitter på servern.
-
-När du försöker logga in skickar servern en "utmaning" till din dator.
-
-Din dator löser utmaningen med din privata nyckel.
-
-Om det matchar serverns publika nyckel (hänglåset), släpps du in.
-
-## Varför använder vi SSH-nycklar?
-  - **Högre säkerhet**&lt;br&gt;
-    En SSH-nyckel är praktiskt taget omöjlig att knäcka med "brute-force" (gissningsattacker), till skillnad från korta lösenord.
-  - **Automatisering**&lt;br&gt;
-    Det möjliggör inloggning utan att en människa behöver sitta och skriva in ett lösenord. Detta är ett krav för att kunna köra automatiska script (t.ex. backup-script eller deploy.sh) mellan dator och server.
-  - **Bekvämlighet**&lt;br&gt;
-    Du slipper komma ihåg komplexa lösenord för varje server.
-</code></pre>
-<p>[^3]: # En kort förklaring till argumenten för ssh-keygen
-    <strong>-t</strong> anger vilken metod (algoritm) som ska användas.<br>
-    <strong>-b</strong> anger hur svår (storlek) nyckeln ska vara att knäcka.</p>
-<pre><code>### **-t rsa**
-står för "Type" och bestämmer vilken matematisk algoritm som ska användas för att generera nyckelparet./
-**RSA** (*Rivest–Shamir–Adleman*) är den äldsta och mest välkända algoritmen för kryptering./
-Den är "universell" och fungerar på precis alla system, även väldigt gamla servrar (vilket är dess största styrka).
-
-### **-b 4096**
-står för "Bits" och bestämmer längden på nyckeln.
-4096 betyder att nyckeln består av 4096 ettor och nollor.&lt;br&gt;
-Ju högre siffra, desto svårare är nyckeln att knäcka med "brute force" (datorer som gissar).&lt;br&gt;
-En RSA-nyckel på 2048 bitar anses vara säker idag, men 4096 är "framtidssäkert" och anses vara extremt säkert. Nackdelen är att den är lite långsammare att generera och använda än kortare nycklar, men för SSH märks det knappt.
-
-### **Notera** en viktig detalj
-
-### RSA (4096)
-Den "gamla trotjänaren". Fungerar överallt. Nycklarna blir fysiskt väldigt långa textsträngar.&lt;br&gt;
-### Ed25519
-Den "nya standarden". Den är säkrare än RSA och mycket snabbare, samtidigt som nyckeln är mycket kortare.
-
-Det verkar just nu som att Strato kräver användning av RSA men det kan ju ändras i framtiden.&lt;br&gt;
+  - Den <strong>privata</strong> nyckeln är den faktiska fysiska nyckeln som du har i fickan<br>
+    Endast din nyckel kan öppna låset som sitter på servern.</p>
+<p>När du försöker logga in skickar servern en "utmaning" till din dator.</p>
+<p>Din dator löser utmaningen med din privata nyckel.</p>
+<p>Om det matchar serverns publika nyckel (hänglåset), släpps du in.</p>
+<h2 id="varfor-anvander-vi-ssh-nycklar">Varför använder vi SSH-nycklar?<a class="headerlink" href="#varfor-anvander-vi-ssh-nycklar" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Högre säkerhet</strong><br>
+    En SSH-nyckel är praktiskt taget omöjlig att knäcka med "brute-force" (gissningsattacker), till skillnad från korta lösenord.</li>
+<li><strong>Automatisering</strong><br>
+    Det möjliggör inloggning utan att en människa behöver sitta och skriva in ett lösenord. Detta är ett krav för att kunna köra automatiska script (t.ex. backup-script eller deploy.sh) mellan dator och server.</li>
+<li><strong>Bekvämlighet</strong><br>
+    Du slipper komma ihåg komplexa lösenord för varje server.</li>
+</ul>
+<p><a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<h1 id="en-kort-forklaring-till-argumenten-for-ssh-keygen">En kort förklaring till argumenten för ssh-keygen<a class="headerlink" href="#en-kort-forklaring-till-argumenten-for-ssh-keygen" title="Permanent link">&para;</a></h1>
+<p><strong>-t</strong> anger vilken metod (algoritm) som ska användas.<br>
+<strong>-b</strong> anger hur svår (storlek) nyckeln ska vara att knäcka.</p>
+<h3 id="-t-rsa"><strong>-t rsa</strong><a class="headerlink" href="#-t-rsa" title="Permanent link">&para;</a></h3>
+<p>står för "Type" och bestämmer vilken matematisk algoritm som ska användas för att generera nyckelparet./
+<strong>RSA</strong> (<em>Rivest–Shamir–Adleman</em>) är den äldsta och mest välkända algoritmen för kryptering./
+Den är "universell" och fungerar på precis alla system, även väldigt gamla servrar (vilket är dess största styrka).</p>
+<h3 id="-b-4096"><strong>-b 4096</strong><a class="headerlink" href="#-b-4096" title="Permanent link">&para;</a></h3>
+<p>står för "Bits" och bestämmer längden på nyckeln.
+4096 betyder att nyckeln består av 4096 ettor och nollor.<br>
+Ju högre siffra, desto svårare är nyckeln att knäcka med "brute force" (datorer som gissar).<br>
+En RSA-nyckel på 2048 bitar anses vara säker idag, men 4096 är "framtidssäkert" och anses vara extremt säkert. Nackdelen är att den är lite långsammare att generera och använda än kortare nycklar, men för SSH märks det knappt.</p>
+<h3 id="notera-en-viktig-detalj"><strong>Notera</strong> en viktig detalj<a class="headerlink" href="#notera-en-viktig-detalj" title="Permanent link">&para;</a></h3>
+<h3 id="rsa-4096">RSA (4096)<a class="headerlink" href="#rsa-4096" title="Permanent link">&para;</a></h3>
+<p>Den "gamla trotjänaren". Fungerar överallt. Nycklarna blir fysiskt väldigt långa textsträngar.<br></p>
+<h3 id="ed25519">Ed25519<a class="headerlink" href="#ed25519" title="Permanent link">&para;</a></h3>
+<p>Den "nya standarden". Den är säkrare än RSA och mycket snabbare, samtidigt som nyckeln är mycket kortare.</p>
+<p>Det verkar just nu som att Strato kräver användning av RSA men det kan ju ändras i framtiden.<br>
 Om de ändrar sin strategi så att de accepterar ed25519 så skall du istället använda dig av kommandot
-  - **ssh-keygen -t ed25519 -C "MarketData-VPS"**
-
-*Notera att -b inte behövs för ed25519 eftersom den alltid har en fast, säker längd*.
-</code></pre>
+  - <strong>ssh-keygen -t ed25519 -C "MarketData-VPS"</strong></p>
+<p><em>Notera att -b inte behövs för ed25519 eftersom den alltid har en fast, säker längd</em>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
