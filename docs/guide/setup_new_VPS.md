@@ -5,8 +5,8 @@ Om du någon gång behöver installera om din VPS-server från början så kan d
 Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.
 
-```diff
-- Värt att notera att jag använder mig av Mac vilket innebär att alla kommandon som körs lokalt kanske måste modifieras om du kör Windows.
+```bash {: .courier-tight }
+Värt att notera att jag använder mig av Mac vilket innebär att alla kommandon som körs lokalt kanske måste modifieras om du kör Windows.
 ```
 
 ```bash
