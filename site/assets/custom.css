@@ -126,3 +126,8 @@ body {
   background-color: transparent !important;
   border: none !important;
 }
+.md-typeset pre > code {
+  border: 1px solid darkblue !important;
+  border-radius: 4px;
+  background-color: #e7e5e5;
+}
