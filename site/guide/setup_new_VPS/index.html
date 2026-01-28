@@ -2127,12 +2127,9 @@ systemctl start mysqld
 <h3 id="skapa-databas-och-anvandare">Skapa Databas och Användare<a class="headerlink" href="#skapa-databas-och-anvandare" title="Permanent link">&para;</a></h3>
 <p>Nu loggar vi in "på riktigt" och skapar applikationsdatabasen och användare.</p>
 <pre><code class="language-bash">mysql -u root -p
-````
-
-och ange lösenordet du satte ovan.
-
-```bash
--- Skapa databasen
+</code></pre>
+<p>och ange lösenordet du satte ovan.</p>
+<pre><code class="language-bash">-- Skapa databasen
 CREATE DATABASE MD;
 -- Skapa användaren 'Admin' som får logga in utifrån (för Workbench)
 CREATE USER 'Admin'@'%' IDENTIFIED BY 'Maija_2609';

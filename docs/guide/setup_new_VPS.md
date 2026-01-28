@@ -5,7 +5,7 @@ Om du någon gång behöver installera om din VPS-server från början så kan d
 Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.
 
-```text
+```bash
 Alla kommandon är noterade i en sån här ruta
 ```
 
@@ -37,25 +37,12 @@ För att skapa en SSH-nyckel[^2] i Mac-miljö använder jag mig av ssh-keygen[^3
 ```bash
 ssh-keygen -t rsa -b 4096 -C "MarketData-VPS"
 ```
-Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.
+Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' (lösenord) till SSH-nyckeln.
 
-I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.
+I kommentaren nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn i framtiden. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.
 
-För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (*långa haranger av tecken*).
-
->*Generating public/private rsa key pair.*<br>
-*Enter file in which to save the key (/Users/siren/.ssh/id_rsa):*<br>
->**/Users/siren/.ssh/STRATO**<br>
->*Enter passphrase (empty for no passphrase):*<br>
-**MarketData**<br>
-*Enter same passphrase again:*<br>
-**MarketData**<br>
-*Your identification has been saved in /Users/siren/.ssh/STRATO*<br>
-*Your public key has been saved in /Users/siren/.ssh/STRATO.pub*<br>
-*The key fingerprint is:*<br>
-...<br>
-*The key's randomart image is:*<br>
-...
+>File in which to save the key: **/Users/siren/.ssh/STRATO**<br>
+Passphrase: **MarketData**<br>
 
 ### Konfigurera lokal SSH-konfigurering
 
@@ -67,7 +54,8 @@ Detta gör att du kan skriva **ssh root@87.106.130.217** utan att behöva lägga
 nano ~/.ssh/config
 ```
 Klistra in följande text
-```ini
+
+```bash
 Host 87.106.130.217
     User root
     IdentityFile ~/.ssh/STRATO
@@ -79,11 +67,13 @@ Spara filen och avsluta nano med hjälp av : **Ctrl+O, Enter, Ctrl+X**
 ## 2. Ominstallation via Strato-panelen
 Efter att du skapat din SSH-nyckel så skall du logga in mot Strato
 
-```ini
+```bash
 https://www.strato.se/apps/CustomerService
 ```
-Ditt kundnummer är : **77971995**<br>
-och ditt lösenord är : **Maija---9377**
+>Kundnummer : **77971995**<br>
+Lösenord : **Maija---9377**
+
+![Login Screen Diagram](./assets/Agreement_Server_info.png)
 
 Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
 *Jag skriver ner de som gäller idag så att vi har dem lagrade även utanför Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.*
@@ -321,19 +311,19 @@ mysql_secure_installation
 För att webbservern ska kunna köra din kod och prata med databasen.
 
 1. Installera PHP och nödvändiga moduler:
-```ini
+```bash
 dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring -y
 ```
 2. Starta PHP-processhanteraren:
-```ini
+```bash
 systemctl enable --now php-fpm
 ```
 3. Starta om Apache (så den hittar PHP):
-```ini
+```bash
 systemctl restart httpd
 ```
 4. Verifiera att det körs:
-```ini
+```bash
 systemctl status php-fpm
 ```
 - *Du skall se en grön text som säger "**active (running)**"*
@@ -342,7 +332,7 @@ systemctl status php-fpm
 
 ### Konfigurera Brandväggen (Firewalld)
 Vi måste stänga alla portar utom de vi faktiskt använder.
-```ini
+```bash
 dnf install firewalld -y
 systemctl enable --now firewalld
 firewall-cmd --permanent --add-service=ssh
@@ -354,15 +344,18 @@ firewall-cmd --reload
 ### Installera Fail2Ban
 Detta skyddar servern mot "brute-force"-attacker genom att bannlysa IP-adresser som gissar fel lösenord för många gånger.
 1. Installera EPEL (Extra Packages for Enterprise Linux):
-```ini
+
+```bash
 dnf install epel-release -y
 ```
 2. Installera Fail2Ban:
-```ini
+
+```bash
 dnf install fail2ban fail2ban-firewalld -y
 ```
 3. Konfigurera (skapa filen jail.local)
-```ini
+
+```bash
 [DEFAULT]
 bantime = 24h
 findtime = 10m
@@ -387,18 +380,21 @@ backend = systemd
 | **banaction**  | Vilken metod som används för att blockera (Firewalld).  |
 
 ### 4. Starta tjänsten
-```ini
+
+```bash
 systemctl enable --now fail2ban
 ```
 
 ### 5. Verifiera att tjänsten fugerar
-```ini
+
+```bash
 fail2ban-client status sshd
 ```
 
 ### Om jag råkat 'banna' mig själv
 Om du oavsiktligt råkat banna dig själv så kan du göra 'unban' av en specifik IP-adress mhanedanstående kommando (från en annan IP som till exempel VNC-konsolen)
-```ini
+
+```bash
 fail2ban-client set sshd unbanip 83.251.178.197
 ```
 ---
@@ -416,14 +412,16 @@ Om du blir utlåst, använd VNC-konsolen i Strato och kör följande kommandon f
 Istället för att editera originalfilen för SSH konfigurering (som i regel görs 'override' på) så skapar vi en sk "00"-fil.<br>
 OpenSSH läser alltid in filer i alfabetisk ordning vilket gör att 00-fix.conf kommer att appliceras före normalkonfigureringen.
 
-```ini
+```bash
 echo -e "PermitRootLogin yes<br>nPasswordAuthentication yes" > /etc/ssh/sshd_config.d/00-fix.conf
 ```
 1. **Sätt SELinux till Permissive (tillåtande)**:<br>
 I AlmaLinux, räcker det inte med att filer har korrekta rättigheter, de måste även ha en korrekt sk "Security Context". Om Security Context är felaktig så kommer det att blockera dig. Ändra därför till "PERMISSIVE" så att blockerigen hävs.
-```ini
+
+```bash
 nano /etc/selinux/config
-````
+```
+
 >Find the line:<br>
 SELINUX=enforcing<br>
 Change it to:<br>
@@ -438,26 +436,29 @@ När du laddat upp dina filer (via ditt **deploy.sh** skript), måste du se till
 
 Kör dessa kommandon efter varje stor uppladdning:
 1. Ge ägarskap till Apache:
-```ini
+
+```bash
 chown -R apache:apache /var/www/html/MD
 ```
 2. Sätt rättigheter på mappar (755):
-```ini
+
+```bash
 find /var/www/html/MD -type d -exec chmod 755 {} <br>;
 ```
 3. Sätt rättigheter på filer (644):
-```ini
+
+```bash
 find /var/www/html/MD -type f -exec chmod 644 {} <br>;
 ```
 4. Tagga filer för SELinux (om du kör SELinux i Enforcing-läge):
-```ini
+```bash
 chcon -R -t httpd_sys_content_t /var/www/html/MD
 ```
 
 ## 10. Lagra ditt SSH-lösenord (lokalt)
 Lagra SSH-lösenordet i 'Apple Keychain' (*gäller bara om du kör Mac*)
 
-```ii
+```bash
 - **ssh-add --apple-use-keychain ~/.ssh/STRATO**
 ```
 Om du däremot använder dig av Windows så måste du göra detta på ett helt annat sätt.
@@ -471,17 +472,20 @@ Som standard är denna tjänst ofta avstängd i Windows. Du måste slå på den.
 1. Öppna **PowerShell** som Administratör<br>
 (*Högerklicka på Start-menyn -> välj Terminal (Admin) eller PowerShell (Admin)*).
 2. Kör följande kommando för att ställa in så att tjänsten startar automatiskt:
-```ini
+
+```bash
 Get-Service ssh-agent | Set-Service -StartupType Automatic
 ```
 3. Starta tjänsten nu direkt:
-```ini
+
+```bash
 Start-Service ssh-agent
 ```
 ### Lägg till nyckeln
 Nu när "hovmästaren" (agenten) är vaken, kan du ge nyckeln till honom.
 1. I samma PowerShell-fönster, kör:
-```ini
+
+```bash
 ssh-add C:<br>Users<br>DittNamn<br>.ssh<br>STRATO
 ```
 - (*Byt ut DittNamn och sökvägen till där nyckeln ligger*).
@@ -502,14 +506,14 @@ root user är numera ändrad till **mormaija123**
 
 ### Montera disken
 
-```ini
+```bash
 mkdir -p /mnt/vps
 mount /dev/vda4 /mnt/vps
 ```
 
 ### Ändra root lösenord
 
-```ini
+```bash
 chroot /mnt/vps passwd root
 ```
 
@@ -631,4 +635,3 @@ chroot /mnt/vps passwd root
       - **ssh-keygen -t ed25519 -C "MarketData-VPS"**
 
     *Notera att -b inte behövs för ed25519 eftersom den alltid har en fast, säker längd*.
-
