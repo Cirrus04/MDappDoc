@@ -105,3 +105,24 @@ body {
   white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
 
 }
+/* 1. Target the code block wrapper or element */
+.md-typeset .courier-tight {
+  /* This ensures the wrapper (if exists) gets the border */
+  border: 1px solid darkblue !important;
+  border-radius: 4px;
+  background-color: #e7e5e5;
+  padding: 10px; /* Padding on the container */
+  display: block; /* Ensures it takes up space */
+}
+
+/* 2. Target the actual text inside to fix fonts */
+.md-typeset .courier-tight code {
+  font-family: "Courier New", Courier, monospace !important;
+  line-height: 1.0;
+  font-size: 0.6rem;
+  white-space: pre-wrap;
+
+  /* Reset background/border on the inner code element so it doesn't double up */
+  background-color: transparent !important;
+  border: none !important;
+}
