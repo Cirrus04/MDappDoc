@@ -82,14 +82,14 @@ body {
 }
 
 .md-typeset pre.courier-tight {
-  font-family: monospace, Courier, "Courier New", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   line-height: 1.0;
   font-size: 0.6rem;
   padding: 10px;
-  background-color: #e7e5e5; /* Optional: Add a background color for code blocks */
-  border-radius: 4px;          /* Optional: Add rounded corners */
+  background-color: #e7e5e5;
+  border-radius: 4px;
   border: 1px solid darkblue;
-  white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
+  white-space: pre-wrap;
 }
 
 .md-typeset blockquote {
