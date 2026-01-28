@@ -18,6 +18,6 @@ echo "Starting deployment for version: $VERSION"
 git add .
 git commit -m "New Version v$VERSION"
 git push origin main
-mkdocs gh-deploy
+mkdocs gh-deploy --force
 
 echo "Success! Version $VERSION has been deployed."
