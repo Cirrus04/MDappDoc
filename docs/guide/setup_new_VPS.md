@@ -6,7 +6,10 @@ Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen 
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.
 
 ```text
-Värt att notera att jag använder mig av Mac vilket innebär att alla kommandon som körs lokalt kanske måste modifieras om du kör Windows.
+Värt att notera:
+Jag använder mig av Mac istf. Windows
+vilket innebär att alla kommandon som
+körs lokalt troligen måste modifieras
 ```
 
 ```bash
