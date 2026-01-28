@@ -88,7 +88,7 @@ body {
   padding: 10px;
   background-color: #e7e5e5; /* Optional: Add a background color for code blocks */
   border-radius: 4px;          /* Optional: Add rounded corners */
-  border:darkblue;
+  border: 1px solid darkblue;
   white-space: pre-wrap;       /* Optional: Allows long lines to wrap */
 }
 

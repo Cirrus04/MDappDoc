@@ -7,7 +7,7 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 
 ```diff
 - Värt att notera att jag använder mig av Mac vilket innebär att alla kommandon som körs lokalt kanske måste modifieras om du kör Windows.
-````
+```
 
 ```bash
 Alla kommandon är noterade i en sån här ruta
