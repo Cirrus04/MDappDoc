@@ -5,20 +5,20 @@ Om du någon gång behöver installera om din VPS-server från början så kan d
 Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.
 
+```diff
+- Värt att notera att jag använder mig av Mac vilket innebär att alla kommandon som körs lokalt kanske måste modifieras om du kör Windows.
+````
+
 ```bash
 Alla kommandon är noterade i en sån här ruta
 ```
 
-Ibland kan det finnas ett exempel på en dialog som kommandot kommer att ha med dig (för att erhålla ytterligare direktiv).
+Ibland har jag lagt in utdrag ur dialoger alternativt  argument som jag använt mig av i samband med att jag skapade VPS-servern.
 
-Dialogen är då markerad på nedanstående sätt med, av mig, angivna svar i **fet stil**
+Dessa är då markerade på nedanstående sätt
 
-### **Exempel:**
-> *Securing the MySQL server deployment.*<br>
-> *Enter password for user root:* **Maija_2609**<br>
-> *The 'validate_password' component is installed on the server.*<br>
-> ...
-> *Success.*
+> File in which to save the key: **/Users/siren/.ssh/STRATO**<br>
+Passphrase: **MarketData**<br>
 
 Naturligtvis kan vissa avsnitt vara lite blodfattiga och skulle må väl av lite mer beskrivande text men vi börjar så här och kompletterar med klargörande text om det visar sig nödvändigt.
 
@@ -73,30 +73,11 @@ https://www.strato.se/apps/CustomerService
 >Kundnummer : **77971995**<br>
 Lösenord : **Maija---9377**
 
-![Login Screen Diagram](./assets/Agreement_Server_info.png)
+Du kommer nu att få upp en sida, enligt nedan, med dina avtals- och server-upgifter.
 
-Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
-*Jag skriver ner de som gäller idag så att vi har dem lagrade även utanför Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.*
+![Login Screen Diagram](../assets/Agreement_Server_info.png)
 
->## Avtalsinformation
->Ordernummer : *9114028*<br>
->Paketnamn : **STRATO VPS Linux VC4-8** (12.se)<br>
->Pris / månad : **120 kr/månad**.<br>
->Beställningsdatum : **27/11/2024**<br>
->Aktiv sedan : **27/11/2024**<br>
->Nästa möjliga uppsägning : **27/11/2026**<br>
-
->## Serveruppgifter
->Operativsystem : **AlmaLinux 9**<br>
->Processor : **4 Kärnor**<br>
->RAM : **8 GB**<br>
->Lagringsutrymme : **240 GB**<br>
->Användare : **root**<br>
->Värd : **87.106.130.217**<br>
->Server IP-adress (IPv4) : **87.106.130.217**<br>
->Server IP-adress (IPv6) : **2a01:239:363:8500::1**
-
-I slutet av sidan ser du ett antal knappar där "**Ominstallation**" är det val du skall göra när du avser att göra en ominstallation av VPS-servern.
+Längst ner på sidan ser du en knapprad där "**Ominstallation**" är det val du skall göra när du avser att skapa en ny VPS-server.
 
 När du klickar knappen "**Ominstallation**" så erhålls lite varningar om vad som kommer att ske och att det inte finns någon väg tillbaka om valet är att gå vidare.
 
@@ -104,20 +85,21 @@ Den aktuella installationen kommer att helt raderas.
 
 När du väljer att gå vidare så måste du ange din SSH-nyckel.
 
-Du kopierar din SSH-nyckel (som är lååång och ligger i filen **/Users/siren/.ssh/STRATO.pub** (eller vilken fil du nu angav till ssh-keygen)). Kopiera och klistra in den i **Strato Re-installation wizard**.
-
-I Mac miljö hämtar du den enklast mha
+Du kopierar din SSH-nyckel som ligger i filen **/Users/siren/.ssh/STRATO.pub** (*eller vilken fil du angav då du genererade din SSH-nyckel*)).
 
 ```bash
 cat ~/.ssh/STRATO.pub
 ```
+
+Kopiera och klistra in den i **Strato Re-installation wizard**.
+
 Just nu ser vår SSH-nyckel som följer (*inses lätt att det blir tämligen svårt att knappa in den koden manuellt)*:
 
 >*ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDgxP5ButcDcA29EoX35TYCzkQrem8Vj0D2EG0RVYdfsBcmdVxhlXZiQLeMn6zWEevH+J73rQx0kGmeLxeclbHY/bdpLV1HdVQb3M4RjU+ry0Ki8BrujnO7yZ2J36uUZ7j9hvAfygOtGdqpwqkYntrJPL7LiEF6WvcVPF41NgZ4Q+e0LbGwqKjAVw5hR1u3ORG5sdhP5oYG6ICNz6ftJXSTc3SDTCgRT+rp3n5/xcuiOxIzngSMbXH31vyKmMNwADs9T4+0LNROlz5cCamoFHBjkYhIDqXOsrcDcqOYEwJEso+RjW9XmwwmdGHIX2m/fF26X3RaVwXLK9haqQD++CkDLkFfGzputGyR8mzTuPyw5OLs70i1RDNLMYLD/yF4WaHOupAcDgpsjjMULfVEiye28uemEkD0WLgJaCCWgAxW6W5IU1x/fUi3OQXLlG9Vpb2gYltZ7ojsiR8dXA4aZTAN2V78CeVchPJUdD4c6QoJmytgPK06iJFBiodSdGAj6vtbiqBQGVC74OPHdvPemY8GKlkoeAv+pXjaRkbao4oyZgZ5hbyyzS1IUyDbwexcyRRYrb1NQpvv70U0OQ+XOCORvarZZRQfuc16P6hB4C2u0eYlieHAZG3B2mnIzG6+FxyYQzTBbBN7GXO/49NydmA2cwZWJ17oQCIFzQMJbj3ww== MarketData-VPS*
 
 **Observera** att ett lösenord måste anges när du startar en om-installation av VPS-servern.
 
-Jag använde **MarketData2025** som  lösenord. Du kanske vill ha något helt annat. Anteckna det lösenord du väljer att använda dig av på något säkert ställe då den är lätt att glömma.
+Jag använde **MarketData2025** som lösenord. Du kanske vill ha något helt annat. Anteckna det lösenord du väljer att använda dig av på något säkert ställe då den är lätt att glömma.
 
 All data för den nuvarande installationen kommer nu att raderas.
 

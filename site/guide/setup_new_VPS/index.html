@@ -828,6 +828,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#9-slutforande-ladda-upp-och-satt-rattigheter" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Slutförande: Ladda upp och Sätt rättigheter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
     <span class="md-ellipsis">
       10. Lagra ditt SSH-lösenord (lokalt)
@@ -1883,6 +1892,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#9-slutforande-ladda-upp-och-satt-rattigheter" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Slutförande: Ladda upp och Sätt rättigheter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#10-lagra-ditt-ssh-losenord-lokalt" class="md-nav__link">
     <span class="md-ellipsis">
       10. Lagra ditt SSH-lösenord (lokalt)
@@ -1944,7 +1962,7 @@
 <p>Om du någon gång behöver installera om din VPS-server från början så kan denna handledning vara till viss hjälp.</p>
 <p>Har försökt ta med samtliga nödvändiga steg för att göra ominstallationen så enkel som möjligt.
 Har även försökt ge några kommentarer så att du vet vad du installerar och varför.</p>
-<pre><code class="language-text">Alla kommandon är noterade i en sån här ruta
+<pre><code class="language-bash">Alla kommandon är noterade i en sån här ruta
 </code></pre>
 <p>Ibland kan det finnas ett exempel på en dialog som kommandot kommer att ha med dig (för att erhålla ytterligare direktiv).</p>
 <p>Dialogen är då markerad på nedanstående sätt med, av mig, angivna svar i <strong>fet stil</strong></p>
@@ -1966,23 +1984,11 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <p><em>(Du kanske föredrar </em><em>Windows</em><em> och måste då använda dig av något annat verktyg för att skapa din SSH-nyckel.)</em></p>
 <pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;MarketData-VPS&quot;
 </code></pre>
-<p>Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' för SSH-nyckeln.</p>
-<p>I dialogen nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.</p>
-<p>För tydlighets skull har jag utelämnat såväl 'fingerprint' samt 'image' för SSH-nyckeln (<em>långa haranger av tecken</em>).</p>
+<p>Ange namnet till den fil i vilken SSH-nyckeln skall skapas samt ge ett lämpligt 'passphrase' (lösenord) till SSH-nyckeln.</p>
+<p>I kommentaren nedan så ser du de namn jag valt för den nuvarande installationen av vår gemensamma VPS-server. Du kanske vill använda andra namn i framtiden. Om så, anteckna dem någonstans för säkerhets skull - du kanske behöver använda dem någon gång i framtiden.</p>
 <blockquote>
-<p><em>Generating public/private rsa key pair.</em><br>
-<em>Enter file in which to save the key (/Users/siren/.ssh/id_rsa):</em><br>
-<strong>/Users/siren/.ssh/STRATO</strong><br>
-<em>Enter passphrase (empty for no passphrase):</em><br>
-<strong>MarketData</strong><br>
-<em>Enter same passphrase again:</em><br>
-<strong>MarketData</strong><br>
-<em>Your identification has been saved in /Users/siren/.ssh/STRATO</em><br>
-<em>Your public key has been saved in /Users/siren/.ssh/STRATO.pub</em><br>
-<em>The key fingerprint is:</em><br>
-...<br>
-<em>The key's randomart image is:</em><br>
-...</p>
+<p>File in which to save the key: <strong>/Users/siren/.ssh/STRATO</strong><br>
+Passphrase: <strong>MarketData</strong><br></p>
 </blockquote>
 <h3 id="konfigurera-lokal-ssh-konfigurering">Konfigurera lokal SSH-konfigurering<a class="headerlink" href="#konfigurera-lokal-ssh-konfigurering" title="Permanent link">&para;</a></h3>
 <p>För att slippa ange vilken nyckelfil som ska användas vid varje inloggning, ställ in din lokala konfiguration.</p>
@@ -1990,7 +1996,7 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <pre><code class="language-bash">nano ~/.ssh/config
 </code></pre>
 <p>Klistra in följande text</p>
-<pre><code class="language-ini">Host 87.106.130.217
+<pre><code class="language-bash">Host 87.106.130.217
     User root
     IdentityFile ~/.ssh/STRATO
     IdentitiesOnly yes
@@ -1999,10 +2005,13 @@ Har även försökt ge några kommentarer så att du vet vad du installerar och 
 <hr />
 <h2 id="2-ominstallation-via-strato-panelen">2. Ominstallation via Strato-panelen<a class="headerlink" href="#2-ominstallation-via-strato-panelen" title="Permanent link">&para;</a></h2>
 <p>Efter att du skapat din SSH-nyckel så skall du logga in mot Strato</p>
-<pre><code class="language-ini">https://www.strato.se/apps/CustomerService
+<pre><code class="language-bash">https://www.strato.se/apps/CustomerService
 </code></pre>
-<p>Ditt kundnummer är : <strong>77971995</strong><br>
-och ditt lösenord är : <strong>Maija---9377</strong></p>
+<blockquote>
+<p>Kundnummer : <strong>77971995</strong><br>
+Lösenord : <strong>Maija---9377</strong></p>
+</blockquote>
+<p><img alt="Login Screen Diagram" src="./assets/Agreement_Server_info.png" /></p>
 <p>Du kommer nu att få upp en sida med dina avtals- och server-upgifter.
 <em>Jag skriver ner de som gäller idag så att vi har dem lagrade även utanför Strato. Dessa är inget du behöver bekymra dig om då de inte har någon bäring på ominstallationen i sig.</em></p>
 <blockquote>
@@ -2197,28 +2206,28 @@ EXIT;
 <ol>
 <li>Installera PHP och nödvändiga moduler:</li>
 </ol>
-<pre><code class="language-ini">dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring -y
+<pre><code class="language-bash">dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring -y
 </code></pre>
 <ol>
 <li>Starta PHP-processhanteraren:</li>
 </ol>
-<pre><code class="language-ini">systemctl enable --now php-fpm
+<pre><code class="language-bash">systemctl enable --now php-fpm
 </code></pre>
 <ol>
 <li>Starta om Apache (så den hittar PHP):</li>
 </ol>
-<pre><code class="language-ini">systemctl restart httpd
+<pre><code class="language-bash">systemctl restart httpd
 </code></pre>
 <ol>
 <li>Verifiera att det körs:</li>
 </ol>
-<pre><code class="language-ini">systemctl status php-fpm
+<pre><code class="language-bash">systemctl status php-fpm
 </code></pre>
 <h2 id="-du-skall-se-en-gron-text-som-sager-active-running">- <em>Du skall se en grön text som säger "</em><em>active (running)</em><em>"</em><a class="headerlink" href="#-du-skall-se-en-gron-text-som-sager-active-running" title="Permanent link">&para;</a></h2>
 <h2 id="7-sakerhet-brandvagg-fail2ban">7. Säkerhet (Brandvägg &amp; Fail2Ban)<a class="headerlink" href="#7-sakerhet-brandvagg-fail2ban" title="Permanent link">&para;</a></h2>
 <h3 id="konfigurera-brandvaggen-firewalld">Konfigurera Brandväggen (Firewalld)<a class="headerlink" href="#konfigurera-brandvaggen-firewalld" title="Permanent link">&para;</a></h3>
 <p>Vi måste stänga alla portar utom de vi faktiskt använder.</p>
-<pre><code class="language-ini">dnf install firewalld -y
+<pre><code class="language-bash">dnf install firewalld -y
 systemctl enable --now firewalld
 firewall-cmd --permanent --add-service=ssh
 firewall-cmd --permanent --add-service=http
@@ -2229,17 +2238,17 @@ firewall-cmd --reload
 <h3 id="installera-fail2ban">Installera Fail2Ban<a class="headerlink" href="#installera-fail2ban" title="Permanent link">&para;</a></h3>
 <p>Detta skyddar servern mot "brute-force"-attacker genom att bannlysa IP-adresser som gissar fel lösenord för många gånger.
 1. Installera EPEL (Extra Packages for Enterprise Linux):</p>
-<pre><code class="language-ini">dnf install epel-release -y
+<pre><code class="language-bash">dnf install epel-release -y
 </code></pre>
 <ol>
 <li>Installera Fail2Ban:</li>
 </ol>
-<pre><code class="language-ini">dnf install fail2ban fail2ban-firewalld -y
+<pre><code class="language-bash">dnf install fail2ban fail2ban-firewalld -y
 </code></pre>
 <ol>
 <li>Konfigurera (skapa filen jail.local)</li>
 </ol>
-<pre><code class="language-ini">[DEFAULT]
+<pre><code class="language-bash">[DEFAULT]
 bantime = 24h
 findtime = 10m
 maxretry = 5
@@ -2284,14 +2293,14 @@ backend = systemd
 </tbody>
 </table>
 <h3 id="4-starta-tjansten">4. Starta tjänsten<a class="headerlink" href="#4-starta-tjansten" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">systemctl enable --now fail2ban
+<pre><code class="language-bash">systemctl enable --now fail2ban
 </code></pre>
 <h3 id="5-verifiera-att-tjansten-fugerar">5. Verifiera att tjänsten fugerar<a class="headerlink" href="#5-verifiera-att-tjansten-fugerar" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">fail2ban-client status sshd
+<pre><code class="language-bash">fail2ban-client status sshd
 </code></pre>
 <h3 id="om-jag-rakat-banna-mig-sjalv">Om jag råkat 'banna' mig själv<a class="headerlink" href="#om-jag-rakat-banna-mig-sjalv" title="Permanent link">&para;</a></h3>
 <p>Om du oavsiktligt råkat banna dig själv så kan du göra 'unban' av en specifik IP-adress mhanedanstående kommando (från en annan IP som till exempel VNC-konsolen)</p>
-<pre><code class="language-ini">fail2ban-client set sshd unbanip 83.251.178.197
+<pre><code class="language-bash">fail2ban-client set sshd unbanip 83.251.178.197
 </code></pre>
 <hr />
 <h2 id="8-ssh-rattigheter-den-svara-biten">8. SSH &amp; Rättigheter (Den svåra biten)<a class="headerlink" href="#8-ssh-rattigheter-den-svara-biten" title="Permanent link">&para;</a></h2>
@@ -2305,49 +2314,53 @@ backend = systemd
 Istället för att editera originalfilen för SSH konfigurering (som i regel görs 'override' på) så skapar vi en sk "00"-fil.<br>
 OpenSSH läser alltid in filer i alfabetisk ordning vilket gör att 00-fix.conf kommer att appliceras före normalkonfigureringen.</li>
 </ol>
-<pre><code class="language-ini">echo -e &quot;PermitRootLogin yes&lt;br&gt;nPasswordAuthentication yes&quot; &gt; /etc/ssh/sshd_config.d/00-fix.conf
+<pre><code class="language-bash">echo -e &quot;PermitRootLogin yes&lt;br&gt;nPasswordAuthentication yes&quot; &gt; /etc/ssh/sshd_config.d/00-fix.conf
 </code></pre>
 <ol>
 <li><strong>Sätt SELinux till Permissive (tillåtande)</strong>:<br>
 I AlmaLinux, räcker det inte med att filer har korrekta rättigheter, de måste även ha en korrekt sk "Security Context". Om Security Context är felaktig så kommer det att blockera dig. Ändra därför till "PERMISSIVE" så att blockerigen hävs.</li>
 </ol>
-<pre><code class="language-ini">nano /etc/selinux/config
-````
-&gt;Find the line:&lt;br&gt;
-SELINUX=enforcing&lt;br&gt;
-Change it to:&lt;br&gt;
-SELINUX=permissive&lt;br&gt;
-*Save the file (Ctrl+O, Enter) and Exit (Ctrl+X)*
-
-- ändra till **SELINUX=permissive**.
-
-1. **Starta om**: reboot.
-## 9. Slutförande: Ladda upp och Sätt rättigheter
-När du laddat upp dina filer (via ditt **deploy.sh** skript), måste du se till att webbservern äger dem, annars kan inte sidan visas.
-
-Kör dessa kommandon efter varje stor uppladdning:
-1. Ge ägarskap till Apache:
-```ini
-chown -R apache:apache /var/www/html/MD
+<pre><code class="language-bash">nano /etc/selinux/config
+</code></pre>
+<blockquote>
+<p>Find the line:<br>
+SELINUX=enforcing<br>
+Change it to:<br>
+SELINUX=permissive<br>
+<em>Save the file (Ctrl+O, Enter) and Exit (Ctrl+X)</em></p>
+</blockquote>
+<ul>
+<li>
+<p>ändra till <strong>SELINUX=permissive</strong>.</p>
+</li>
+<li>
+<p><strong>Starta om</strong>: reboot.</p>
+</li>
+</ul>
+<h2 id="9-slutforande-ladda-upp-och-satt-rattigheter">9. Slutförande: Ladda upp och Sätt rättigheter<a class="headerlink" href="#9-slutforande-ladda-upp-och-satt-rattigheter" title="Permanent link">&para;</a></h2>
+<p>När du laddat upp dina filer (via ditt <strong>deploy.sh</strong> skript), måste du se till att webbservern äger dem, annars kan inte sidan visas.</p>
+<p>Kör dessa kommandon efter varje stor uppladdning:
+1. Ge ägarskap till Apache:</p>
+<pre><code class="language-bash">chown -R apache:apache /var/www/html/MD
 </code></pre>
 <ol>
 <li>Sätt rättigheter på mappar (755):</li>
 </ol>
-<pre><code class="language-ini">find /var/www/html/MD -type d -exec chmod 755 {} &lt;br&gt;;
+<pre><code class="language-bash">find /var/www/html/MD -type d -exec chmod 755 {} &lt;br&gt;;
 </code></pre>
 <ol>
 <li>Sätt rättigheter på filer (644):</li>
 </ol>
-<pre><code class="language-ini">find /var/www/html/MD -type f -exec chmod 644 {} &lt;br&gt;;
+<pre><code class="language-bash">find /var/www/html/MD -type f -exec chmod 644 {} &lt;br&gt;;
 </code></pre>
 <ol>
 <li>Tagga filer för SELinux (om du kör SELinux i Enforcing-läge):</li>
 </ol>
-<pre><code class="language-ini">chcon -R -t httpd_sys_content_t /var/www/html/MD
+<pre><code class="language-bash">chcon -R -t httpd_sys_content_t /var/www/html/MD
 </code></pre>
 <h2 id="10-lagra-ditt-ssh-losenord-lokalt">10. Lagra ditt SSH-lösenord (lokalt)<a class="headerlink" href="#10-lagra-ditt-ssh-losenord-lokalt" title="Permanent link">&para;</a></h2>
 <p>Lagra SSH-lösenordet i 'Apple Keychain' (<em>gäller bara om du kör Mac</em>)</p>
-<pre><code class="language-ii">- **ssh-add --apple-use-keychain ~/.ssh/STRATO**
+<pre><code class="language-bash">- **ssh-add --apple-use-keychain ~/.ssh/STRATO**
 </code></pre>
 <p>Om du däremot använder dig av Windows så måste du göra detta på ett helt annat sätt.</p>
 <p>Skulle gissa på att du där gör något i stil med följande.</p>
@@ -2357,17 +2370,17 @@ chown -R apache:apache /var/www/html/MD
 1. Öppna <strong>PowerShell</strong> som Administratör<br>
 (<em>Högerklicka på Start-menyn -&gt; välj Terminal (Admin) eller PowerShell (Admin)</em>).
 2. Kör följande kommando för att ställa in så att tjänsten startar automatiskt:</p>
-<pre><code class="language-ini">Get-Service ssh-agent | Set-Service -StartupType Automatic
+<pre><code class="language-bash">Get-Service ssh-agent | Set-Service -StartupType Automatic
 </code></pre>
 <ol>
 <li>Starta tjänsten nu direkt:</li>
 </ol>
-<pre><code class="language-ini">Start-Service ssh-agent
+<pre><code class="language-bash">Start-Service ssh-agent
 </code></pre>
 <h3 id="lagg-till-nyckeln">Lägg till nyckeln<a class="headerlink" href="#lagg-till-nyckeln" title="Permanent link">&para;</a></h3>
 <p>Nu när "hovmästaren" (agenten) är vaken, kan du ge nyckeln till honom.
 1. I samma PowerShell-fönster, kör:</p>
-<pre><code class="language-ini">ssh-add C:&lt;br&gt;Users&lt;br&gt;DittNamn&lt;br&gt;.ssh&lt;br&gt;STRATO
+<pre><code class="language-bash">ssh-add C:&lt;br&gt;Users&lt;br&gt;DittNamn&lt;br&gt;.ssh&lt;br&gt;STRATO
 </code></pre>
 <ul>
 <li>(<em>Byt ut DittNamn och sökvägen till där nyckeln ligger</em>).</li>
@@ -2383,11 +2396,11 @@ När du sedan kör dina skript eller skriver ssh root@... i PowerShell eller CMD
 <p>root user är numera ändrad till <strong>mormaija123</strong></p>
 <h2 id="om-du-behover-ga-in-i-vnc-konsolen">Om du behöver gå in i VNC-konsolen<a class="headerlink" href="#om-du-behover-ga-in-i-vnc-konsolen" title="Permanent link">&para;</a></h2>
 <h3 id="montera-disken">Montera disken<a class="headerlink" href="#montera-disken" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">mkdir -p /mnt/vps
+<pre><code class="language-bash">mkdir -p /mnt/vps
 mount /dev/vda4 /mnt/vps
 </code></pre>
 <h3 id="andra-root-losenord">Ändra root lösenord<a class="headerlink" href="#andra-root-losenord" title="Permanent link">&para;</a></h3>
-<pre><code class="language-ini">chroot /mnt/vps passwd root
+<pre><code class="language-bash">chroot /mnt/vps passwd root
 </code></pre>
 <div class="footnote">
 <hr />
