@@ -127,7 +127,12 @@ body {
   border: none !important;
 }
 .language-text {
-  border: 1px solid darkblue !important;
+  border: 2px solid darkblue !important;
+  border-radius: 4px;
+  background-color: #e7e5e5;
+}
+.language-bash {
+  border: 2px solid darkblue !important;
   border-radius: 4px;
   background-color: #e7e5e5;
 }

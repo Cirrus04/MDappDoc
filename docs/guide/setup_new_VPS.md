@@ -119,8 +119,7 @@ ssh root@87.106.130.217
 ```
 om du konfigurerat din lokala SSH-konfiguration.
 
->Enter passphrase for key '**/Users/siren/.ssh/STRATO**':<br>
->**MarketData**
+>Enter passphrase for key '**/Users/siren/.ssh/STRATO**': **MarketData**
 
 ---
 ## 3. Grundläggande Serverkonfiguration
@@ -132,7 +131,7 @@ dnf update -y
 ```
 
 ### Installera nödvändiga verktyg
-Installera textredigeraren 'nano' och kalkylatorn 'bc' (krävs för dina skript).
+Installera textredigeraren '**nano**' och kalkylatorn '**bc**' (krävs för dina skript).
 
 ```bash
 dnf install nano bc -y
