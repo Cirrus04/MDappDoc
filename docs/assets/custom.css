@@ -15,26 +15,27 @@ body { --md-text-font-size:     0.6rem;
        --md-text-font-size--h5: 0.6rem;
        --md-code-font-size:     0.6rem;
 }
-.md-typeset {    font-size:       0.6rem;}
-.md-typeset h1 { font-size:       1.0rem;}
-.md-typeset h2 { font-size:       0.9rem;
+.md-typeset {    font-size:       0.6rem;
                  font-weight:     400;
-                 color:           rgba(255, 255, 255);
+}
+.md-typeset h1 { font-size:       1.0rem;
+                 color:           #003A6B;
+                 /* background-color:rgba(73, 136, 154); */
+}
+.md-typeset h2 { font-size:       0.9rem;
+                 color:           #1B5886;
                  /* background-color:rgba(73, 136, 154); */
 }
 .md-typeset h3 { font-size:       0.8rem;
-                 font-weight:     400;
-                 color:           rgba(255, 255, 255);
+                 color:           #3776A1;
                  /* background-color:rgba(128,172,184); */
 }
 .md-typeset h4 { font-size:       0.7rem;
-                 font-weight:     400;
-                 color:           rgba(39, 76, 119);
+                 color:           #5293BB;
                  /* background-color:rgba(200,219,225); */
 }
 .md-typeset h5 { font-size:       0.6rem;
-                 font-weight:     400;
-                 color:           rgba(39, 76, 119);
+                 color:           #6EB1D6;
                  /* background-color:rgba(200,219,225); */
 }
 .md-typeset code { font-size: 0.6rem; }
