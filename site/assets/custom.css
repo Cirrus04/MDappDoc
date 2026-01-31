@@ -43,6 +43,7 @@ body { --md-text-font-size:     0.6rem;
 }
 
 .md-typeset code { font-size: 0.6rem; }
+/*
 .md-typeset pre.courier-tight { font-family:      "Courier New", Courier, monospace;
                                 line-height:      1.0;
                                 font-size:        0.6rem;
@@ -51,6 +52,7 @@ body { --md-text-font-size:     0.6rem;
                                 border:           1px solid #003A6B !important;
                                 white-space:      pre-wrap;
 }
+*/
 .md-typeset blockquote {        font-family:      "Courier New", Courier, monospace;
                                 line-height:      1.0;
                                 font-size:        0.6rem;
@@ -58,6 +60,7 @@ body { --md-text-font-size:     0.6rem;
                                 border-radius:    4px;
                                 white-space:      pre-wrap;
 }
+/*
 .md-typeset .courier-tight { border:              1px solid #003A6B !important;
                              border-radius:       4px;
                              background-color:    #e7e5e5;
@@ -70,6 +73,7 @@ body { --md-text-font-size:     0.6rem;
                                   background-color: transparent !important;
                                   border: none !important;
 }
+*/
 .language-text {                  border: 2px solid #003A6B !important;
                                   border-radius: 4px !important;
                                   background-color: #e7e5e5 !important;ß

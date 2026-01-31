@@ -59,6 +59,7 @@ body { --md-text-font-size:     0.6rem;
                                 background-color: #d9e7f2;
                                 border-radius:    4px;
                                 white-space:      pre-wrap;
+                                border-left:      .1rem solid var(----md-primary-fg-color) !important;
 }
 /*
 .md-typeset .courier-tight { border:              1px solid #003A6B !important;
