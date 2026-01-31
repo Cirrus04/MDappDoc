@@ -39,7 +39,7 @@ body { --md-text-font-size:     0.6rem;
                  /* background-color:rgba(200,219,225); */
 }
 
-.md-typeset footnote-ref { font-size: 1em;
+.md-typeset .footnote-ref { font-size: 1em;
 }
 
 .md-typeset code { font-size: 0.6rem; }
