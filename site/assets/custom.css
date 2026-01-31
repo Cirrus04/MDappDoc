@@ -38,6 +38,9 @@ body { --md-text-font-size:     0.6rem;
                  color:           #6EB1D6;
                  /* background-color:rgba(200,219,225); */
 }
+
+.md-typeset footnote-ref5 { font-size:       1em;
+}
 .md-typeset code { font-size: 0.6rem; }
 .md-typeset pre.courier-tight { font-family:      "Courier New", Courier, monospace;
                                 line-height:      1.0;
