@@ -501,6 +501,82 @@ mount /dev/vda4 /mnt/vps
 chroot /mnt/vps passwd root
 ```
 
+```bash
+<?php
+$host    = '127.0.0.1';
+$db      = 'MD4';
+$user    = 'root';
+$pass    = 'Maija9377';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+try {
+  $pdo = new PDO($dsn, $user, $pass, $options);
+  echo "Connected to database successfully.<br>";
+
+  $sql = "UPDATE tSymbol
+          SET sector = :sector,
+              segment = :segment,
+              modificationDate = CURDATE(),
+              altFullname = :altFullname
+          WHERE ticker = :ticker
+          AND exchange = 'ST'";
+
+  $stmt = $pdo->prepare($sql);
+
+  $csvFile = 'NASDAQ_ST_BORSDATA.csv';
+  if (($handle = fopen($csvFile, "r")) !== FALSE) {
+    fgetcsv($handle, 1000, ";"); // Skip the first line (the header)
+
+    $rowCount = 0;
+    $updatedCount = 0;
+
+    echo "Starting update process...<br><br>";
+
+    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+      $altFullname = trim($data[0]);
+      $segment = trim($data[1]);
+      $ticker  = trim($data[2]);
+      $sector  = trim($data[3]);
+
+      if (!empty($ticker)) {
+        $stmt->execute([
+          ':sector'  => $sector,
+          ':segment' => $segment,
+          ':ticker'  => $ticker,
+          ':altFullname' => $altFullname
+        ]);
+
+        if ($stmt->rowCount() > 0) {
+          $updatedCount++;
+        }
+        $rowCount++;
+      }
+    }
+
+    fclose($handle);
+
+    echo "<strong>Process Finished!</strong><br>";
+    echo "Total lines processed: $rowCount<br>";
+    echo "Total records actually updated: $updatedCount<br>";
+    echo "Note: If 'updated' is lower than 'processed', it means the data was already up to date for those symbols.";
+
+  } else {
+    echo "Error: Could not open $csvFile";
+  }
+
+} catch (\PDOException $e) {
+  echo "Database Error: " . $e->getMessage();
+}
+?>
+```
+
 [^1]: # Vad är AlmaLinux?
 
     AlmaLinux är ett gratis, öppen källkods-operativsystem för servrar.
